@@ -1,0 +1,38 @@
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.AssemblyReference.cache
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para_inventario.frmHerramientas.resources
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.frmPrincipal.resources
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Properties.Resources.resources
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.GenerateResource.cache
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.AssemblyInfoInputs.cache
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.AssemblyInfo.cs
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.CoreCompileInputs.cache
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\bin\Debug\net6.0-windows\Para inventario.exe
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\bin\Debug\net6.0-windows\Para inventario.deps.json
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\bin\Debug\net6.0-windows\Para inventario.runtimeconfig.json
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\bin\Debug\net6.0-windows\Para inventario.dll
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\bin\Debug\net6.0-windows\Para inventario.pdb
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.dll
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\refint\Para inventario.dll
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.pdb
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\Para inventario.genruntimeconfig.cache
+C:\Users\YamiYB\source\repos\Para inventario\Para inventario\obj\Debug\net6.0-windows\ref\Para inventario.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\Para inventario.exe
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\Para inventario.deps.json
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\Para inventario.runtimeconfig.json
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\Para inventario.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\Para inventario.pdb
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.AssemblyReference.cache
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.frmHerramientas.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.frmPrincipal.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Properties.Resources.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.GenerateResource.cache
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.AssemblyInfoInputs.cache
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.AssemblyInfo.cs
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.CoreCompileInputs.cache
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\refint\Para inventario.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.pdb
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.genruntimeconfig.cache
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\ref\Para inventario.dll
