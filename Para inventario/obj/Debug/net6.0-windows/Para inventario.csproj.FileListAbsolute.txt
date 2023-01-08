@@ -36,3 +36,11 @@ C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.pdb
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.genruntimeconfig.cache
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\ref\Para inventario.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\Para inventario.dll.config
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.CopyComplete

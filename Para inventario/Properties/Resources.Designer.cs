@@ -63,9 +63,39 @@ namespace Para_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura {
+            get {
+                object obj = ResourceManager.GetObject("Captura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap descargar {
             get {
                 object obj = ResourceManager.GetObject("descargar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descargar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("descargar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descargar1 {
+            get {
+                object obj = ResourceManager.GetObject("descargar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

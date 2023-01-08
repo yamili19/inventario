@@ -155,6 +155,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnVolver
             // 
@@ -178,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.iStock_493585980;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(529, 281);
+            this.ClientSize = new System.Drawing.Size(529, 250);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.checkCantidad);
@@ -192,6 +193,7 @@
             this.Controls.Add(this.lblMaterial);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHerramientas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

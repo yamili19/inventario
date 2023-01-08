@@ -35,6 +35,7 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,27 +65,42 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::Para_inventario.Properties.Resources.Captura;
+            this.btnCerrar.Location = new System.Drawing.Point(760, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmPrincipal
             // 
@@ -93,7 +109,9 @@
             this.BackgroundImage = global::Para_inventario.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
@@ -115,5 +133,6 @@
         private ToolStripMenuItem consultarToolStripMenuItem;
         private ToolStripMenuItem actualizarToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem;
+        private Button btnCerrar;
     }
 }

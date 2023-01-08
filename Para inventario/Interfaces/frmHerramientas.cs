@@ -1,4 +1,6 @@
+using Para_inventario.Clases;
 using Para_inventario.Interfaces;
+using Para_inventario.Servicios;
 
 namespace Para_inventario
 {
@@ -54,6 +56,25 @@ namespace Para_inventario
                 {
                     bandera = false;
                 }
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Herramienta herramienta = new Herramienta();
+                herramienta.cantidad = Convert.ToInt32(maskCantidad.Text);
+                herramienta.material = txtMaterial.Text;
+                herramienta.lugar = txtLugar.Text;
+                herramienta.marca = txtMarca.Text;
+                herramienta.nombre = txtNombre.Text;
+                herramienta.agregarHerramienta(herramienta);
+                MessageBox.Show("Herramienta"+" "+herramienta.nombre+" "+herramienta.marca+" "+"agregada exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
