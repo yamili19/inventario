@@ -1,6 +1,7 @@
 ﻿using Para_inventario.Clases;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,54 @@ namespace Para_inventario.Servicios
             finally
             {
                 cn.Close(); 
+            }
+        }
+
+        public DataTable mostrar()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = "mostrarHerramientas";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally 
+            { 
+                cn.Close(); 
+            }
+            return dt;
+        }
+
+        public void eliminar(int nro)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection= cn;
+                cmd.CommandText = "UPDATE HerramientasManuales SET estado = 0  where nro = @nro";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nro", nro);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
+            finally
+            {
+                cn.Close();
             }
         }
     }

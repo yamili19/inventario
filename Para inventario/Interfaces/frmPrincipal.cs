@@ -33,5 +33,12 @@ namespace Para_inventario.Interfaces
         {
             this.Close();
         }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHerramientaBaja ventana = new frmHerramientaBaja();
+            ventana.Show();
+            this.Hide();    
+        }
     }
 }

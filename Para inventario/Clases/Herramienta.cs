@@ -33,5 +33,25 @@ namespace Para_inventario.Clases
             ServicioHerramienta h = new ServicioHerramienta();
             h.agregar(herramienta);
         }
+
+        public void mostrar(DataGridView herramienta)
+        {
+            ServicioHerramienta h = new ServicioHerramienta();
+            herramienta.DataSource = h.mostrar();   
+        }
+
+        public void eliminar(DataGridView herramienta)
+        {
+            int indice = herramienta.CurrentRow.Index;
+            int nro = Convert.ToInt32(herramienta.CurrentRow.Cells["nro"].Value.ToString());
+            ServicioHerramienta h = new ServicioHerramienta();
+            DialogResult resultado = MessageBox.Show("¿Desea eliminar la herramienta con el nro de inventario " + nro.ToString()+"?", "Información",
+                MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+                h.eliminar(nro);
+                MessageBox.Show("Herramienta eliminada correctamente");
+            }
+        }
     }
 }
