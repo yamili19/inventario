@@ -40,5 +40,47 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();    
         }
+
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHerramientasActualizacion ventana = new frmHerramientasActualizacion();
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHerramientasConsultar ventana = new frmHerramientasConsultar();
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void acToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            actualizarElementosDibujo ventana = new actualizarElementosDibujo();
+            ventana.Show(); 
+            this.Hide();
+        }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            elementosDibujoAgregar ventana = new elementosDibujoAgregar();
+            ventana.Show(); 
+            this.Hide();    
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            consultarElementosDibujo ventana = new consultarElementosDibujo();
+            ventana.Show(); 
+            this.Hide();
+        }
+
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            eliminarElementosDibujo ventana = new eliminarElementosDibujo();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }

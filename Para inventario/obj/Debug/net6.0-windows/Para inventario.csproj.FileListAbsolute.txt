@@ -45,3 +45,9 @@ C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para inventario.csproj.CopyComplete
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.frmHerramientaBaja.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.frmHerramientasActualizacion.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.frmHerramientasConsultar.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.actualizarElementosDibujo.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.consultarElementosDibujo.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.elementosDibujoAgregar.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.eliminarElementosDibujo.resources

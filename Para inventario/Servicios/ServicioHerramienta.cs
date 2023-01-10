@@ -88,5 +88,29 @@ namespace Para_inventario.Servicios
                 cn.Close();
             }
         }
+        public void actualizar(Herramienta herramienta)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection= cn;
+                cmd.CommandText = "UPDATE HerramientasManuales SET cantidad = @cantidad, lugar = @lugar WHERE nro = @nro";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@lugar", herramienta.lugar);
+                cmd.Parameters.AddWithValue("@cantidad", herramienta.cantidad);
+                cmd.Parameters.AddWithValue("@nro", herramienta.nro);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);    
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

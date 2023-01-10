@@ -103,6 +103,16 @@ namespace Para_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dibujo {
+            get {
+                object obj = ResourceManager.GetObject("Dibujo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -116,6 +126,16 @@ namespace Para_inventario.Properties {
         internal static System.Drawing.Bitmap iStock_493585980 {
             get {
                 object obj = ResourceManager.GetObject("iStock-493585980", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tablero_regla_t {
+            get {
+                object obj = ResourceManager.GetObject("tablero-regla-t", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

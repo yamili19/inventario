@@ -32,11 +32,6 @@ namespace Para_inventario.Interfaces
             herramienta.mostrar(dataHerramientasBaja);
         }
 
-        private void dataHerramientasBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnEliminar.Enabled= true;
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -44,11 +39,17 @@ namespace Para_inventario.Interfaces
                 Herramienta herramienta = new Herramienta();    
                 herramienta.eliminar(dataHerramientasBaja);
                 herramienta.mostrar(dataHerramientasBaja);
+                btnEliminar.Enabled = false;
             }
             catch(Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dataHerramientasBaja_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEliminar.Enabled = true;
         }
     }
 }

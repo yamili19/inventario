@@ -1,6 +1,6 @@
 ﻿namespace Para_inventario.Interfaces
 {
-    partial class frmHerramientaBaja
+    partial class frmHerramientasActualizacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHerramientaBaja));
+            this.dataHerramientasActualizar = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.dataHerramientasBaja = new System.Windows.Forms.DataGridView();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblHerramientas = new System.Windows.Forms.Label();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasBaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasActualizar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataHerramientasActualizar
+            // 
+            this.dataHerramientasActualizar.AllowUserToAddRows = false;
+            this.dataHerramientasActualizar.AllowUserToDeleteRows = false;
+            this.dataHerramientasActualizar.AllowUserToOrderColumns = true;
+            this.dataHerramientasActualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataHerramientasActualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nro,
+            this.nombre,
+            this.marca,
+            this.material,
+            this.lugar,
+            this.cantidad});
+            this.dataHerramientasActualizar.Location = new System.Drawing.Point(79, 45);
+            this.dataHerramientasActualizar.Name = "dataHerramientasActualizar";
+            this.dataHerramientasActualizar.RowTemplate.Height = 25;
+            this.dataHerramientasActualizar.Size = new System.Drawing.Size(643, 334);
+            this.dataHerramientasActualizar.TabIndex = 16;
+            this.dataHerramientasActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHerramientasActualizar_CellClick);
             // 
             // btnVolver
             // 
@@ -49,51 +69,39 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(449, 377);
+            this.btnVolver.Location = new System.Drawing.Point(495, 397);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(95, 38);
-            this.btnVolver.TabIndex = 14;
+            this.btnVolver.TabIndex = 17;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // btnEliminar
+            // btnActualizar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.Location = new System.Drawing.Point(576, 377);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(95, 38);
-            this.btnEliminar.TabIndex = 13;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnActualizar.Location = new System.Drawing.Point(615, 397);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(107, 38);
+            this.btnActualizar.TabIndex = 18;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // dataHerramientasBaja
+            // lblHerramientas
             // 
-            this.dataHerramientasBaja.AllowUserToAddRows = false;
-            this.dataHerramientasBaja.AllowUserToDeleteRows = false;
-            this.dataHerramientasBaja.AllowUserToOrderColumns = true;
-            this.dataHerramientasBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataHerramientasBaja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nro,
-            this.nombre,
-            this.marca,
-            this.material,
-            this.lugar,
-            this.cantidad});
-            this.dataHerramientasBaja.Location = new System.Drawing.Point(28, 21);
-            this.dataHerramientasBaja.Name = "dataHerramientasBaja";
-            this.dataHerramientasBaja.ReadOnly = true;
-            this.dataHerramientasBaja.RowTemplate.Height = 25;
-            this.dataHerramientasBaja.Size = new System.Drawing.Size(643, 334);
-            this.dataHerramientasBaja.TabIndex = 15;
-            this.dataHerramientasBaja.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHerramientasBaja_CellClick);
-            
+            this.lblHerramientas.AutoSize = true;
+            this.lblHerramientas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHerramientas.Location = new System.Drawing.Point(313, 25);
+            this.lblHerramientas.Name = "lblHerramientas";
+            this.lblHerramientas.Size = new System.Drawing.Size(176, 20);
+            this.lblHerramientas.TabIndex = 22;
+            this.lblHerramientas.Text = "Todas Las Herramientas";
             // 
             // nro
             // 
@@ -127,42 +135,43 @@
             // 
             this.lugar.DataPropertyName = "lugar";
             this.lugar.HeaderText = "Lugar";
+            this.lugar.MaxInputLength = 50;
             this.lugar.Name = "lugar";
-            this.lugar.ReadOnly = true;
             // 
             // cantidad
             // 
             this.cantidad.DataPropertyName = "cantidad";
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
             // 
-            // frmHerramientaBaja
+            // frmHerramientasActualizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.iStock_493585980;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(727, 450);
-            this.Controls.Add(this.dataHerramientasBaja);
+            this.ClientSize = new System.Drawing.Size(800, 452);
+            this.Controls.Add(this.lblHerramientas);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.dataHerramientasActualizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmHerramientaBaja";
+            this.Name = "frmHerramientasActualizacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmHerramientaBaja";
-            this.Load += new System.EventHandler(this.frmHerramientaBaja_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasBaja)).EndInit();
+            this.Text = "frmHerramientasActualizacion";
+            this.Load += new System.EventHandler(this.frmHerramientasActualizacion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasActualizar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private DataGridView dataHerramientasActualizar;
         private Button btnVolver;
-        private Button btnEliminar;
-        private DataGridView dataHerramientasBaja;
+        private Button btnActualizar;
+        private Label lblHerramientas;
         private DataGridViewTextBoxColumn nro;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn marca;

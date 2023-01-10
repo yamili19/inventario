@@ -47,7 +47,7 @@ namespace Para_inventario
                         checkCantidad.Text = "Error, debe ingresar un numero mayor que 0";
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     bandera = false;
                     btnAgregar.Enabled = false;
