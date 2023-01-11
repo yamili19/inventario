@@ -16,5 +16,12 @@ namespace Para_inventario.Interfaces
         {
             InitializeComponent();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmPrincipal ventana = new frmPrincipal();  
+            ventana.Show();
+            this.Hide();
+        }
     }
 }
