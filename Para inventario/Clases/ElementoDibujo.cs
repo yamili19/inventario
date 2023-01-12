@@ -66,5 +66,76 @@ namespace Para_inventario.Clases
                 MessageBox.Show("Elemento de dibujo actualizado exitosamente");
             }
         }
+
+        public void consultarNroInventario(TextBox numero, DataGridView elemento)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = elemento.DataSource;
+            bool bandera = false;
+            if (numero.Text != null)
+            {
+                bandera = true;
+            }
+            while (bandera)
+            {
+                try
+                {
+                    if (bs.DataSource != null)
+                    {
+                        int nro = int.Parse(numero.Text);
+                        bs.Filter = "nro = '" + nro + "'";
+                        elemento.DataSource = bs.DataSource;
+                        if (elemento.RowCount == 0)
+                        {
+                            MessageBox.Show("No se encontró ningún elemento de dibujo con el nro de inventario ingresado");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    bandera = false;
+                    mostrar(elemento);  
+                }
+                finally
+                {
+                    bandera = false;
+                }
+            }
+        }
+
+        public void consultarNombre(TextBox nombre, DataGridView elemento) 
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = elemento.DataSource;    
+            bool bandera = false;   
+            if (nombre.Text != null) 
+            {
+                bandera = true;
+            }
+            while (bandera)
+            {
+                try
+                {
+                    if (bs.DataSource != null)
+                    {
+                        bs.Filter = "nombre like '%"+nombre.Text+"%'";
+                        elemento.DataSource = bs.DataSource;    
+                        if (elemento.RowCount == 0)
+                        {
+                            MessageBox.Show("No se encontró ningún elemento de dibujo con el nombre ingresado");
+                        }
+                    }
+                }
+                catch
+                {
+                    bandera = false;
+                    mostrar(elemento);
+                }
+                finally
+                {
+                    bandera = false;
+                }
+            }
+        }
     }
 }
