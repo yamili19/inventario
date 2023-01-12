@@ -30,6 +30,13 @@
         {
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.dataEDActualizar = new System.Windows.Forms.DataGridView();
+            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHerramientas = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataEDActualizar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizar
@@ -46,6 +53,7 @@
             this.btnActualizar.TabIndex = 20;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnVolver
             // 
@@ -63,6 +71,66 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // dataEDActualizar
+            // 
+            this.dataEDActualizar.AllowUserToAddRows = false;
+            this.dataEDActualizar.AllowUserToDeleteRows = false;
+            this.dataEDActualizar.AllowUserToOrderColumns = true;
+            this.dataEDActualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataEDActualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nro,
+            this.nombre,
+            this.cantidadDisponible,
+            this.cantidadComprada});
+            this.dataEDActualizar.Location = new System.Drawing.Point(84, 67);
+            this.dataEDActualizar.Name = "dataEDActualizar";
+            this.dataEDActualizar.RowTemplate.Height = 25;
+            this.dataEDActualizar.Size = new System.Drawing.Size(643, 314);
+            this.dataEDActualizar.TabIndex = 21;
+            this.dataEDActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEDActualizar_CellClick);
+            this.dataEDActualizar.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataEDActualizar_DataError);
+            // 
+            // nro
+            // 
+            this.nro.DataPropertyName = "nro";
+            this.nro.HeaderText = "Nro Inventario";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            this.nro.Width = 150;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 150;
+            // 
+            // cantidadDisponible
+            // 
+            this.cantidadDisponible.DataPropertyName = "cantidadDisponible";
+            this.cantidadDisponible.HeaderText = "Cantidad Disponible";
+            this.cantidadDisponible.Name = "cantidadDisponible";
+            this.cantidadDisponible.ReadOnly = true;
+            this.cantidadDisponible.Width = 150;
+            // 
+            // cantidadComprada
+            // 
+            this.cantidadComprada.DataPropertyName = "cantidadComprada";
+            this.cantidadComprada.HeaderText = "Cantidad Comprada";
+            this.cantidadComprada.Name = "cantidadComprada";
+            this.cantidadComprada.Width = 150;
+            // 
+            // lblHerramientas
+            // 
+            this.lblHerramientas.AutoSize = true;
+            this.lblHerramientas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHerramientas.Location = new System.Drawing.Point(290, 44);
+            this.lblHerramientas.Name = "lblHerramientas";
+            this.lblHerramientas.Size = new System.Drawing.Size(229, 20);
+            this.lblHerramientas.TabIndex = 23;
+            this.lblHerramientas.Text = "Todos Los Elementos De Dibujo";
+            // 
             // actualizarElementosDibujo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -70,13 +138,18 @@
             this.BackgroundImage = global::Para_inventario.Properties.Resources.tablero_regla_t;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblHerramientas);
+            this.Controls.Add(this.dataEDActualizar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnVolver);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "actualizarElementosDibujo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "actualizarElementosDibujo";
+            this.Load += new System.EventHandler(this.actualizarElementosDibujo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataEDActualizar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -84,5 +157,11 @@
 
         private Button btnActualizar;
         private Button btnVolver;
+        private DataGridView dataEDActualizar;
+        private DataGridViewTextBoxColumn nro;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn cantidadDisponible;
+        private DataGridViewTextBoxColumn cantidadComprada;
+        private Label lblHerramientas;
     }
 }

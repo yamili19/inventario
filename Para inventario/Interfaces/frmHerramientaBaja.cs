@@ -38,7 +38,6 @@ namespace Para_inventario.Interfaces
             {
                 Herramienta herramienta = new Herramienta();    
                 herramienta.eliminar(dataHerramientasBaja);
-                herramienta.mostrar(dataHerramientasBaja);
                 btnEliminar.Enabled = false;
             }
             catch(Exception ex) 

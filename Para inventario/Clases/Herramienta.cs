@@ -50,6 +50,7 @@ namespace Para_inventario.Clases
             {
                 h.eliminar(nro);
                 MessageBox.Show("Herramienta eliminada correctamente");
+                mostrar(herramienta);
             }
         }
 

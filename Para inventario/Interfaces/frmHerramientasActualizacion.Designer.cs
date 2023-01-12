@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dataHerramientasActualizar = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.lblHerramientas = new System.Windows.Forms.Label();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblHerramientas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasActualizar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,48 @@
             this.dataHerramientasActualizar.Size = new System.Drawing.Size(643, 334);
             this.dataHerramientasActualizar.TabIndex = 16;
             this.dataHerramientasActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHerramientasActualizar_CellClick);
+            this.dataHerramientasActualizar.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataHerramientasActualizar_DataError);
+            // 
+            // nro
+            // 
+            this.nro.DataPropertyName = "nro";
+            this.nro.HeaderText = "Nro Inventario";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.DataPropertyName = "marca";
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // material
+            // 
+            this.material.DataPropertyName = "material";
+            this.material.HeaderText = "Material";
+            this.material.Name = "material";
+            this.material.ReadOnly = true;
+            // 
+            // lugar
+            // 
+            this.lugar.DataPropertyName = "lugar";
+            this.lugar.HeaderText = "Lugar";
+            this.lugar.MaxInputLength = 50;
+            this.lugar.Name = "lugar";
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
             // 
             // btnVolver
             // 
@@ -102,47 +144,6 @@
             this.lblHerramientas.Size = new System.Drawing.Size(176, 20);
             this.lblHerramientas.TabIndex = 22;
             this.lblHerramientas.Text = "Todas Las Herramientas";
-            // 
-            // nro
-            // 
-            this.nro.DataPropertyName = "nro";
-            this.nro.HeaderText = "Nro Inventario";
-            this.nro.Name = "nro";
-            this.nro.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // marca
-            // 
-            this.marca.DataPropertyName = "marca";
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            // 
-            // material
-            // 
-            this.material.DataPropertyName = "material";
-            this.material.HeaderText = "Material";
-            this.material.Name = "material";
-            this.material.ReadOnly = true;
-            // 
-            // lugar
-            // 
-            this.lugar.DataPropertyName = "lugar";
-            this.lugar.HeaderText = "Lugar";
-            this.lugar.MaxInputLength = 50;
-            this.lugar.Name = "lugar";
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
             // 
             // frmHerramientasActualizacion
             // 

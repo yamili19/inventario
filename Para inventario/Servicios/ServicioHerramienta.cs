@@ -103,9 +103,9 @@ namespace Para_inventario.Servicios
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex) 
+            catch(Exception) 
             {
-                MessageBox.Show(ex.Message);    
+                MessageBox.Show("Error ingrese un nro entero como cantidad");    
             }
             finally
             {

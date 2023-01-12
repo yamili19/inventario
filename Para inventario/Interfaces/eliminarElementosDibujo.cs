@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Para_inventario.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,25 @@ namespace Para_inventario.Interfaces
             frmPrincipal ventana = new frmPrincipal();  
             ventana.Show();
             this.Hide();
+        }
+
+        private void eliminarElementosDibujo_Load(object sender, EventArgs e)
+        {
+            btnEliminar.Enabled = false;
+            ElementoDibujo elememento = new ElementoDibujo();
+            elememento.mostrar(dataEDEliminar);
+        }
+
+        private void dataEDEliminar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEliminar.Enabled = true; 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ElementoDibujo elemento = new ElementoDibujo();
+            elemento.eliminar(dataEDEliminar);
+            btnEliminar.Enabled = false;
         }
     }
 }

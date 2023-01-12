@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Para_inventario.Interfaces
 {
@@ -29,7 +30,7 @@ namespace Para_inventario.Interfaces
         {
             btnActualizar.Enabled = false;
             Herramienta herramienta = new Herramienta();
-            herramienta.mostrar(dataHerramientasActualizar);
+            herramienta.mostrar(dataHerramientasActualizar); 
         }
 
         private void dataHerramientasActualizar_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -40,23 +41,26 @@ namespace Para_inventario.Interfaces
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(dataHerramientasActualizar.CurrentRow.Cells["cantidad"].Value.ToString()) > 0) 
+            Herramienta herramienta = new Herramienta();
+            if (Convert.ToInt32(dataHerramientasActualizar.CurrentRow.Cells["cantidad"].Value.ToString()) > 0)
             {
-                Herramienta herramienta = new Herramienta();
                 herramienta.nro = Convert.ToInt32(dataHerramientasActualizar.CurrentRow.Cells["nro"].Value.ToString());
                 herramienta.lugar = dataHerramientasActualizar.CurrentRow.Cells["lugar"].Value.ToString();
                 herramienta.cantidad = Convert.ToInt32(dataHerramientasActualizar.CurrentRow.Cells["cantidad"].Value.ToString());
                 herramienta.actualizar(herramienta);
-                herramienta.mostrar(dataHerramientasActualizar);
                 btnActualizar.Enabled = false;
             }
             else
             {
                 MessageBox.Show("La cantidad de la herramienta tiene que ser mayor a 0");
-                Herramienta herramienta = new Herramienta();
-                herramienta.mostrar(dataHerramientasActualizar);
                 btnActualizar.Enabled = false;
             }
+            herramienta.mostrar(dataHerramientasActualizar);
+        }
+
+        private void dataHerramientasActualizar_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ingrese un numero entero mayor a 0 en la columna Cantidad");
         }
     }
 }
