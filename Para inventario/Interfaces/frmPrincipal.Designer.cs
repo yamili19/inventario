@@ -41,6 +41,11 @@
             this.acToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.consumiblesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +54,8 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.herramientasToolStripMenuItem,
-            this.elementosDibujoToolStripMenuItem});
+            this.elementosDibujoToolStripMenuItem,
+            this.consumiblesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 27);
@@ -71,28 +77,28 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -151,6 +157,43 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // consumiblesToolStripMenuItem
+            // 
+            this.consumiblesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarToolStripMenuItem2,
+            this.consultarToolStripMenuItem2,
+            this.actualizarToolStripMenuItem1,
+            this.eliminarToolStripMenuItem2});
+            this.consumiblesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.consumiblesToolStripMenuItem.Name = "consumiblesToolStripMenuItem";
+            this.consumiblesToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
+            this.consumiblesToolStripMenuItem.Text = "Consumibles";
+            // 
+            // agregarToolStripMenuItem2
+            // 
+            this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.agregarToolStripMenuItem2.Text = "Agregar";
+            this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
+            // 
+            // consultarToolStripMenuItem2
+            // 
+            this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.consultarToolStripMenuItem2.Text = "Consultar";
+            // 
+            // actualizarToolStripMenuItem1
+            // 
+            this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
+            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.actualizarToolStripMenuItem1.Text = "Actualizar";
+            // 
+            // eliminarToolStripMenuItem2
+            // 
+            this.eliminarToolStripMenuItem2.Name = "eliminarToolStripMenuItem2";
+            this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.eliminarToolStripMenuItem2.Text = "Eliminar";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -188,5 +231,10 @@
         private ToolStripMenuItem consultarToolStripMenuItem1;
         private ToolStripMenuItem acToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem1;
+        private ToolStripMenuItem consumiblesToolStripMenuItem;
+        private ToolStripMenuItem agregarToolStripMenuItem2;
+        private ToolStripMenuItem consultarToolStripMenuItem2;
+        private ToolStripMenuItem actualizarToolStripMenuItem1;
+        private ToolStripMenuItem eliminarToolStripMenuItem2;
     }
 }

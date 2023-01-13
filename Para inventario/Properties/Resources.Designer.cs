@@ -133,6 +133,16 @@ namespace Para_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap precision_erasers_group {
+            get {
+                object obj = ResourceManager.GetObject("precision-erasers-group", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tablero_regla_t {
             get {
                 object obj = ResourceManager.GetObject("tablero-regla-t", resourceCulture);

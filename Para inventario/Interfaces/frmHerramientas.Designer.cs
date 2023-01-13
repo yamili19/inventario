@@ -135,6 +135,7 @@
             // checkCantidad
             // 
             this.checkCantidad.AutoSize = true;
+            this.checkCantidad.ForeColor = System.Drawing.Color.Red;
             this.checkCantidad.Location = new System.Drawing.Point(243, 183);
             this.checkCantidad.Name = "checkCantidad";
             this.checkCantidad.Size = new System.Drawing.Size(15, 14);

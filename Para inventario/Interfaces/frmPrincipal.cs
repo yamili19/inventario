@@ -82,5 +82,12 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();
         }
+
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            agregarConsumible ventana = new agregarConsumible();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }

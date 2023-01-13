@@ -35,6 +35,7 @@ namespace Para_inventario.Interfaces
                 elementoDibujo.cantidadComprada = int.Parse(maskCantidadComprada.Text);
                 elementoDibujo.agregar(elementoDibujo);
                 MessageBox.Show("Elemento de dibujo " + elementoDibujo.nombre+" "+"agregado exitosamente");
+                limpiarCampos();
             }
             catch(Exception ex) 
             {
@@ -57,11 +58,17 @@ namespace Para_inventario.Interfaces
                     {
                         btnAgregar.Enabled = true;
                         checkCantidad.Checked = true;
-                    }
+                        checkCantidad.Text = "";
+                        checkCantidad.Enabled= true;
+                        checkCantidad.FlatStyle = FlatStyle.Flat;
+                        checkCantidad.ForeColor = checkCantidad.Checked ? Color.Green : Color.Red;                     }
                     else
                     {
                         checkCantidad.Checked = false;
                         checkCantidad.Text = "Debe ingresar una cantidad mayor que 0";
+                        checkCantidad.Enabled= true;
+                        checkCantidad.FlatStyle= FlatStyle.Flat;
+                        checkCantidad.ForeColor = checkCantidad.Checked? Color.Red : Color.Red;
                     }
                 }
                 catch (Exception)
@@ -80,6 +87,15 @@ namespace Para_inventario.Interfaces
         {
             btnAgregar.Enabled = false;
             checkCantidad.Enabled = false;  
+        }
+
+        private void limpiarCampos()
+        {
+            btnAgregar.Enabled = false;
+            txtNombre.Text = "";
+            maskCantidadComprada.Text = null;
+            checkCantidad.Enabled = false;
+            checkCantidad.Checked = false;
         }
     }
 }

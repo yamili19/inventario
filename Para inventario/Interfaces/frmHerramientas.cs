@@ -31,7 +31,7 @@ namespace Para_inventario
             {
                 bandera = true;
             }
-            while (bandera == true)
+            if (bandera == true)
             {
                 try
                 {
@@ -39,18 +39,26 @@ namespace Para_inventario
                     {
                         checkCantidad.Checked = true;
                         btnAgregar.Enabled = true;
+                        checkCantidad.Text = "";
+                        checkCantidad.Enabled = true;
+                        checkCantidad.FlatStyle = FlatStyle.Flat;
+                        checkCantidad.ForeColor = checkCantidad.Checked? Color.Green : Color.Red;
                     }
                     else
                     {
                         btnAgregar.Enabled = false;
                         checkCantidad.Checked = false;
+                        checkCantidad.Enabled = true;
                         checkCantidad.Text = "Error, debe ingresar un numero mayor que 0";
+                        checkCantidad.FlatStyle = FlatStyle.Flat;
+                        checkCantidad.ForeColor = checkCantidad.Checked ? Color.Red : Color.Red;
                     }
                 }
                 catch (Exception)
                 {
                     bandera = false;
                     btnAgregar.Enabled = false;
+                    checkCantidad.Checked = false;
                 }
                 finally
                 {
@@ -71,11 +79,23 @@ namespace Para_inventario
                 herramienta.nombre = txtNombre.Text;
                 herramienta.agregarHerramienta(herramienta);
                 MessageBox.Show("Herramienta"+" "+herramienta.nombre+" "+herramienta.marca+" "+"agregada exitosamente");
+                limpiarCampos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void limpiarCampos()
+        {
+            btnAgregar.Enabled = false; 
+            checkCantidad.Checked = false;
+            txtLugar.Text = "";
+            txtMarca.Text = "";
+            txtMaterial.Text = "";
+            txtNombre.Text = "";
+            maskCantidad.Text = null;
         }
     }
 }
