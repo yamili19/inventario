@@ -53,6 +53,7 @@
             this.btnActualizar.TabIndex = 22;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnVolver
             // 
@@ -96,6 +97,8 @@
             this.dataConsumiblesActualizar.RowTemplate.Height = 25;
             this.dataConsumiblesActualizar.Size = new System.Drawing.Size(443, 306);
             this.dataConsumiblesActualizar.TabIndex = 25;
+            this.dataConsumiblesActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataConsumiblesActualizar_CellClick);
+            this.dataConsumiblesActualizar.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataConsumiblesActualizar_DataError);
             // 
             // nro
             // 

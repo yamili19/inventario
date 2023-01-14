@@ -29,6 +29,39 @@ namespace Para_inventario.Interfaces
         {
             Consumible consumible = new Consumible();
             consumible.mostrar(dataConsumiblesActualizar);
+            btnActualizar.Enabled = false;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Consumible consumible = new Consumible();
+            if (int.Parse(dataConsumiblesActualizar.CurrentRow.Cells["cantidadComprada"].Value.ToString()) >=
+                int.Parse(dataConsumiblesActualizar.CurrentRow.Cells["cantidadDisponible"].Value.ToString()))
+            {
+                consumible.actualizar(dataConsumiblesActualizar);
+                limpiarCampos();   
+            }
+            else
+            {
+                MessageBox.Show("La cantidad comprada del consumible tiene que ser mayor o igual a la cantidad disponible");
+                limpiarCampos();
+            }
+            consumible.mostrar(dataConsumiblesActualizar);
+        }
+
+        private void limpiarCampos()
+        {
+            btnActualizar.Enabled = false;
+        }
+
+        private void dataConsumiblesActualizar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnActualizar.Enabled = true;
+        }
+
+        private void dataConsumiblesActualizar_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("La cantidad comprada del consumible tiene que ser mayor o igual a la cantidad disponible");
         }
     }
 }
