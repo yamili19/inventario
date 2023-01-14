@@ -1,6 +1,7 @@
 ﻿using Para_inventario.Clases;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,55 @@ namespace Para_inventario.Servicios
             catch (Exception)
             {
                 MessageBox.Show("No se pudo agregar el consumible exitosamente");
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public DataTable mostrar()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "mostrarConsumibles";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                ad.Fill(dt);    
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al mostrar los Consumibles");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return dt;
+        }
+
+        public void actualizar(Consumible consumible)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "UPDATE Consumibles SET cantidadComprada = @cantidadComprada WHERE nro = @nro";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nro", consumible.nro);
+                cmd.Parameters.AddWithValue("@cantidadComprada", consumible.cantidadComprada);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception) 
+            {
+                MessageBox.Show("Error al eliminar el Consumible seleccionado");
             }
             finally
             {

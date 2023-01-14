@@ -30,5 +30,11 @@ namespace Para_inventario.Clases
             servicio.agregar(consumible);
             MessageBox.Show("Consumible agregado exitosamente");
         }
+
+        public void mostrar(DataGridView con)
+        {
+            ServicioConsumible consumible = new ServicioConsumible();
+            con.DataSource = consumible.mostrar();
+        }
     }
 }
