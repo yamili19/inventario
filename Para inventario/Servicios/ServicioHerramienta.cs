@@ -31,9 +31,9 @@ namespace Para_inventario.Servicios
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al agregar herramienta");
             }
             finally
             {
@@ -55,9 +55,9 @@ namespace Para_inventario.Servicios
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 ad.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error");
             }
             finally 
             { 
@@ -79,9 +79,9 @@ namespace Para_inventario.Servicios
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);    
+                MessageBox.Show("Error al eliminar herramienta");    
             }
             finally
             {
@@ -105,7 +105,7 @@ namespace Para_inventario.Servicios
             }
             catch(Exception) 
             {
-                MessageBox.Show("Error ingrese un nro entero como cantidad");    
+                MessageBox.Show("Error al actualizar herramienta");    
             }
             finally
             {

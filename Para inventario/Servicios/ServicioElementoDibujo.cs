@@ -29,9 +29,9 @@ namespace Para_inventario.Servicios
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex) 
+            catch (Exception) 
             {
-                MessageBox.Show(ex.Message);    
+                MessageBox.Show("Error al agregar elemento de dibujo");    
             }
             finally
             {
@@ -53,9 +53,9 @@ namespace Para_inventario.Servicios
                 cn.Open();
                 ad.Fill(dataTable);
             }
-            catch(Exception ex) 
+            catch(Exception) 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error");
             }
             finally
             {
@@ -77,9 +77,9 @@ namespace Para_inventario.Servicios
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al eliminar elemento de dibujo");
             }
             finally
             {
@@ -101,9 +101,9 @@ namespace Para_inventario.Servicios
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error en la actulización del elemento de dibujo");
             }
             finally
             {

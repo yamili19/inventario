@@ -52,5 +52,41 @@ namespace Para_inventario.Clases
                 mostrar(con);
             }
         }
+
+        public void consultarNroInventario(TextBox numero, DataGridView dataConsumible)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataConsumible.DataSource;
+            bool bandera = false;
+            if (numero.Text != null) 
+            {
+                bandera = true;
+            }
+            if (bandera)
+            {
+                try
+                {
+                    if (bs.DataSource!= null) 
+                    {
+                        int nro = int.Parse(numero.Text);
+                        bs.Filter = "nro = '"+nro+"'";
+                        dataConsumible.DataSource = bs.DataSource;
+                        if (dataConsumible.RowCount == 0)
+                        {
+                            MessageBox.Show("No se encontró ningún consumible con el nro de inventario ingresado");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    bandera = false;
+                    mostrar(dataConsumible);
+                }
+                finally
+                {
+                    bandera = false;
+                }
+            }
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace Para_inventario.Servicios
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo agregar el consumible exitosamente");
+                MessageBox.Show("Error al agregar el consumible");
             }
             finally
             {
@@ -55,7 +55,7 @@ namespace Para_inventario.Servicios
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al mostrar los Consumibles");
+                MessageBox.Show("Error");
             }
             finally
             {
@@ -80,7 +80,7 @@ namespace Para_inventario.Servicios
             }
             catch (Exception) 
             {
-                MessageBox.Show("Error al eliminar el Consumible seleccionado");
+                MessageBox.Show("Error en la actualización del consumible");
             }
             finally
             {
