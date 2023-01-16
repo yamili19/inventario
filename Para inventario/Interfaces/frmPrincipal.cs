@@ -103,5 +103,19 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();
         }
+
+        private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            agregarInformatica ventana = new agregarInformatica();
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void consultarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            consultarInformatica ventana = new consultarInformatica();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }

@@ -117,9 +117,9 @@ namespace Para_inventario.Clases
                     MessageBox.Show("No se encontró ninguna herramienta con el nombre ingresado");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                mostrar(herramienta);
             }
         }
     }

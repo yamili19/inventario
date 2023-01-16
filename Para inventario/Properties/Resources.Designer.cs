@@ -63,6 +63,36 @@ namespace Para_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _25020269 {
+            get {
+                object obj = ResourceManager.GetObject("25020269", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _250202691 {
+            get {
+                object obj = ResourceManager.GetObject("250202691", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _250202692 {
+            get {
+                object obj = ResourceManager.GetObject("250202692", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura {
             get {
                 object obj = ResourceManager.GetObject("Captura", resourceCulture);
@@ -126,6 +156,16 @@ namespace Para_inventario.Properties {
         internal static System.Drawing.Bitmap iStock_493585980 {
             get {
                 object obj = ResourceManager.GetObject("iStock-493585980", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maxresdefault {
+            get {
+                object obj = ResourceManager.GetObject("maxresdefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
