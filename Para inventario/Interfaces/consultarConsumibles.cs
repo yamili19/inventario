@@ -36,5 +36,11 @@ namespace Para_inventario.Interfaces
             Consumible consumible = new Consumible();
             consumible.consultarNroInventario(txtNroInventario,dataConsumiblesConsultar);
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            Consumible consumible = new Consumible();
+            consumible.consultarNombre(txtNombre, dataConsumiblesConsultar);
+        }
     }
 }

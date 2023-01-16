@@ -88,5 +88,40 @@ namespace Para_inventario.Clases
                 }
             }
         }
+
+        public void consultarNombre(TextBox nombre , DataGridView dataConsumible) 
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataConsumible.DataSource;
+            bool bandera = false;
+            if (nombre.Text != null) 
+            {
+                bandera = true;
+            }
+            if (bandera)
+            {
+                try
+                {
+                    if (bs.DataSource != null)
+                    {
+                        bs.Filter = "nombre like '%"+nombre.Text+"%'";
+                        dataConsumible.DataSource = bs.DataSource;
+                        if (dataConsumible.RowCount == 0)
+                        {
+                            MessageBox.Show("No se encontró ningún consumible con el nombre ingresado");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    bandera = false;
+                    mostrar(dataConsumible);
+                }
+                finally
+                {
+                    bandera = false;
+                }
+            }
+        }
     }
 }
