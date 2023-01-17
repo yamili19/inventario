@@ -77,7 +77,7 @@ namespace Para_inventario.Interfaces
         private void limpiarCampos()
         {
             btnAgregar.Enabled = false;
-            checkCantidad.Enabled = false;
+            checkCantidad.Checked = false;  
             txtNombre.Text = null;
             maskCantidadComprada.Text = null;   
         }
@@ -93,9 +93,9 @@ namespace Para_inventario.Interfaces
                 consumible.agregar(consumible);
                 limpiarCampos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al agregar consumible");
             }
         }
     }

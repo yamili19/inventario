@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Para_inventario.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,24 @@ namespace Para_inventario.Interfaces
             frmPrincipal ventana = new frmPrincipal();
             ventana.Show();
             this.Close();   
+        }
+
+        private void txtNroInventario_TextChanged(object sender, EventArgs e)
+        {
+            Informática informatica = new Informática();
+            informatica.consultarNroInventario(txtNroInventario, dataInformaticaConsultar);
+        }
+
+        private void consultarInformatica_Load(object sender, EventArgs e)
+        {
+            Informática informatica = new Informática();
+            informatica.mostrar(dataInformaticaConsultar);
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            Informática informatica = new Informática();
+            informatica.consultarNombre(txtNombre, dataInformaticaConsultar);
         }
     }
 }

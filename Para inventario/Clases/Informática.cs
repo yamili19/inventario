@@ -70,12 +70,72 @@ namespace Para_inventario.Clases
 
         public void consultarNroInventario(TextBox numero, DataGridView dataInformatica)
         {
-
+            BindingSource bs = new BindingSource(); 
+            bs.DataSource = dataInformatica.DataSource;
+            bool bandera = false;
+            if (numero.Text != null)
+            {
+                bandera = true; 
+            }
+            if (bandera)
+            {
+                try
+                {
+                    if (bs.DataSource != null)
+                    {
+                        bs.Filter = "nro = '" + int.Parse(numero.Text) + "'";
+                        dataInformatica.DataSource = bs.DataSource;
+                        if (dataInformatica.RowCount == 0)
+                        {
+                            MessageBox.Show("No se encontró ningún elemento de informática con el nro de inventario ingresado");
+                        }
+                    }
+                }
+                catch (Exception) 
+                {
+                    bandera = false;
+                    mostrar(dataInformatica);
+                }
+                finally
+                {
+                    bandera = false;
+                }
+            }
         }
 
         public void consultarNombre(TextBox nombre, DataGridView dataInformatica) 
         {
-            
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataInformatica.DataSource;
+            bool bandera = false;
+            if (nombre.Text != null) 
+            {
+                bandera = true;
+            }
+            if (bandera)
+            {
+                try
+                {
+                    if (bs.DataSource != null)
+                    {
+                        bs.Filter = "nombre like '%"+nombre.Text+"%'";
+                        dataInformatica.DataSource = bs.DataSource;
+                        if (dataInformatica.RowCount == 0)
+                        {
+                            MessageBox.Show("No se encontró ningún elemento de informática con el nombre ingresado");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    bandera = false;
+                    mostrar(dataInformatica);
+                }
+                finally
+                {
+                    bandera = false;
+                }
+            }
         }
     }
 }

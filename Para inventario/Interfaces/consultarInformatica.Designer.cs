@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnVolver = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataInformaticaConsultar = new System.Windows.Forms.DataGridView();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNroInventario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataInformaticaConsultar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -58,24 +58,24 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // dataGridView1
+            // dataInformaticaConsultar
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataInformaticaConsultar.AllowUserToAddRows = false;
+            this.dataInformaticaConsultar.AllowUserToDeleteRows = false;
+            this.dataInformaticaConsultar.AllowUserToOrderColumns = true;
+            this.dataInformaticaConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataInformaticaConsultar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nro,
             this.nombre,
             this.marca,
             this.lugar,
             this.cantidad});
-            this.dataGridView1.Location = new System.Drawing.Point(48, 76);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 289);
-            this.dataGridView1.TabIndex = 22;
+            this.dataInformaticaConsultar.Location = new System.Drawing.Point(48, 76);
+            this.dataInformaticaConsultar.Name = "dataInformaticaConsultar";
+            this.dataInformaticaConsultar.ReadOnly = true;
+            this.dataInformaticaConsultar.RowTemplate.Height = 25;
+            this.dataInformaticaConsultar.Size = new System.Drawing.Size(544, 289);
+            this.dataInformaticaConsultar.TabIndex = 22;
             // 
             // nro
             // 
@@ -118,6 +118,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(134, 23);
             this.txtNombre.TabIndex = 33;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // label4
             // 
@@ -135,6 +136,7 @@
             this.txtNroInventario.Name = "txtNroInventario";
             this.txtNroInventario.Size = new System.Drawing.Size(100, 23);
             this.txtNroInventario.TabIndex = 31;
+            this.txtNroInventario.TextChanged += new System.EventHandler(this.txtNroInventario_TextChanged);
             // 
             // label3
             // 
@@ -157,13 +159,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNroInventario);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataInformaticaConsultar);
             this.Controls.Add(this.btnVolver);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "consultarInformatica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "consultarInformatica";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.consultarInformatica_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataInformaticaConsultar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +175,7 @@
         #endregion
 
         private Button btnVolver;
-        private DataGridView dataGridView1;
+        private DataGridView dataInformaticaConsultar;
         private DataGridViewTextBoxColumn nro;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn marca;

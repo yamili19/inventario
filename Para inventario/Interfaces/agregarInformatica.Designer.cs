@@ -71,12 +71,13 @@
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // checkCantidad
             // 
             this.checkCantidad.AutoSize = true;
             this.checkCantidad.ForeColor = System.Drawing.Color.Red;
-            this.checkCantidad.Location = new System.Drawing.Point(243, 139);
+            this.checkCantidad.Location = new System.Drawing.Point(239, 150);
             this.checkCantidad.Name = "checkCantidad";
             this.checkCantidad.Size = new System.Drawing.Size(15, 14);
             this.checkCantidad.TabIndex = 29;
@@ -90,6 +91,7 @@
             this.maskCantidad.Size = new System.Drawing.Size(42, 23);
             this.maskCantidad.TabIndex = 28;
             this.maskCantidad.ValidatingType = typeof(int);
+            this.maskCantidad.TextChanged += new System.EventHandler(this.maskCantidad_TextChanged);
             // 
             // lblCantidad
             // 
@@ -174,6 +176,7 @@
             this.Name = "agregarInformatica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "agregarInformatica";
+            this.Load += new System.EventHandler(this.agregarInformatica_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

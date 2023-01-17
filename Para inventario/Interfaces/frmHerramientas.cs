@@ -81,9 +81,9 @@ namespace Para_inventario
                 MessageBox.Show("Herramienta"+" "+herramienta.nombre+" "+herramienta.marca+" "+"agregada exitosamente");
                 limpiarCampos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al agregar herramienta");
             }
         }
 

@@ -37,9 +37,9 @@ namespace Para_inventario.Interfaces
                 MessageBox.Show("Elemento de dibujo " + elementoDibujo.nombre+" "+"agregado exitosamente");
                 limpiarCampos();
             }
-            catch(Exception ex) 
+            catch(Exception) 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al agregar elemento de dibujo");
             }
         }
 
@@ -94,7 +94,6 @@ namespace Para_inventario.Interfaces
             btnAgregar.Enabled = false;
             txtNombre.Text = "";
             maskCantidadComprada.Text = null;
-            checkCantidad.Enabled = false;
             checkCantidad.Checked = false;
         }
     }
