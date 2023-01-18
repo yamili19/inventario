@@ -92,6 +92,7 @@ namespace Para_inventario.Interfaces
                 informatica.lugar = txtLugar.Text;
                 informatica.cantidad = int.Parse(maskCantidad.Text);
                 informatica.agregar(informatica);
+                MessageBox.Show("Elemento de informática agregado exitósamente");
                 limpiarCampos();
             }
             catch(Exception) 

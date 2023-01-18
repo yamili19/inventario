@@ -30,7 +30,6 @@ namespace Para_inventario.Clases
         {
             ServicioInformatica servicio = new ServicioInformatica();
             servicio.agregar(informatica);
-            MessageBox.Show("Elemento de informática agregado exitósamente");
         }
 
         public void mostrar(DataGridView dataInformatica)
@@ -52,19 +51,15 @@ namespace Para_inventario.Clases
             }
         }
 
-        public void actualizar(DataGridView dataInformatica)
+        public void actualizar(Informática informatica)
         {
-            DialogResult resultado = MessageBox.Show("Confirme actualización del elemento de informática con nro de inventario "
-                + dataInformatica.CurrentRow.Cells["nro"].Value.ToString(), "Información", MessageBoxButtons.YesNo);
+            ServicioInformatica servicio = new ServicioInformatica();
+            DialogResult resultado = MessageBox.Show("Confirme actualizacion el elemento de informática con nro de inventario " + informatica.nro,
+                "Información", MessageBoxButtons.YesNo);
             if (resultado == DialogResult.Yes) 
             {
-                ServicioInformatica servicio = new ServicioInformatica();
-                this.nro = int.Parse(dataInformatica.CurrentRow.Cells["nro"].Value.ToString());
-                this.cantidad = int.Parse(dataInformatica.CurrentRow.Cells["nro"].Value.ToString());
-                this.lugar = dataInformatica.CurrentRow.Cells["nro"].Value.ToString();
-                servicio.actualizar(this);
-                MessageBox.Show("Elemento de informática actualizado exitosamente");
-                mostrar(dataInformatica);   
+                servicio.actualizar(informatica);
+                MessageBox.Show("Elemento de informática actualizado exitósamente");
             }
         }
 

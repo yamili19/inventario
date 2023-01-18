@@ -59,12 +59,12 @@ namespace Para_inventario.Clases
         public void actualizar(Herramienta herramienta) 
         {
             ServicioHerramienta h = new ServicioHerramienta();
-            DialogResult resultado = MessageBox.Show("Confirme actualizacion de la herramienta con nro de inventario " + herramienta.nro + "?", "Información",
+            DialogResult resultado = MessageBox.Show("Confirme actualizacion de la herramienta con nro de inventario " + herramienta.nro, "Información",
                 MessageBoxButtons.YesNo);
             if (resultado == DialogResult.Yes)
             {
                 h.actualizar(herramienta);
-                MessageBox.Show("Herramienta actualizada correctamente");
+                MessageBox.Show("Herramienta actualizada exitósamente");
             }
         }
 

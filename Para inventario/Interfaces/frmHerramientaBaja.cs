@@ -40,9 +40,10 @@ namespace Para_inventario.Interfaces
                 herramienta.eliminar(dataHerramientasBaja);
                 btnEliminar.Enabled = false;
             }
-            catch(Exception ex) 
+            catch(Exception) 
             {
-                MessageBox.Show(ex.Message);
+                btnEliminar.Enabled = false;
+                MessageBox.Show("Error al eliminar herramienta");
             }
         }
 

@@ -56,3 +56,5 @@ C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.consultarConsumibles.resources
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.agregarInformatica.resources
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.consultarInformatica.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.actualizarInformatica.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.eliminarInformatica.resources

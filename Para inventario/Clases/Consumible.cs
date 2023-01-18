@@ -28,7 +28,6 @@ namespace Para_inventario.Clases
         {
             ServicioConsumible servicio = new ServicioConsumible();
             servicio.agregar(consumible);
-            MessageBox.Show("Consumible agregado exitosamente");
         }
 
         public void mostrar(DataGridView con)
@@ -48,8 +47,7 @@ namespace Para_inventario.Clases
                 this.nro = nro;
                 this.cantidadComprada = int.Parse(con.CurrentRow.Cells["cantidadComprada"].Value.ToString());
                 servicio.actualizar(this);
-                MessageBox.Show("Consumible actualizado exitosamente");
-                mostrar(con);
+                MessageBox.Show("Consumible actualizado exitósamente");
             }
         }
 

@@ -91,6 +91,7 @@ namespace Para_inventario.Interfaces
                 consumible.cantidadDisponible = int.Parse(maskCantidadComprada.Text);
                 consumible.cantidadComprada = int.Parse(maskCantidadComprada.Text);
                 consumible.agregar(consumible);
+                MessageBox.Show("Consumible agregado exitósamente");
                 limpiarCampos();
             }
             catch (Exception)

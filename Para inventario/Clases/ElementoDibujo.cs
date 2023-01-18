@@ -62,7 +62,6 @@ namespace Para_inventario.Clases
                 this.nro = nro;
                 this.cantidadComprada = int.Parse(elementosDibujo.CurrentRow.Cells["cantidadComprada"].Value.ToString());
                 servicio.actualizar(this);
-                mostrar(elementosDibujo);
                 MessageBox.Show("Elemento de dibujo actualizado exitosamente");
             }
         }
