@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Para_inventario.Interfaces
 {
     public partial class agregarMaquinas : Form
-    {
+    {  
         public agregarMaquinas()
         {
             InitializeComponent();
@@ -65,6 +65,7 @@ namespace Para_inventario.Interfaces
                 {
                     btnAgregar.Enabled = false;
                     bandera = false;
+                    checkCantidad.Checked = false;
                 }
                 finally
                 {

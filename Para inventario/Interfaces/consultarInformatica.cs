@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class consultarInformatica : Form
     {
+        Informática informatica = new Informática();
         public consultarInformatica()
         {
             InitializeComponent();
@@ -27,19 +28,16 @@ namespace Para_inventario.Interfaces
 
         private void txtNroInventario_TextChanged(object sender, EventArgs e)
         {
-            Informática informatica = new Informática();
             informatica.consultarNroInventario(txtNroInventario, dataInformaticaConsultar);
         }
 
         private void consultarInformatica_Load(object sender, EventArgs e)
         {
-            Informática informatica = new Informática();
             informatica.mostrar(dataInformaticaConsultar);
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            Informática informatica = new Informática();
             informatica.consultarNombre(txtNombre, dataInformaticaConsultar);
         }
     }

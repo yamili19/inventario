@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class consultarElementosDibujo : Form
     {
+        ElementoDibujo elemento = new ElementoDibujo();
         public consultarElementosDibujo()
         {
             InitializeComponent();
@@ -27,19 +28,16 @@ namespace Para_inventario.Interfaces
 
         private void txtNroInventario_TextChanged(object sender, EventArgs e)
         {
-            ElementoDibujo elemento = new ElementoDibujo();
             elemento.consultarNroInventario(txtNroInventario, dataEDConsultar);
         }
 
         private void consultarElementosDibujo_Load(object sender, EventArgs e)
         {
-            ElementoDibujo elemento = new ElementoDibujo();
             elemento.mostrar(dataEDConsultar);
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            ElementoDibujo elemento = new ElementoDibujo();
             elemento.consultarNombre(txtNombre, dataEDConsultar);
         }
     }

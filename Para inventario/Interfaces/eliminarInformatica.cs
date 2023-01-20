@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class eliminarInformatica : Form
     {
+        Informática informatica = new Informática();
         public eliminarInformatica()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace Para_inventario.Interfaces
         private void eliminarInformatica_Load(object sender, EventArgs e)
         {
             btnEliminar.Enabled = false;
-            Informática informatica = new Informática();
             informatica.mostrar(dataInformaticaEliminar);
         }
 
@@ -41,7 +41,6 @@ namespace Para_inventario.Interfaces
         {
             try
             {
-                Informática informatica = new Informática();
                 informatica.eliminar(dataInformaticaEliminar);
                 btnEliminar.Enabled = false;
             }

@@ -93,7 +93,6 @@
             this.dataHerramientasBaja.Size = new System.Drawing.Size(643, 334);
             this.dataHerramientasBaja.TabIndex = 15;
             this.dataHerramientasBaja.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHerramientasBaja_CellClick);
-            
             // 
             // nro
             // 
@@ -143,7 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.iStock_493585980;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(727, 450);
+            this.ClientSize = new System.Drawing.Size(727, 438);
             this.Controls.Add(this.dataHerramientasBaja);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);

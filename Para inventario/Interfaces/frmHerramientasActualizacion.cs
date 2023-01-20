@@ -14,6 +14,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class frmHerramientasActualizacion : Form
     {
+        Herramienta herramienta = new Herramienta();
         public frmHerramientasActualizacion()
         {
             InitializeComponent();
@@ -29,7 +30,6 @@ namespace Para_inventario.Interfaces
         private void frmHerramientasActualizacion_Load(object sender, EventArgs e)
         {
             btnActualizar.Enabled = false;
-            Herramienta herramienta = new Herramienta();
             herramienta.mostrar(dataHerramientasActualizar); 
         }
 

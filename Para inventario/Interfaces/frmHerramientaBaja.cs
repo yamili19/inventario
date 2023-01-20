@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class frmHerramientaBaja : Form
     {
+        Herramienta herramienta = new Herramienta();
         public frmHerramientaBaja()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace Para_inventario.Interfaces
         private void frmHerramientaBaja_Load(object sender, EventArgs e)
         {
             btnEliminar.Enabled= false;
-            Herramienta herramienta = new Herramienta();
             herramienta.mostrar(dataHerramientasBaja);
         }
 
@@ -36,7 +36,6 @@ namespace Para_inventario.Interfaces
         {
             try
             {
-                Herramienta herramienta = new Herramienta();    
                 herramienta.eliminar(dataHerramientasBaja);
                 btnEliminar.Enabled = false;
             }

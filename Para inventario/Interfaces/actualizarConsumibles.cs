@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class actualizarConsumibles : Form
     {
+        Consumible consumible = new Consumible();
         public actualizarConsumibles()
         {
             InitializeComponent();
@@ -27,14 +28,12 @@ namespace Para_inventario.Interfaces
 
         private void actualizarConsumibles_Load(object sender, EventArgs e)
         {
-            Consumible consumible = new Consumible();
             consumible.mostrar(dataConsumiblesActualizar);
             btnActualizar.Enabled = false;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Consumible consumible = new Consumible();
             if (int.Parse(dataConsumiblesActualizar.CurrentRow.Cells["cantidadComprada"].Value.ToString()) >=
                 int.Parse(dataConsumiblesActualizar.CurrentRow.Cells["cantidadDisponible"].Value.ToString()))
             {

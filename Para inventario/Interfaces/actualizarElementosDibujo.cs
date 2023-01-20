@@ -14,6 +14,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class actualizarElementosDibujo : Form
     {
+        ElementoDibujo elemento = new ElementoDibujo();
         public actualizarElementosDibujo()
         {
             InitializeComponent();
@@ -29,7 +30,6 @@ namespace Para_inventario.Interfaces
         private void actualizarElementosDibujo_Load(object sender, EventArgs e)
         {
             btnActualizar.Enabled = false;
-            ElementoDibujo elemento = new ElementoDibujo();
             elemento.mostrar(dataEDActualizar);
         }
 
@@ -40,7 +40,6 @@ namespace Para_inventario.Interfaces
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ElementoDibujo elemento = new ElementoDibujo();
             int cantidadComprada = int.Parse(dataEDActualizar.CurrentRow.Cells["cantidadComprada"].Value.ToString());
             int cantidadDisponible = int.Parse(dataEDActualizar.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
             if (cantidadComprada >= cantidadDisponible)

@@ -14,6 +14,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class actualizarInformatica : Form
     {
+        Informática informatica = new Informática();
         public actualizarInformatica()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace Para_inventario.Interfaces
 
         private void actualizarInformatica_Load(object sender, EventArgs e)
         {
-            Informática informatica = new Informática();
             informatica.mostrar(dataInformaticaActualizar);
             btnActualizar.Enabled = false;
         }

@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class consultarConsumibles : Form
     {
+        Consumible consumible = new Consumible();
         public consultarConsumibles()
         {
             InitializeComponent();
@@ -27,19 +28,16 @@ namespace Para_inventario.Interfaces
 
         private void consultarConsumibles_Load(object sender, EventArgs e)
         {
-            Consumible consumible = new Consumible();
             consumible.mostrar(dataConsumiblesConsultar);
         }
 
         private void txtNroInventario_TextChanged(object sender, EventArgs e)
         {
-            Consumible consumible = new Consumible();
             consumible.consultarNroInventario(txtNroInventario,dataConsumiblesConsultar);
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            Consumible consumible = new Consumible();
             consumible.consultarNombre(txtNombre, dataConsumiblesConsultar);
         }
     }

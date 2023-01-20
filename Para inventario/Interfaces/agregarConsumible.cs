@@ -14,6 +14,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class agregarConsumible : Form
     {
+        Consumible consumible = new Consumible();
         public agregarConsumible()
         {
             InitializeComponent();

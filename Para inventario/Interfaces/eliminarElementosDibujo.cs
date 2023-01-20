@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class eliminarElementosDibujo : Form
     {
+        ElementoDibujo elemento = new ElementoDibujo();
         public eliminarElementosDibujo()
         {
             InitializeComponent();
@@ -28,8 +29,7 @@ namespace Para_inventario.Interfaces
         private void eliminarElementosDibujo_Load(object sender, EventArgs e)
         {
             btnEliminar.Enabled = false;
-            ElementoDibujo elememento = new ElementoDibujo();
-            elememento.mostrar(dataEDEliminar);
+            elemento.mostrar(dataEDEliminar);
         }
 
         private void dataEDEliminar_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -39,7 +39,6 @@ namespace Para_inventario.Interfaces
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ElementoDibujo elemento = new ElementoDibujo();
             elemento.eliminar(dataEDEliminar);
             btnEliminar.Enabled = false;
         }

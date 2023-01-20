@@ -13,6 +13,7 @@ namespace Para_inventario.Interfaces
 {
     public partial class frmHerramientasConsultar : Form
     {
+        Herramienta herramienta = new Herramienta();
         public frmHerramientasConsultar()
         {
             InitializeComponent();
@@ -27,20 +28,17 @@ namespace Para_inventario.Interfaces
 
         private void txtNro_TextChanged(object sender, EventArgs e)
         {
-            Herramienta herramienta = new Herramienta();
             herramienta.buscarNroInventario(txtNro,
                 dataHerramientasConsultar);
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            Herramienta herramienta = new Herramienta();
             herramienta.buscarNombreHerramienta(txtNombre.Text, dataHerramientasConsultar);
         }
 
         private void frmHerramientasConsultar_Load(object sender, EventArgs e)
         {
-            Herramienta herramienta = new Herramienta();
             herramienta.mostrar(dataHerramientasConsultar);
         }
     }
