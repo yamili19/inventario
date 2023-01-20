@@ -131,5 +131,12 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();    
         }
+
+        private void agregarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            agregarMaquinas ventana = new agregarMaquinas();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }
