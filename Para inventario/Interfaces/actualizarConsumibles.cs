@@ -43,6 +43,7 @@ namespace Para_inventario.Interfaces
             else
             {
                 MessageBox.Show("La cantidad comprada del consumible tiene que ser mayor o igual a la cantidad disponible");
+                dataConsumiblesActualizar.CurrentRow.SetValues();
                 limpiarCampos();
             }
             consumible.mostrar(dataConsumiblesActualizar);

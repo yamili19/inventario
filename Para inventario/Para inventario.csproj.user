@@ -10,6 +10,9 @@
     <Compile Update="Interfaces\actualizarInformatica.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interfaces\actualizarMaquina.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Interfaces\agregarConsumible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -28,6 +31,9 @@
     <Compile Update="Interfaces\consultarInformatica.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interfaces\consultarMaquina.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Interfaces\elementosDibujoAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -35,6 +41,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Interfaces\eliminarInformatica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interfaces\eliminarMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Interfaces\frmHerramientaBaja.cs">

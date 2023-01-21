@@ -54,6 +54,7 @@ namespace Para_inventario.Interfaces
             {
                 MessageBox.Show("La cantidad de la herramienta tiene que ser mayor a 0");
                 btnActualizar.Enabled = false;
+                dataHerramientasActualizar.CurrentRow.SetValues();
             }
             herramienta.mostrar(dataHerramientasActualizar);
         }

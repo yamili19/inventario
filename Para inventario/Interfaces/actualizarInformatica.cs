@@ -53,6 +53,7 @@ namespace Para_inventario.Interfaces
             else
             {
                 MessageBox.Show("Ingrese un número entero mayor a 0 en la columna cantidad");
+                dataInformaticaActualizar.CurrentRow.SetValues();
                 btnActualizar.Enabled =false;   
             }
             informática.mostrar(dataInformaticaActualizar);

@@ -138,5 +138,26 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();
         }
+
+        private void eliminarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            eliminarMaquina ventana = new eliminarMaquina();
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void actualizarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            actualizarMaquina ventana = new actualizarMaquina();
+            ventana.Show(); 
+            this.Hide();
+        }
+
+        private void consultarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            consultarMaquina ventana = new consultarMaquina();
+            ventana.Show();
+            this.Hide();    
+        }
     }
 }

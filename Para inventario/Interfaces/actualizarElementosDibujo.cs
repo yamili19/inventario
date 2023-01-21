@@ -50,6 +50,7 @@ namespace Para_inventario.Interfaces
             else
             {
                 btnActualizar.Enabled = false;
+                dataEDActualizar.CurrentRow.SetValues();
                 MessageBox.Show("La cantidad comprada del elemento de dibujo tiene que ser mayor o igual a la cantidad disponible");
             }
             elemento.mostrar(dataEDActualizar);
