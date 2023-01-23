@@ -56,7 +56,7 @@ namespace Para_inventario.Interfaces
                 dataInformaticaActualizar.CurrentRow.SetValues();
                 btnActualizar.Enabled =false;   
             }
-            informática.mostrar(dataInformaticaActualizar);
+            dataInformaticaActualizar.Refresh();
         }
 
         private void dataInformaticaActualizar_DataError(object sender, DataGridViewDataErrorEventArgs e)

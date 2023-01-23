@@ -59,7 +59,7 @@ namespace Para_inventario.Interfaces
                 dataMaquinasActualizar.CurrentRow.SetValues();
             }
             btnActualizar.Enabled = false;
-            maquina.mostrar(dataMaquinasActualizar);
+            dataMaquinasActualizar.Refresh();
         }
     }
 }

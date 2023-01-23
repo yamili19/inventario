@@ -47,7 +47,8 @@ namespace Para_inventario.Clases
                 ServicioInformatica servicio = new ServicioInformatica();
                 servicio.eliminar(int.Parse(dataInformatica.CurrentRow.Cells["nro"].Value.ToString()));
                 MessageBox.Show("Elemento de informática eliminado exitósamente");
-                mostrar(dataInformatica);
+                dataInformatica.Rows.Remove(dataInformatica.CurrentRow);
+                dataInformatica.Refresh();
             }
         }
 

@@ -56,7 +56,7 @@ namespace Para_inventario.Interfaces
                 btnActualizar.Enabled = false;
                 dataHerramientasActualizar.CurrentRow.SetValues();
             }
-            herramienta.mostrar(dataHerramientasActualizar);
+            dataHerramientasActualizar.Refresh();
         }
 
         private void dataHerramientasActualizar_DataError(object sender, DataGridViewDataErrorEventArgs e)

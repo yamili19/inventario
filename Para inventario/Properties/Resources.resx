@@ -127,8 +127,8 @@
   <data name="maxresdefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxresdefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="25020269" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\25020269.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iStock-493585980" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iStock-493585980.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="precision-erasers-group" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\precision-erasers-group.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,8 +139,14 @@
   <data name="descargar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Maquinaria-pesada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Maquinaria-pesada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="descargar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maxresdefault (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maxresdefault (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tablero-regla-t" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tablero-regla-t.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +154,8 @@
   <data name="Dibujo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dibujo.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iStock-493585980" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iStock-493585980.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="25020269" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25020269.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="250202691" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\250202691.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +163,7 @@
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Maquinaria-pesada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Maquinaria-pesada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fbd5599924f8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbd5599924f8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

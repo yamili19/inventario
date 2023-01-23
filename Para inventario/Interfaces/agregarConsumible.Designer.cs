@@ -109,10 +109,10 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNombre.Location = new System.Drawing.Point(144, 33);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(77, 21);
+            this.lblNombre.Size = new System.Drawing.Size(78, 21);
             this.lblNombre.TabIndex = 20;
             this.lblNombre.Text = "Nombre:";
             // 

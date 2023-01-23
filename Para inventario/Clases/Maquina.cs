@@ -46,7 +46,8 @@ namespace Para_inventario.Clases
             {
                 ServicioMaquina servicio = new ServicioMaquina();
                 servicio.eliminar(nro);
-                mostrar(maquinas);
+                maquinas.Rows.Remove(maquinas.CurrentRow);
+                maquinas.Refresh();
                 MessageBox.Show("Máquina eliminada exitósamente");
             }
         }
@@ -65,6 +66,7 @@ namespace Para_inventario.Clases
 
         public void consultarNroInventario(TextBox nro ,DataGridView maquinas)
         {
+            DataGridView m = maquinas;
             BindingSource bs = new BindingSource();
             bs.DataSource = maquinas.DataSource;
             bool bandera = false;
@@ -80,13 +82,14 @@ namespace Para_inventario.Clases
                     maquinas.DataSource = bs.DataSource;
                     if (maquinas.RowCount == 0)
                     {
+                        m.Refresh();
                         MessageBox.Show("No se encontró ninguna máquina con el nro de inventario ingresado");
                     }
                 }
                 catch (Exception)
                 {
                     bandera = false;
-                    mostrar(maquinas);
+                    m.Refresh();
                 }
                 finally
                 {
@@ -97,11 +100,12 @@ namespace Para_inventario.Clases
 
         public void consultarNombre(TextBox nombre, DataGridView maquinas)
         {
+            DataGridView m = maquinas;
             BindingSource bs = new BindingSource();
             bs.DataSource = maquinas.DataSource;
             try
             {
-                bs.Filter = "nombre like '%" + nombre.Text + "&'";
+                bs.Filter = "nombre like '%" + nombre.Text + "%'";
                 maquinas.DataSource = bs.DataSource;
                 if (maquinas.RowCount == 0)
                 {
@@ -110,7 +114,7 @@ namespace Para_inventario.Clases
             }
             catch (Exception)
             {
-                mostrar(maquinas);
+                m.Refresh();
             }
         }
     }

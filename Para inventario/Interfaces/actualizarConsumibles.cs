@@ -46,7 +46,7 @@ namespace Para_inventario.Interfaces
                 dataConsumiblesActualizar.CurrentRow.SetValues();
                 limpiarCampos();
             }
-            consumible.mostrar(dataConsumiblesActualizar);
+            dataConsumiblesActualizar.Refresh();
         }
 
         private void limpiarCampos()

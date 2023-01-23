@@ -53,7 +53,7 @@ namespace Para_inventario.Interfaces
                 dataEDActualizar.CurrentRow.SetValues();
                 MessageBox.Show("La cantidad comprada del elemento de dibujo tiene que ser mayor o igual a la cantidad disponible");
             }
-            elemento.mostrar(dataEDActualizar);
+            dataEDActualizar.Refresh();
         }
 
         private void dataEDActualizar_DataError(object sender, DataGridViewDataErrorEventArgs e)

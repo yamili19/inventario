@@ -47,7 +47,8 @@ namespace Para_inventario.Clases
                 ServicioElementoDibujo ele = new ServicioElementoDibujo();
                 ele.eliminar(nro);
                 MessageBox.Show("Elemento de dibujo eliminado exitosamente");
-                mostrar(elemento);
+                elemento.Rows.Remove(elemento.CurrentRow);
+                elemento.Refresh();
             }
         }
 
