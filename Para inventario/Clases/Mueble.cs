@@ -49,5 +49,20 @@ namespace Para_inventario.Clases
                 MessageBox.Show("Mueble eliminado exitósamente");
             }
         }
+
+        public void actualizar(DataGridView muebles)
+        {
+            DialogResult resultado = MessageBox.Show("Confirme actualización del mueble con nro de inventario"
+                + muebles.CurrentRow.Cells["nro"].Value.ToString(), "Información", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes) 
+            {
+                ServicioMueble servicio = new ServicioMueble();
+                this.nro = int.Parse(muebles.CurrentRow.Cells["nro"].Value.ToString());
+                this.cantidad = int.Parse(muebles.CurrentRow.Cells["cantidad"].Value.ToString());
+                this.lugar = muebles.CurrentRow.Cells["lugar"].Value.ToString();
+                servicio.actualizar(this);
+                MessageBox.Show("Mueble actualizado exitósamente");
+            }
+        }
     }
 }

@@ -13,6 +13,9 @@
     <Compile Update="Interfaces\actualizarMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interfaces\actualizarMueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Interfaces\agregarConsumible.cs">
       <SubType>Form</SubType>
     </Compile>

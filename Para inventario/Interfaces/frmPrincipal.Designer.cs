@@ -301,6 +301,7 @@
             this.actualizarToolStripMenuItem4.Name = "actualizarToolStripMenuItem4";
             this.actualizarToolStripMenuItem4.Size = new System.Drawing.Size(180, 24);
             this.actualizarToolStripMenuItem4.Text = "Actualizar";
+            this.actualizarToolStripMenuItem4.Click += new System.EventHandler(this.actualizarToolStripMenuItem4_Click);
             // 
             // eliminarToolStripMenuItem4
             // 

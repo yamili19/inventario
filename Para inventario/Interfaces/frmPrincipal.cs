@@ -173,5 +173,12 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();
         }
+
+        private void actualizarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            actualizarMueble ventana = new actualizarMueble();
+            ventana.Show();
+            this.Hide();    
+        }
     }
 }
