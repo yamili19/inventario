@@ -64,5 +64,56 @@ namespace Para_inventario.Clases
                 MessageBox.Show("Mueble actualizado exitósamente");
             }
         }
+
+        public void consultarNroInventario(TextBox nro, DataGridView muebles)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = muebles.DataSource;
+            bool bandera = false;
+            if (nro.Text != null)
+            {
+                bandera = true;
+            }
+            if (bandera)
+            {
+                try
+                {
+                    bs.Filter = "nro = '"+int.Parse(nro.Text)+"'";
+                    muebles.DataSource = bs.DataSource;
+                    if (muebles.RowCount == 0)
+                    {
+                        MessageBox.Show("No se encontró ningún mueble con el nro de inventario ingresado");
+                    }
+                }
+                catch(Exception) 
+                {
+                    bandera = false;
+                    muebles.Refresh();
+                }
+                finally
+                {
+                    bandera = false;
+                }
+            }
+        }
+
+        public void consultarNombre(TextBox nombre, DataGridView muebles)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = muebles.DataSource;
+            try
+            {
+                bs.Filter = "nombre like '%"+nombre.Text+"%'";
+                muebles.DataSource = bs.DataSource; 
+                if (muebles.RowCount == 0)
+                {
+                    MessageBox.Show("No se encontró ningún mueble con el nombre ingresado");
+                }
+            }
+            catch (Exception)
+            {
+                muebles.Refresh();
+            }
+        }
     }
 }

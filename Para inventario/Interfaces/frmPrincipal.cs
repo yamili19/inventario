@@ -180,5 +180,12 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();    
         }
+
+        private void consultarToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            consultarMueble ventana = new consultarMueble();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }

@@ -66,7 +66,6 @@ namespace Para_inventario.Clases
 
         public void consultarNroInventario(TextBox nro ,DataGridView maquinas)
         {
-            DataGridView m = maquinas;
             BindingSource bs = new BindingSource();
             bs.DataSource = maquinas.DataSource;
             bool bandera = false;
@@ -82,14 +81,13 @@ namespace Para_inventario.Clases
                     maquinas.DataSource = bs.DataSource;
                     if (maquinas.RowCount == 0)
                     {
-                        m.Refresh();
                         MessageBox.Show("No se encontró ninguna máquina con el nro de inventario ingresado");
                     }
                 }
                 catch (Exception)
                 {
                     bandera = false;
-                    m.Refresh();
+                    maquinas.Refresh();
                 }
                 finally
                 {
@@ -100,7 +98,6 @@ namespace Para_inventario.Clases
 
         public void consultarNombre(TextBox nombre, DataGridView maquinas)
         {
-            DataGridView m = maquinas;
             BindingSource bs = new BindingSource();
             bs.DataSource = maquinas.DataSource;
             try
@@ -114,7 +111,7 @@ namespace Para_inventario.Clases
             }
             catch (Exception)
             {
-                m.Refresh();
+                maquinas.Refresh();
             }
         }
     }

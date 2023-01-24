@@ -295,6 +295,7 @@
             this.consultarToolStripMenuItem5.Name = "consultarToolStripMenuItem5";
             this.consultarToolStripMenuItem5.Size = new System.Drawing.Size(180, 24);
             this.consultarToolStripMenuItem5.Text = "Consultar";
+            this.consultarToolStripMenuItem5.Click += new System.EventHandler(this.consultarToolStripMenuItem5_Click);
             // 
             // actualizarToolStripMenuItem4
             // 

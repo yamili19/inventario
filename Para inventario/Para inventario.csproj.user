@@ -40,6 +40,9 @@
     <Compile Update="Interfaces\consultarMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interfaces\consultarMueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Interfaces\elementosDibujoAgregar.cs">
       <SubType>Form</SubType>
     </Compile>

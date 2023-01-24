@@ -78,7 +78,7 @@ namespace Para_inventario.Clases
                 catch (Exception)
                 {
                     bandera = false;
-                    mostrar(dataConsumible);
+                    dataConsumible.Refresh();
                 }
                 finally
                 {
@@ -113,7 +113,7 @@ namespace Para_inventario.Clases
                 catch (Exception)
                 {
                     bandera = false;
-                    mostrar(dataConsumible);
+                    dataConsumible.Refresh();
                 }
                 finally
                 {

@@ -95,7 +95,7 @@ namespace Para_inventario.Clases
                 }
                 catch (Exception)
                 {
-                    mostrar(herramienta);
+                    herramienta.Refresh();
                     bandera = false;
                 }
                 finally
@@ -120,7 +120,7 @@ namespace Para_inventario.Clases
             }
             catch (Exception)
             {
-                mostrar(herramienta);
+                herramienta.Refresh();
             }
         }
     }
