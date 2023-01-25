@@ -121,5 +121,55 @@ namespace Para_inventario.Clases
                 }
             }
         }
+
+        public void mostrarNombreConsumible(ComboBox nombre)
+        {
+            ServicioConsumible servicio = new ServicioConsumible();
+            nombre.DataSource = servicio.mostrarNombreConsumible();
+            nombre.DisplayMember = "nombre";
+            nombre.ValueMember = "nro";
+            nombre.SelectedIndex = -1;
+        }
+
+        public void verificarCantidad(DataGridView consumibles, int nro, int cant, DataGridView consumos, DateTime fecha)
+        {
+            ServicioConsumible servicio = new ServicioConsumible();
+            consumibles.DataSource = servicio.mostrar();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = consumibles.DataSource;
+            try
+            {
+                bs.Filter = "nro = '" + nro + "'";
+                consumibles.DataSource = bs.DataSource;
+                int cantidad = Convert.ToInt32(consumibles.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
+                if (cant <= cantidad)
+                {
+                    consumos.Rows.Add(consumibles.CurrentRow.Cells["nro"].Value.ToString(), 
+                        consumibles.CurrentRow.Cells["nombre"].Value.ToString(), cant.ToString(), fecha);
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible del consumible seleccionado que es: "
+                        +cantidad.ToString(), 
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void mostrarConsumos(DataGridView consumos)
+        {
+            ServicioConsumible servicio = new ServicioConsumible();
+            consumos.DataSource = servicio.mostrarConsumos();
+        }
+
+        public void aregarConsumo(DataGridView consumos)
+        {
+            ServicioConsumible servicio = new ServicioConsumible();
+            servicio.agregarConsumos(consumos);
+        }
     }
 }

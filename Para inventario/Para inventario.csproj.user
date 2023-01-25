@@ -1,76 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Interfaces\actualizarConsumibles.cs">
+    <Compile Update="ABM\actualizarConsumibles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\actualizarElementosDibujo.cs">
+    <Compile Update="ABM\actualizarElementosDibujo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\actualizarInformatica.cs">
+    <Compile Update="ABM\actualizarInformatica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\actualizarMaquina.cs">
+    <Compile Update="ABM\actualizarMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\actualizarMueble.cs">
+    <Compile Update="ABM\actualizarMueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\agregarConsumible.cs">
+    <Compile Update="ABM\agregarConsumible.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\agregarInformatica.cs">
+    <Compile Update="ABM\agregarInformatica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\agregarMaquinas.cs">
+    <Compile Update="ABM\agregarMaquinas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\agregarMueble.cs">
+    <Compile Update="ABM\agregarMueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\consultarConsumibles.cs">
+    <Compile Update="ABM\consultarConsumibles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\consultarElementosDibujo.cs">
+    <Compile Update="ABM\consultarElementosDibujo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\consultarInformatica.cs">
+    <Compile Update="ABM\consultarInformatica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\consultarMaquina.cs">
+    <Compile Update="ABM\consultarMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\consultarMueble.cs">
+    <Compile Update="ABM\consultarMueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\elementosDibujoAgregar.cs">
+    <Compile Update="ABM\elementosDibujoAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\eliminarElementosDibujo.cs">
+    <Compile Update="ABM\eliminarElementosDibujo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\eliminarInformatica.cs">
+    <Compile Update="ABM\eliminarInformatica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\eliminarMaquina.cs">
+    <Compile Update="ABM\eliminarMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\eliminarMueble.cs">
+    <Compile Update="ABM\eliminarMueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\frmHerramientaBaja.cs">
+    <Compile Update="ABM\frmHerramientaBaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\frmHerramientas.cs">
+    <Compile Update="ABM\frmHerramientas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\frmHerramientasActualizacion.cs">
+    <Compile Update="ABM\frmHerramientasActualizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\frmHerramientasConsultar.cs">
+    <Compile Update="ABM\frmHerramientasConsultar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Interfaces\frmPrincipal.cs">
+    <Compile Update="ABM\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transacciones\Consumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transacciones\mostrarConsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transacciones\Prestamos.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
