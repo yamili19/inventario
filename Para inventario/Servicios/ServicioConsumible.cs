@@ -66,29 +66,6 @@ namespace Para_inventario.Servicios
             return dt;
         }
 
-        public void actualizar(Consumible consumible)
-        {
-            SqlConnection cn = new SqlConnection(cadenaBD);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "UPDATE Consumibles SET cantidadComprada = @cantidadComprada WHERE nro = @nro";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nro", consumible.nro);
-                cmd.Parameters.AddWithValue("@cantidadComprada", consumible.cantidadComprada);
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception) 
-            {
-                MessageBox.Show("Error en la actualización del consumible");
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
 
         public DataTable mostrarNombreConsumible()
         {

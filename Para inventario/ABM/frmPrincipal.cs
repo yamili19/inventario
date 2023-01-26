@@ -56,13 +56,6 @@ namespace Para_inventario.Interfaces
             this.Hide();
         }
 
-        private void acToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            actualizarElementosDibujo ventana = new actualizarElementosDibujo();
-            ventana.Show(); 
-            this.Hide();
-        }
-
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             elementosDibujoAgregar ventana = new elementosDibujoAgregar();
@@ -87,13 +80,6 @@ namespace Para_inventario.Interfaces
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             agregarConsumible ventana = new agregarConsumible();
-            ventana.Show();
-            this.Hide();
-        }
-
-        private void actualizarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            actualizarConsumibles ventana = new actualizarConsumibles();
             ventana.Show();
             this.Hide();
         }

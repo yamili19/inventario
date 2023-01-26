@@ -38,12 +38,10 @@
             this.elementosDibujoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.acToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consumiblesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.informáticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,7 +126,6 @@
             this.elementosDibujoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem1,
             this.consultarToolStripMenuItem1,
-            this.acToolStripMenuItem,
             this.eliminarToolStripMenuItem1});
             this.elementosDibujoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.elementosDibujoToolStripMenuItem.Name = "elementosDibujoToolStripMenuItem";
@@ -138,28 +135,21 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(137, 24);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(137, 24);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
-            // 
-            // acToolStripMenuItem
-            // 
-            this.acToolStripMenuItem.Name = "acToolStripMenuItem";
-            this.acToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
-            this.acToolStripMenuItem.Text = "Actualizar";
-            this.acToolStripMenuItem.Click += new System.EventHandler(this.acToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(137, 24);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
@@ -167,8 +157,7 @@
             // 
             this.consumiblesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem2,
-            this.consultarToolStripMenuItem2,
-            this.actualizarToolStripMenuItem1});
+            this.consultarToolStripMenuItem2});
             this.consumiblesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.consumiblesToolStripMenuItem.Name = "consumiblesToolStripMenuItem";
             this.consumiblesToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
@@ -177,23 +166,16 @@
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(137, 24);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
             // consultarToolStripMenuItem2
             // 
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(137, 24);
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.consultarToolStripMenuItem2.Text = "Consultar";
             this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
-            // 
-            // actualizarToolStripMenuItem1
-            // 
-            this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(137, 24);
-            this.actualizarToolStripMenuItem1.Text = "Actualizar";
-            this.actualizarToolStripMenuItem1.Click += new System.EventHandler(this.actualizarToolStripMenuItem1_Click);
             // 
             // informáticaToolStripMenuItem
             // 
@@ -389,12 +371,10 @@
         private ToolStripMenuItem elementosDibujoToolStripMenuItem;
         private ToolStripMenuItem agregarToolStripMenuItem1;
         private ToolStripMenuItem consultarToolStripMenuItem1;
-        private ToolStripMenuItem acToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem1;
         private ToolStripMenuItem consumiblesToolStripMenuItem;
         private ToolStripMenuItem agregarToolStripMenuItem2;
         private ToolStripMenuItem consultarToolStripMenuItem2;
-        private ToolStripMenuItem actualizarToolStripMenuItem1;
         private ToolStripMenuItem informáticaToolStripMenuItem;
         private ToolStripMenuItem agregarToolStripMenuItem3;
         private ToolStripMenuItem consultarToolStripMenuItem3;

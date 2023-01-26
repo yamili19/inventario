@@ -36,21 +36,6 @@ namespace Para_inventario.Clases
             con.DataSource = consumible.mostrar();
         }
 
-        public void actualizar(DataGridView con)
-        {
-            int nro = int.Parse(con.CurrentRow.Cells["nro"].Value.ToString());
-           DialogResult resultado = MessageBox.Show("Confirme la actualización del Consumible con el nro de inventario "+nro.ToString(),
-                "Información", MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes) 
-            {
-                ServicioConsumible servicio = new ServicioConsumible();
-                this.nro = nro;
-                this.cantidadComprada = int.Parse(con.CurrentRow.Cells["cantidadComprada"].Value.ToString());
-                servicio.actualizar(this);
-                MessageBox.Show("Consumible actualizado exitósamente");
-            }
-        }
-
         public void consultarNroInventario(TextBox numero, DataGridView dataConsumible)
         {
             BindingSource bs = new BindingSource();

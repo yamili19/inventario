@@ -86,29 +86,5 @@ namespace Para_inventario.Servicios
                 cn.Close();
             }
         }
-
-        public void actualizar(ElementoDibujo elemento)
-        {
-            SqlConnection cn = new SqlConnection(cadenaBD);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "UPDATE ElementosDibujo SET cantidadComprada = @cant WHERE nro = @nro";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@cant", elemento.cantidadComprada);
-                cmd.Parameters.AddWithValue("@nro", elemento.nro);
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la actulización del elemento de dibujo");
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
     }
 }

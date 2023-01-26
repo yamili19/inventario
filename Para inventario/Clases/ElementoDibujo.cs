@@ -52,21 +52,6 @@ namespace Para_inventario.Clases
             }
         }
 
-        public void actualizar(DataGridView elementosDibujo)
-        {
-            int nro = int.Parse(elementosDibujo.CurrentRow.Cells["nro"].Value.ToString());
-            DialogResult dialogo = MessageBox.Show("Confirme actualización del elemento de dibujo con nro de inventario "+nro.ToString(), "Información",
-                MessageBoxButtons.YesNo);
-            if (dialogo == DialogResult.Yes) 
-            {
-                ServicioElementoDibujo servicio = new ServicioElementoDibujo();
-                this.nro = nro;
-                this.cantidadComprada = int.Parse(elementosDibujo.CurrentRow.Cells["cantidadComprada"].Value.ToString());
-                servicio.actualizar(this);
-                MessageBox.Show("Elemento de dibujo actualizado exitosamente");
-            }
-        }
-
         public void consultarNroInventario(TextBox numero, DataGridView elemento)
         {
             BindingSource bs = new BindingSource();
