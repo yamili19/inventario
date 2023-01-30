@@ -65,5 +65,6 @@ C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.actualizarMueble.resources
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Interfaces.consultarMueble.resources
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Transacciones.Consumos.resources
-C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Transacciones.Prestamos.resources
 C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Transacciones.mostrarConsumos.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Transacciones.prestamoHerramientas.resources
+C:\Users\YamiYB\OneDrive\Escritorio\inventario\base-de-datos\Para inventario\obj\Debug\net6.0-windows\Para_inventario.Transacciones.mostrarPrestamoHerramienta.resources

@@ -123,5 +123,42 @@ namespace Para_inventario.Clases
                 herramienta.Refresh();
             }
         }
+
+        public void mostrarNombreHerramienta(ComboBox nombre)
+        {
+            ServicioHerramienta servicio = new ServicioHerramienta();
+            nombre.DataSource = servicio.mostrar();
+            nombre.ValueMember = "nro";
+            nombre.DisplayMember = "nombre";
+            nombre.SelectedIndex = -1;
+        }
+
+        public void verificarCantidadHerramienta(int nro, DataGridView herramienta, DataGridView prestamos, int cant, DateTime fecha, string nombre) 
+        { 
+            BindingSource bs = new BindingSource(); 
+            bs.DataSource = herramienta.DataSource;
+            try
+            {
+                bs.Filter = "nro = '"+nro+"'";
+                herramienta.DataSource = bs.DataSource;
+                int cantidad = int.Parse(herramienta.CurrentRow.Cells["cantidad"].Value.ToString());
+                if (cant <= cantidad)
+                {
+                    prestamos.Rows.Add(nro.ToString(), herramienta.CurrentRow.Cells["nombre"].Value.ToString(), cant.ToString(),
+                        fecha, null, nombre);
+                    herramienta.CurrentRow.Cells["cantidad"].Value = cantidad - cant;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible de la herramienta seleccionada que es: "
+                        + cantidad.ToString(),
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

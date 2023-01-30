@@ -182,9 +182,15 @@ namespace Para_inventario.Interfaces
             this.Hide();
         }
 
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            DataGridView dgv = new DataGridView();
+        }
+
         private void registrarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Prestamos ventana = new Prestamos();
+            prestamoHerramientas ventana = new prestamoHerramientas();
             ventana.Show();
             this.Hide();
         }

@@ -29,9 +29,10 @@ namespace Para_inventario.Transacciones
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (comboConsumible.SelectedIndex == -1 || maskedCantidad.Text == null)
+            bool resultado = estaConsumible(Convert.ToInt32(comboConsumible.SelectedValue));
+            if (comboConsumible.SelectedIndex == -1 || maskedCantidad.Text == null || resultado || maskedCantidad.Text == 0.ToString())
             {
-                MessageBox.Show("Primero seleccione un consumible e ingrese una cantidad");
+                MessageBox.Show("Primero seleccione un consumible e ingrese una cantidad y por favor no repita consumible");
             }
             else
             {
@@ -39,20 +40,31 @@ namespace Para_inventario.Transacciones
                        dataConsumos, dtFecha.Value);
                 comboConsumible.SelectedIndex = -1;
                 maskedCantidad.Text = null;
+                btnEliminar.Enabled = false;
             }
         }
 
         private void Consumos_Load(object sender, EventArgs e)
         {
             consumible.mostrarNombreConsumible(comboConsumible);
+            consumible.mostrar(dataConsumibles);
+            btnEliminar.Enabled = false;
         }
 
         private void btnRegistrarConsumos_Click(object sender, EventArgs e)
         {
-            consumible.aregarConsumo(dataConsumos);
-            comboConsumible.SelectedIndex = -1;
-            maskedCantidad.Text = null;
-            dataConsumos.Rows.Clear();
+            if (dataConsumos.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay consumos para registrar");
+            }
+            else
+            {
+                consumible.aregarConsumo(dataConsumos);
+                comboConsumible.SelectedIndex = -1;
+                maskedCantidad.Text = null;
+                dataConsumos.Rows.Clear();
+                btnEliminar.Enabled = false;    
+            }
         }
 
         private void btnMostrarConsumos_Click(object sender, EventArgs e)
@@ -60,6 +72,31 @@ namespace Para_inventario.Transacciones
             mostrarConsumos ventana = new mostrarConsumos();
             ventana.Show();
             this.Hide();
+        }
+
+        private void dataConsumos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            dataConsumos.Rows.Remove(dataConsumos.CurrentRow);
+            btnEliminar.Enabled = false;
+        }
+
+        private bool estaConsumible(int consumible)
+        {
+            bool bandera = false;
+            for (int i = 0; i < dataConsumos.Rows.Count; i++)
+            {
+                if (dataConsumos.CurrentRow.Cells["nro_inventario"].Value.ToString() == consumible.ToString())
+                {
+                    bandera = true;
+                    break;
+                }
+            }
+            return bandera;
         }
     }
 }

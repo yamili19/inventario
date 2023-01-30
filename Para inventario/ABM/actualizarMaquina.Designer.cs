@@ -162,11 +162,11 @@
         private Button btnActualizar;
         private Button btnVolver;
         private Label lblHerramientas;
-        private DataGridView dataMaquinasActualizar;
         private DataGridViewTextBoxColumn nro;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn marca;
         private DataGridViewTextBoxColumn lugar;
         private DataGridViewTextBoxColumn cantidad;
+        public DataGridView dataMaquinasActualizar;
     }
 }

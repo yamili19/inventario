@@ -47,6 +47,7 @@
             this.maskedCantidad = new System.Windows.Forms.MaskedTextBox();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnMostrarConsumos = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumibles)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             this.dataConsumos.RowTemplate.Height = 25;
             this.dataConsumos.Size = new System.Drawing.Size(493, 307);
             this.dataConsumos.TabIndex = 18;
+            this.dataConsumos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataConsumos_CellClick);
             // 
             // nro_inventario
             // 
@@ -151,10 +153,10 @@
             this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(360, 29);
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregar.Location = new System.Drawing.Point(266, 54);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(95, 38);
+            this.btnAgregar.Size = new System.Drawing.Size(70, 25);
             this.btnAgregar.TabIndex = 23;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -254,6 +256,22 @@
             this.btnMostrarConsumos.UseVisualStyleBackColor = false;
             this.btnMostrarConsumos.Click += new System.EventHandler(this.btnMostrarConsumos_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.Location = new System.Drawing.Point(342, 54);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(67, 25);
+            this.btnEliminar.TabIndex = 36;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // Consumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -261,6 +279,7 @@
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(594, 478);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnMostrarConsumos);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.maskedCantidad);
@@ -305,5 +324,6 @@
         private DataGridViewTextBoxColumn cantidad;
         private DataGridViewTextBoxColumn fecha;
         private Button btnMostrarConsumos;
+        private Button btnEliminar;
     }
 }
