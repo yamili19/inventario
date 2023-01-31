@@ -129,7 +129,6 @@ namespace Para_inventario.Clases
                 {
                     consumos.Rows.Add(consumibles.CurrentRow.Cells["nro"].Value.ToString(), 
                         consumibles.CurrentRow.Cells["nombre"].Value.ToString(), cant.ToString(), fecha);
-                    consumibles.CurrentRow.Cells["cantidadDisponible"].Value = cantidad - cant;
                 }
                 else
                 {

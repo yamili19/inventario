@@ -94,5 +94,89 @@ namespace Para_inventario.Servicios
                 cn.Close();
             }
         }
+
+        public void registrarPrestamoED(Prestamo prestamo)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                cmd.CommandText = "INSERT INTO PrestamosElementosDibujo (inventarioElementosDibujo, cantidad, encargado, fechaPrestamo) " +
+                    "VALUES (@n, @c, @e, GETDATE())";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible - @c WHERE nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.ExecuteNonQuery();
+                cmd.Transaction.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public DataTable mostrarPrestamosED()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "mostrarPrestamosED";
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            cn.Open();
+            ad.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
+        public void registrarDevED(Prestamo prestamo)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();  
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                cmd.CommandText = "UPDATE PrestamosElementosDibujo SET fechaDevolucion = GETDATE() " +
+                    "WHERE inventarioElementosDibujo = @n AND fechaPrestamo = @f";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();  
+                cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible + @c WHERE nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();
+                cmd.Transaction.Commit();
+                MessageBox.Show("Devolución registrada exitósamente");
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Para_inventario.Transacciones
 
         private void btnRegistrarDev_Click(object sender, EventArgs e)
         {
-            if (dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value == null)
+            if (dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value.ToString() == "")
             {
                 prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["inventarioHerramienta"].Value.ToString());
                 prestamo.cantidad = int.Parse(dataPrestamos.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
@@ -47,7 +47,6 @@ namespace Para_inventario.Transacciones
                 prestamo.registrarDevHerramienta(prestamo);
                 dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value = DateTime.Now.Date.ToString();
                 dataPrestamos.Refresh();
-                btnRegistrarDev.Enabled = false;
             }
             else
             {

@@ -146,7 +146,6 @@ namespace Para_inventario.Clases
                 {
                     prestamos.Rows.Add(nro.ToString(), herramienta.CurrentRow.Cells["nombre"].Value.ToString(), cant.ToString(),
                         fecha, null, nombre);
-                    herramienta.CurrentRow.Cells["cantidad"].Value = cantidad - cant;
                 }
                 else
                 {

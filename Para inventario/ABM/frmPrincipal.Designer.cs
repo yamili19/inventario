@@ -41,7 +41,6 @@
             this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPrestamoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarDevolucionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consumiblesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,7 +129,7 @@
             // 
             this.registrarPrestamoToolStripMenuItem.Name = "registrarPrestamoToolStripMenuItem";
             this.registrarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(253, 24);
-            this.registrarPrestamoToolStripMenuItem.Text = "Registrar/Devolver Prestamo";
+            this.registrarPrestamoToolStripMenuItem.Text = "Registrar/Devolver Préstamo";
             this.registrarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.registrarPrestamoToolStripMenuItem_Click);
             // 
             // elementosDibujoToolStripMenuItem
@@ -139,8 +138,7 @@
             this.agregarToolStripMenuItem1,
             this.consultarToolStripMenuItem1,
             this.eliminarToolStripMenuItem1,
-            this.registrarPrestamoToolStripMenuItem1,
-            this.registrarDevolucionToolStripMenuItem1});
+            this.registrarPrestamoToolStripMenuItem1});
             this.elementosDibujoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.elementosDibujoToolStripMenuItem.Name = "elementosDibujoToolStripMenuItem";
             this.elementosDibujoToolStripMenuItem.Size = new System.Drawing.Size(147, 23);
@@ -149,35 +147,30 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(204, 24);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(253, 24);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(204, 24);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(253, 24);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(204, 24);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(253, 24);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
             // registrarPrestamoToolStripMenuItem1
             // 
             this.registrarPrestamoToolStripMenuItem1.Name = "registrarPrestamoToolStripMenuItem1";
-            this.registrarPrestamoToolStripMenuItem1.Size = new System.Drawing.Size(204, 24);
-            this.registrarPrestamoToolStripMenuItem1.Text = "Registrar Prestamo";
-            // 
-            // registrarDevolucionToolStripMenuItem1
-            // 
-            this.registrarDevolucionToolStripMenuItem1.Name = "registrarDevolucionToolStripMenuItem1";
-            this.registrarDevolucionToolStripMenuItem1.Size = new System.Drawing.Size(204, 24);
-            this.registrarDevolucionToolStripMenuItem1.Text = "Registrar Devolucion";
+            this.registrarPrestamoToolStripMenuItem1.Size = new System.Drawing.Size(253, 24);
+            this.registrarPrestamoToolStripMenuItem1.Text = "Registrar/Devolver Préstamo";
+            this.registrarPrestamoToolStripMenuItem1.Click += new System.EventHandler(this.registrarPrestamoToolStripMenuItem1_Click);
             // 
             // consumiblesToolStripMenuItem
             // 
@@ -402,7 +395,6 @@
         private ToolStripMenuItem eliminarToolStripMenuItem;
         private Button btnCerrar;
         private ToolStripMenuItem elementosDibujoToolStripMenuItem;
-        private ToolStripMenuItem agregarToolStripMenuItem1;
         private ToolStripMenuItem consultarToolStripMenuItem1;
         private ToolStripMenuItem eliminarToolStripMenuItem1;
         private ToolStripMenuItem consumiblesToolStripMenuItem;
@@ -427,8 +419,8 @@
         private ToolStripMenuItem registrarConsumoToolStripMenuItem;
         private ToolStripMenuItem registrarPrestamoToolStripMenuItem;
         private ToolStripMenuItem registrarPrestamoToolStripMenuItem1;
-        private ToolStripMenuItem registrarDevolucionToolStripMenuItem1;
         private ToolStripMenuItem registrarPrestamoToolStripMenuItem2;
         private ToolStripMenuItem registrarDevolucionToolStripMenuItem2;
+        private ToolStripMenuItem agregarToolStripMenuItem1;
     }
 }

@@ -76,6 +76,12 @@
     <Compile Update="Transacciones\mostrarPrestamoHerramienta.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Transacciones\mostrarPrestamosED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transacciones\prestamoED.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Transacciones\prestamoHerramientas.cs">
       <SubType>Form</SubType>
     </Compile>

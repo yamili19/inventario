@@ -122,5 +122,40 @@ namespace Para_inventario.Clases
                 }
             }
         }
+
+        public void mostrarNombreED(ComboBox ED)
+        {
+            ServicioElementoDibujo servicio = new ServicioElementoDibujo();
+            ED.DataSource = servicio.mostrar();
+            ED.ValueMember = "nro";
+            ED.DisplayMember = "nombre";
+            ED.SelectedIndex = -1;
+        }
+
+        public void verificarCantidadED(int nro, DataGridView ed, DataGridView prestamos, string nombre, int cant)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ed.DataSource;
+            try
+            {
+                bs.Filter = "nro = '"+nro+"'";
+                ed.DataSource = bs.DataSource;
+                int cantidad = int.Parse(ed.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
+                if (cant <= cantidad)
+                {
+                    prestamos.Rows.Add(nro.ToString(), ed.CurrentRow.Cells["nombre"].Value.ToString(),
+                        cant.ToString(), DateTime.Now.ToString(), null, nombre);
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible del elemento de dibujo seleccionado que es: "
+                        +cantidad.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception) 
+            {
+                MessageBox.Show("Error");
+            }
+        }
     }
 }
