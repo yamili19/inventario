@@ -178,5 +178,87 @@ namespace Para_inventario.Servicios
                 cn.Close();
             }
         }
+
+        public void registrarPrestamoMaquina(Prestamo prestamo)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                cmd.CommandText = "INSERT INTO PrestamosMaquinas (inventarioMaquinas, cantidad, fechaPrestamo, encargado) " +
+                    "VALUES (@n, @c, GETDATE(), @e)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Maquinas SET cantidad = cantidad - @c WHERE nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();
+                cmd.Transaction.Commit();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public void registrarDevMaquina(Prestamo prestamo)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                cmd.CommandText = "UPDATE PrestamosMaquinas SET fechaDevolucion = GETDATE() WHERE inventarioMaquinas = @n AND fechaPrestamo = @f";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Maquinas SET cantidad = cantidad + @c WHERE nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();
+                cmd.Transaction.Commit();
+                MessageBox.Show("Devolución registrada exitósamente");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public DataTable mostrarPrestamosMaquinas()
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "mostrarPrestamosMaquinas";
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            cn.Open();
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            cn.Close(); 
+            return dt;
+        }
     }
 }

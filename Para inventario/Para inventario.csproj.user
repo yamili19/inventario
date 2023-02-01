@@ -79,10 +79,16 @@
     <Compile Update="Transacciones\mostrarPrestamosED.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Transacciones\mostrarPrestamosMaquinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Transacciones\prestamoED.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Transacciones\prestamoHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transacciones\prestamoMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

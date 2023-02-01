@@ -201,5 +201,12 @@ namespace Para_inventario.Interfaces
             ventana.Show();
             this.Hide();
         }
+
+        private void registrarPrestamoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            prestamoMaquina ventana = new prestamoMaquina();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }

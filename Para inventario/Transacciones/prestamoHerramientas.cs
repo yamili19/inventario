@@ -69,6 +69,7 @@ namespace Para_inventario.Transacciones
                 maskCantidad.Text = null;
                 dataPrestamos.Rows.Clear();
                 btnEliminar.Enabled = false;
+                herramientaaaa.mostrar(dataHerramientasBaja);
             }
         }
 

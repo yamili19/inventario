@@ -32,6 +32,11 @@ namespace Para_inventario.Transacciones
             {
                 prestamo.registrarPrestamoED(dataPrestamos);
                 dataPrestamos.Rows.Clear();
+                comboED.SelectedIndex = -1;
+                txtNombre.Text = "";
+                maskCantidad.Text = null;
+                btnEliminar.Enabled = false;
+                ed.mostrar(dataEDEliminar);
             }
             else
             {
@@ -73,7 +78,7 @@ namespace Para_inventario.Transacciones
                     txtNombre.Text, int.Parse(maskCantidad.Text));
                 comboED.SelectedIndex= -1;
                 maskCantidad.Text = null;
-                txtNombre.Text = "";  
+                txtNombre.Text = "";
             }
         }
 

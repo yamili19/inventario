@@ -76,5 +76,30 @@ namespace Para_inventario.Clases
             ServicioPrestamo servicio = new ServicioPrestamo();
             servicio.registrarDevED(prestamo);
         }
+
+        public void registrarPrestamoMaquina(DataGridView prestamos)
+        {
+            ServicioPrestamo servicio = new ServicioPrestamo();
+            for (int i = 0; i < prestamos.Rows.Count; i++) 
+            {
+                this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioMaquinas"].Value.ToString());
+                this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cant"].Value.ToString());
+                this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
+                servicio.registrarPrestamoMaquina(this);
+            }
+            MessageBox.Show("Prestamos registrados exitósamente");
+        }
+
+        public void mostrarPrestamosMaquinas(DataGridView prestamos)
+        {
+            ServicioPrestamo servicio = new ServicioPrestamo();
+            prestamos.DataSource = servicio.mostrarPrestamosMaquinas();
+        }
+
+        public void registrarDevMaquina(Prestamo prestamo)
+        {
+            ServicioPrestamo servicio = new ServicioPrestamo();
+            servicio.registrarDevMaquina(prestamo);
+        }
     }
 }

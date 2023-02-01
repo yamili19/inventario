@@ -63,7 +63,8 @@ namespace Para_inventario.Transacciones
                 comboConsumible.SelectedIndex = -1;
                 maskedCantidad.Text = null;
                 dataConsumos.Rows.Clear();
-                btnEliminar.Enabled = false;    
+                btnEliminar.Enabled = false;
+                consumible.mostrar(dataConsumibles);
             }
         }
 

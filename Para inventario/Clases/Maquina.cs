@@ -114,5 +114,40 @@ namespace Para_inventario.Clases
                 maquinas.Refresh();
             }
         }
+
+        public void mostrarNombreMaquina(ComboBox maquina)
+        {
+            ServicioMaquina  servicio = new ServicioMaquina();
+            maquina.DataSource = servicio.mostrar();
+            maquina.ValueMember = "nro";
+            maquina.DisplayMember = "nombre";
+            maquina.SelectedIndex = -1;
+        }
+
+        public void verificarCantidadMaquina(int nro, int cant, DataGridView maquinas, DataGridView prestamos, string nombre)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = maquinas.DataSource;
+            try
+            {
+                bs.Filter = "nro = '"+nro+"'";
+                maquinas.DataSource = bs.DataSource;
+                int cantidad = int.Parse(maquinas.CurrentRow.Cells["cantidad"].Value.ToString());
+                if (cant <= cantidad)
+                {
+                    prestamos.Rows.Add(nro.ToString(), maquinas.CurrentRow.Cells["nombre"].Value.ToString(),
+                        cant.ToString(), DateTime.Now.ToString(), null, nombre);
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible de la máquina seleccionada que es: "
+                        +cantidad.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+        }
     }
 }

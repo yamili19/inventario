@@ -189,10 +189,10 @@
             this.nombre,
             this.cantidadDisponible,
             this.cantidadComprada});
-            this.dataConsumibles.Location = new System.Drawing.Point(42, 101);
+            this.dataConsumibles.Location = new System.Drawing.Point(42, 319);
             this.dataConsumibles.Name = "dataConsumibles";
             this.dataConsumibles.RowTemplate.Height = 25;
-            this.dataConsumibles.Size = new System.Drawing.Size(443, 306);
+            this.dataConsumibles.Size = new System.Drawing.Size(115, 88);
             this.dataConsumibles.TabIndex = 26;
             this.dataConsumibles.Visible = false;
             // 
