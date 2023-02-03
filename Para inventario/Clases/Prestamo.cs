@@ -60,6 +60,7 @@ namespace Para_inventario.Clases
                 this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioElementosDibujo"].Value.ToString());
                 this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cant"].Value.ToString());
                 this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
+                this.fechaPrestamo = Convert.ToDateTime(prestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
                 servicio.registrarPrestamoED(this);
             }
             MessageBox.Show("Prestamos registrados exitósamente");
@@ -100,6 +101,21 @@ namespace Para_inventario.Clases
         {
             ServicioPrestamo servicio = new ServicioPrestamo();
             servicio.registrarDevMaquina(prestamo);
+        }
+
+        public void buscarPorEncargado(string nombre, DataGridView prestamos)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = prestamos.DataSource;
+            try
+            {
+                bs.Filter = "encargado like '" + nombre + "'";
+                prestamos.DataSource = bs;
+            }
+            catch (Exception)
+            {
+                prestamos.Refresh();    
+            }
         }
     }
 }

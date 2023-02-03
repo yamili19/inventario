@@ -105,11 +105,12 @@ namespace Para_inventario.Servicios
             try
             {
                 cmd.CommandText = "INSERT INTO PrestamosElementosDibujo (inventarioElementosDibujo, cantidad, encargado, fechaPrestamo) " +
-                    "VALUES (@n, @c, @e, GETDATE())";
+                    "VALUES (@n, @c, @e, @f)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
                 cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible - @c WHERE nro = @n";
                 cmd.Parameters.Clear();
@@ -154,19 +155,18 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "UPDATE PrestamosElementosDibujo SET fechaDevolucion = GETDATE() " +
-                    "WHERE inventarioElementosDibujo = @n AND fechaPrestamo = @f";
+                cmd.CommandText = "registrarPrestED";
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.Parameters.AddWithValue("@fe", prestamo.fechaPrestamo);
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.ExecuteNonQuery();  
+                cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible + @c WHERE nro = @n";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.ExecuteNonQuery();
-                cmd.Transaction.Commit();
-                MessageBox.Show("Devolución registrada exitósamente");
+                cmd.Transaction.Commit();   
             }
             catch(Exception ex) 
             {
@@ -202,9 +202,9 @@ namespace Para_inventario.Servicios
                 cmd.ExecuteNonQuery();
                 cmd.Transaction.Commit();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show(ex.Message);
                 cmd.Transaction.Rollback();
             }
             finally

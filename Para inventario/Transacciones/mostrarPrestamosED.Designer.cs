@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dataPrestamos = new System.Windows.Forms.DataGridView();
+            this.btnRegistrarDev = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.inventarioElementosDibujo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elementosDibujo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRegistrarDev = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,38 @@
             this.dataPrestamos.Size = new System.Drawing.Size(714, 345);
             this.dataPrestamos.TabIndex = 23;
             this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
+            // 
+            // btnRegistrarDev
+            // 
+            this.btnRegistrarDev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegistrarDev.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnRegistrarDev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnRegistrarDev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnRegistrarDev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarDev.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRegistrarDev.Location = new System.Drawing.Point(575, 389);
+            this.btnRegistrarDev.Name = "btnRegistrarDev";
+            this.btnRegistrarDev.Size = new System.Drawing.Size(184, 38);
+            this.btnRegistrarDev.TabIndex = 36;
+            this.btnRegistrarDev.Text = "Registrar Devolución";
+            this.btnRegistrarDev.UseVisualStyleBackColor = false;
+            this.btnRegistrarDev.Click += new System.EventHandler(this.btnRegistrarDev_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Red;
+            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVolver.Location = new System.Drawing.Point(463, 389);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.TabIndex = 35;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // inventarioElementosDibujo
             // 
@@ -108,38 +140,6 @@
             this.encargado.ReadOnly = true;
             this.encargado.Width = 120;
             // 
-            // btnRegistrarDev
-            // 
-            this.btnRegistrarDev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRegistrarDev.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnRegistrarDev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnRegistrarDev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.btnRegistrarDev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarDev.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrarDev.Location = new System.Drawing.Point(575, 389);
-            this.btnRegistrarDev.Name = "btnRegistrarDev";
-            this.btnRegistrarDev.Size = new System.Drawing.Size(184, 38);
-            this.btnRegistrarDev.TabIndex = 36;
-            this.btnRegistrarDev.Text = "Registrar Devolución";
-            this.btnRegistrarDev.UseVisualStyleBackColor = false;
-            this.btnRegistrarDev.Click += new System.EventHandler(this.btnRegistrarDev_Click);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.Red;
-            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(463, 389);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
-            this.btnVolver.TabIndex = 35;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
             // mostrarPrestamosED
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -163,13 +163,13 @@
         #endregion
 
         private DataGridView dataPrestamos;
+        private Button btnRegistrarDev;
+        private Button btnVolver;
         private DataGridViewTextBoxColumn inventarioElementosDibujo;
         private DataGridViewTextBoxColumn elementosDibujo;
         private DataGridViewTextBoxColumn cant;
         private DataGridViewTextBoxColumn fechaPrestamo;
         private DataGridViewTextBoxColumn fechaDevolucion;
         private DataGridViewTextBoxColumn encargado;
-        private Button btnRegistrarDev;
-        private Button btnVolver;
     }
 }

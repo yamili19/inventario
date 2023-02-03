@@ -27,7 +27,7 @@ namespace Para_inventario.Transacciones
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            prestamoHerramientas ventana = new prestamoHerramientas();
+            prestamoMaquina ventana = new prestamoMaquina();
             ventana.Show();
             this.Hide();
         }
@@ -35,6 +35,29 @@ namespace Para_inventario.Transacciones
         private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnRegistrarDev.Enabled = true; 
+        }
+
+        private void btnRegistrarDev_Click(object sender, EventArgs e)
+        {
+            if (dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value.ToString() == "")
+            {
+                prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["inventarioMaquinas"].Value.ToString());
+                prestamo.cantidad = int.Parse(dataPrestamos.CurrentRow.Cells["cant"].Value.ToString());
+                prestamo.fechaPrestamo = Convert.ToDateTime(dataPrestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
+                prestamo.registrarDevMaquina(prestamo);
+                dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value = DateTime.Now.Date.ToString();
+                dataPrestamos.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Ya se registró la devolución");
+            }
+            btnRegistrarDev.Enabled = false;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            prestamo.buscarPorEncargado(txtEncargado.Text, dataPrestamos);
         }
     }
 }

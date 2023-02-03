@@ -37,7 +37,12 @@
             this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrarDev = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.txtEncargado = new System.Windows.Forms.ToolStripTextBox();
+            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataPrestamos
@@ -122,6 +127,7 @@
             this.btnRegistrarDev.TabIndex = 47;
             this.btnRegistrarDev.Text = "Registrar Devolución";
             this.btnRegistrarDev.UseVisualStyleBackColor = false;
+            this.btnRegistrarDev.Click += new System.EventHandler(this.btnRegistrarDev_Click);
             // 
             // btnVolver
             // 
@@ -139,6 +145,42 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2,
+            this.txtEncargado,
+            this.btnBuscar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.TabIndex = 48;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(90, 24);
+            this.toolStripLabel2.Text = "Encargado: ";
+            // 
+            // txtEncargado
+            // 
+            this.txtEncargado.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEncargado.Name = "txtEncargado";
+            this.txtEncargado.Size = new System.Drawing.Size(100, 27);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.Image = global::Para_inventario.Properties.Resources.pngtree_search_icon_creative_design_template_png_image_1998500;
+            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(23, 24);
+            this.btnBuscar.Text = "toolStripButton1";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // mostrarPrestamosMaquinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -146,6 +188,7 @@
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnRegistrarDev);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dataPrestamos);
@@ -155,7 +198,10 @@
             this.Text = "mostrarPrestamosMaquinas";
             this.Load += new System.EventHandler(this.mostrarPrestamosMaquinas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -170,5 +216,9 @@
         private DataGridViewTextBoxColumn encargado;
         private Button btnRegistrarDev;
         private Button btnVolver;
+        private ToolStrip toolStrip1;
+        private ToolStripLabel toolStripLabel2;
+        private ToolStripTextBox txtEncargado;
+        private ToolStripButton btnBuscar;
     }
 }

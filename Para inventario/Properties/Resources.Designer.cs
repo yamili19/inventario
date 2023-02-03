@@ -123,6 +123,16 @@ namespace Para_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap descargar__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("descargar (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap descargar1 {
             get {
                 object obj = ResourceManager.GetObject("descargar1", resourceCulture);
@@ -146,6 +156,16 @@ namespace Para_inventario.Properties {
         internal static System.Drawing.Bitmap fbd5599924f8 {
             get {
                 object obj = ResourceManager.GetObject("fbd5599924f8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagen_2023_02_02_202624769 {
+            get {
+                object obj = ResourceManager.GetObject("imagen_2023-02-02_202624769", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +216,16 @@ namespace Para_inventario.Properties {
         internal static System.Drawing.Bitmap maxresdefault__1_ {
             get {
                 object obj = ResourceManager.GetObject("maxresdefault (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_search_icon_creative_design_template_png_image_1998500 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-search-icon-creative-design-template-png-image_1998500", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
