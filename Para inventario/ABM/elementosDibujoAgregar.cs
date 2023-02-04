@@ -29,13 +29,20 @@ namespace Para_inventario.Interfaces
         {
             try
             {
-                ElementoDibujo elementoDibujo = new ElementoDibujo();
-                elementoDibujo.nombre = txtNombre.Text;
-                elementoDibujo.cantidadDisponible = int.Parse(maskCantidadComprada.Text);
-                elementoDibujo.cantidadComprada = int.Parse(maskCantidadComprada.Text);
-                elementoDibujo.agregar(elementoDibujo);
-                MessageBox.Show("Elemento de dibujo " + elementoDibujo.nombre+" "+"agregado exitosamente");
-                limpiarCampos();
+                if (txtNombre.Text == "")
+                {
+                    MessageBox.Show("Falta completar algunos datos");
+                }
+                else
+                {
+                    ElementoDibujo elementoDibujo = new ElementoDibujo();
+                    elementoDibujo.nombre = txtNombre.Text;
+                    elementoDibujo.cantidadDisponible = int.Parse(maskCantidadComprada.Text);
+                    elementoDibujo.cantidadComprada = int.Parse(maskCantidadComprada.Text);
+                    elementoDibujo.agregar(elementoDibujo);
+                    MessageBox.Show("Elemento de dibujo " + elementoDibujo.nombre + " " + "agregado exitosamente");
+                    limpiarCampos();
+                }
             }
             catch(Exception) 
             {

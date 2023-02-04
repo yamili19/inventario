@@ -30,14 +30,14 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.dataConsumiblesConsultar = new System.Windows.Forms.DataGridView();
-            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNroInventario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumiblesConsultar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,9 +49,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(388, 376);
+            this.btnVolver.Location = new System.Drawing.Point(366, 383);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(128, 38);
             this.btnVolver.TabIndex = 21;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -68,40 +68,12 @@
             this.nombre,
             this.cantidadDisponible,
             this.cantidadComprada});
-            this.dataConsumiblesConsultar.Location = new System.Drawing.Point(40, 64);
+            this.dataConsumiblesConsultar.Location = new System.Drawing.Point(101, 71);
             this.dataConsumiblesConsultar.Name = "dataConsumiblesConsultar";
             this.dataConsumiblesConsultar.ReadOnly = true;
             this.dataConsumiblesConsultar.RowTemplate.Height = 25;
-            this.dataConsumiblesConsultar.Size = new System.Drawing.Size(443, 306);
+            this.dataConsumiblesConsultar.Size = new System.Drawing.Size(393, 306);
             this.dataConsumiblesConsultar.TabIndex = 27;
-            // 
-            // nro
-            // 
-            this.nro.DataPropertyName = "nro";
-            this.nro.HeaderText = "Nro Inventario";
-            this.nro.Name = "nro";
-            this.nro.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // cantidadDisponible
-            // 
-            this.cantidadDisponible.DataPropertyName = "cantidadDisponible";
-            this.cantidadDisponible.HeaderText = "Cantidad Disponible";
-            this.cantidadDisponible.Name = "cantidadDisponible";
-            this.cantidadDisponible.ReadOnly = true;
-            // 
-            // cantidadComprada
-            // 
-            this.cantidadComprada.DataPropertyName = "cantidadComprada";
-            this.cantidadComprada.HeaderText = "Cantidad Comprada";
-            this.cantidadComprada.Name = "cantidadComprada";
-            this.cantidadComprada.ReadOnly = true;
             // 
             // txtNombre
             // 
@@ -139,6 +111,36 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Nro Inventario:";
             // 
+            // nro
+            // 
+            this.nro.DataPropertyName = "nro";
+            this.nro.HeaderText = "Nro Inventario";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // cantidadDisponible
+            // 
+            this.cantidadDisponible.DataPropertyName = "cantidadDisponible";
+            this.cantidadDisponible.HeaderText = "Cantidad Disponible";
+            this.cantidadDisponible.Name = "cantidadDisponible";
+            this.cantidadDisponible.ReadOnly = true;
+            this.cantidadDisponible.Width = 150;
+            // 
+            // cantidadComprada
+            // 
+            this.cantidadComprada.DataPropertyName = "cantidadComprada";
+            this.cantidadComprada.HeaderText = "Cantidad Comprada";
+            this.cantidadComprada.Name = "cantidadComprada";
+            this.cantidadComprada.ReadOnly = true;
+            this.cantidadComprada.Visible = false;
+            // 
             // consultarConsumibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -167,13 +169,13 @@
 
         private Button btnVolver;
         private DataGridView dataConsumiblesConsultar;
-        private DataGridViewTextBoxColumn nro;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn cantidadDisponible;
-        private DataGridViewTextBoxColumn cantidadComprada;
         private TextBox txtNombre;
         private Label label4;
         private TextBox txtNroInventario;
         private Label label3;
+        private DataGridViewTextBoxColumn nro;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn cantidadDisponible;
+        private DataGridViewTextBoxColumn cantidadComprada;
     }
 }

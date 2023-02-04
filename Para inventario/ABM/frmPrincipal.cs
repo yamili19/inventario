@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Para_inventario.ABM;
+using Para_inventario.Clases;
 
 namespace Para_inventario.Interfaces
 {
@@ -185,7 +187,9 @@ namespace Para_inventario.Interfaces
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            DataGridView dgv = new DataGridView();
+            Consumible consumible = new Consumible();
+            consumible.mostrar(dataConsumiblesConsultar);
+            mostrarPorcentajeStock();
         }
 
         private void registrarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,6 +211,41 @@ namespace Para_inventario.Interfaces
             prestamoMaquina ventana = new prestamoMaquina();
             ventana.Show();
             this.Hide();
+        }
+
+        private void reponerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reponerConsumibles ventana = new reponerConsumibles();
+            ventana.Show(); 
+            this.Hide();
+        }
+
+        private void mostrarPorcentajeStock()
+        {
+            List<string> list = new List<string>();
+            for (int i = 0; i < dataConsumiblesConsultar.Rows.Count; i++)
+            {
+                string nombre = dataConsumiblesConsultar.Rows[i].Cells["nombre"].Value.ToString();
+                int stock = int.Parse(dataConsumiblesConsultar.Rows[i].Cells["cantidadDisponible"].Value.ToString());
+                int cantidad = int.Parse(dataConsumiblesConsultar.Rows[i].Cells["cantidadComprada"].Value.ToString());
+                if (stock >= cantidad)
+                {
+                    list.Add("Consumible: " + nombre + " Porcentaje de Stock: " + "100%\n");
+                }
+                else
+                {
+                    double porcentaje = stock * 100 / cantidad;
+                    list.Add("Consumible: " + nombre + " Porcentaje de Stock: " + porcentaje.ToString() + "%\n");
+                }
+            }
+            Label lab = new Label();
+            string textoAnterior = "";
+            for (int i = 0; i < list.Count; i++)
+            {
+                lab.Text = textoAnterior + list[i].ToString();
+                textoAnterior = lab.Text;
+            }
+            MessageBox.Show(lab.Text, "Información sobre el stock", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

@@ -86,6 +86,7 @@ namespace Para_inventario.Clases
                 this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioMaquinas"].Value.ToString());
                 this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cant"].Value.ToString());
                 this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
+                this.fechaPrestamo = Convert.ToDateTime(prestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
                 servicio.registrarPrestamoMaquina(this);
             }
             MessageBox.Show("Prestamos registrados exitósamente");
@@ -109,8 +110,12 @@ namespace Para_inventario.Clases
             bs.DataSource = prestamos.DataSource;
             try
             {
-                bs.Filter = "encargado like '" + nombre + "'";
+                bs.Filter = "encargado like '%" + nombre + "%'";
                 prestamos.DataSource = bs;
+                if (prestamos.RowCount == 0)
+                {
+                    MessageBox.Show("No se encontró el encargado que está buscando");
+                }
             }
             catch (Exception)
             {

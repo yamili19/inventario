@@ -154,5 +154,11 @@ namespace Para_inventario.Clases
             ServicioConsumible servicio = new ServicioConsumible();
             servicio.agregarConsumos(consumos);
         }
+
+        public void reponerConsumible(Consumible consumible)
+        {
+            ServicioConsumible servicio = new ServicioConsumible();
+            servicio.reponerConsumibleV1(consumible);
+        }
     }
 }

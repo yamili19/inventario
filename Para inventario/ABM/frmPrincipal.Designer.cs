@@ -44,6 +44,7 @@
             this.consumiblesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reponerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informáticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,13 @@
             this.consumosPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarConsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.dataConsumiblesConsultar = new System.Windows.Forms.DataGridView();
+            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataConsumiblesConsultar)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -175,7 +182,8 @@
             // 
             this.consumiblesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem2,
-            this.consultarToolStripMenuItem2});
+            this.consultarToolStripMenuItem2,
+            this.reponerToolStripMenuItem});
             this.consumiblesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.consumiblesToolStripMenuItem.Name = "consumiblesToolStripMenuItem";
             this.consumiblesToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
@@ -195,6 +203,13 @@
             this.consultarToolStripMenuItem2.Text = "Consultar";
             this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
             // 
+            // reponerToolStripMenuItem
+            // 
+            this.reponerToolStripMenuItem.Name = "reponerToolStripMenuItem";
+            this.reponerToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.reponerToolStripMenuItem.Text = "Reponer";
+            this.reponerToolStripMenuItem.Click += new System.EventHandler(this.reponerToolStripMenuItem_Click);
+            // 
             // informáticaToolStripMenuItem
             // 
             this.informáticaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -210,28 +225,28 @@
             // agregarToolStripMenuItem3
             // 
             this.agregarToolStripMenuItem3.Name = "agregarToolStripMenuItem3";
-            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(180, 24);
+            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(137, 24);
             this.agregarToolStripMenuItem3.Text = "Agregar ";
             this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
             // 
             // consultarToolStripMenuItem3
             // 
             this.consultarToolStripMenuItem3.Name = "consultarToolStripMenuItem3";
-            this.consultarToolStripMenuItem3.Size = new System.Drawing.Size(180, 24);
+            this.consultarToolStripMenuItem3.Size = new System.Drawing.Size(137, 24);
             this.consultarToolStripMenuItem3.Text = "Consultar";
             this.consultarToolStripMenuItem3.Click += new System.EventHandler(this.consultarToolStripMenuItem3_Click);
             // 
             // actualizarToolStripMenuItem2
             // 
             this.actualizarToolStripMenuItem2.Name = "actualizarToolStripMenuItem2";
-            this.actualizarToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.actualizarToolStripMenuItem2.Size = new System.Drawing.Size(137, 24);
             this.actualizarToolStripMenuItem2.Text = "Actualizar";
             this.actualizarToolStripMenuItem2.Click += new System.EventHandler(this.actualizarToolStripMenuItem2_Click);
             // 
             // eliminarToolStripMenuItem2
             // 
             this.eliminarToolStripMenuItem2.Name = "eliminarToolStripMenuItem2";
-            this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(137, 24);
             this.eliminarToolStripMenuItem2.Text = "Eliminar";
             this.eliminarToolStripMenuItem2.Click += new System.EventHandler(this.eliminarToolStripMenuItem2_Click);
             // 
@@ -298,28 +313,28 @@
             // agregarToolStripMenuItem5
             // 
             this.agregarToolStripMenuItem5.Name = "agregarToolStripMenuItem5";
-            this.agregarToolStripMenuItem5.Size = new System.Drawing.Size(180, 24);
+            this.agregarToolStripMenuItem5.Size = new System.Drawing.Size(137, 24);
             this.agregarToolStripMenuItem5.Text = "Agregar";
             this.agregarToolStripMenuItem5.Click += new System.EventHandler(this.agregarToolStripMenuItem5_Click);
             // 
             // consultarToolStripMenuItem5
             // 
             this.consultarToolStripMenuItem5.Name = "consultarToolStripMenuItem5";
-            this.consultarToolStripMenuItem5.Size = new System.Drawing.Size(180, 24);
+            this.consultarToolStripMenuItem5.Size = new System.Drawing.Size(137, 24);
             this.consultarToolStripMenuItem5.Text = "Consultar";
             this.consultarToolStripMenuItem5.Click += new System.EventHandler(this.consultarToolStripMenuItem5_Click);
             // 
             // actualizarToolStripMenuItem4
             // 
             this.actualizarToolStripMenuItem4.Name = "actualizarToolStripMenuItem4";
-            this.actualizarToolStripMenuItem4.Size = new System.Drawing.Size(180, 24);
+            this.actualizarToolStripMenuItem4.Size = new System.Drawing.Size(137, 24);
             this.actualizarToolStripMenuItem4.Text = "Actualizar";
             this.actualizarToolStripMenuItem4.Click += new System.EventHandler(this.actualizarToolStripMenuItem4_Click);
             // 
             // eliminarToolStripMenuItem4
             // 
             this.eliminarToolStripMenuItem4.Name = "eliminarToolStripMenuItem4";
-            this.eliminarToolStripMenuItem4.Size = new System.Drawing.Size(180, 24);
+            this.eliminarToolStripMenuItem4.Size = new System.Drawing.Size(137, 24);
             this.eliminarToolStripMenuItem4.Text = "Eliminar";
             this.eliminarToolStripMenuItem4.Click += new System.EventHandler(this.eliminarToolStripMenuItem4_Click);
             // 
@@ -354,6 +369,55 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // dataConsumiblesConsultar
+            // 
+            this.dataConsumiblesConsultar.AllowUserToAddRows = false;
+            this.dataConsumiblesConsultar.AllowUserToDeleteRows = false;
+            this.dataConsumiblesConsultar.AllowUserToOrderColumns = true;
+            this.dataConsumiblesConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataConsumiblesConsultar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nro,
+            this.nombre,
+            this.cantidadDisponible,
+            this.cantidadComprada});
+            this.dataConsumiblesConsultar.Location = new System.Drawing.Point(44, 40);
+            this.dataConsumiblesConsultar.Name = "dataConsumiblesConsultar";
+            this.dataConsumiblesConsultar.ReadOnly = true;
+            this.dataConsumiblesConsultar.RowTemplate.Height = 25;
+            this.dataConsumiblesConsultar.Size = new System.Drawing.Size(119, 95);
+            this.dataConsumiblesConsultar.TabIndex = 28;
+            this.dataConsumiblesConsultar.Visible = false;
+            // 
+            // nro
+            // 
+            this.nro.DataPropertyName = "nro";
+            this.nro.HeaderText = "Nro Inventario";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // cantidadDisponible
+            // 
+            this.cantidadDisponible.DataPropertyName = "cantidadDisponible";
+            this.cantidadDisponible.HeaderText = "Cantidad Disponible";
+            this.cantidadDisponible.Name = "cantidadDisponible";
+            this.cantidadDisponible.ReadOnly = true;
+            this.cantidadDisponible.Width = 150;
+            // 
+            // cantidadComprada
+            // 
+            this.cantidadComprada.DataPropertyName = "cantidadComprada";
+            this.cantidadComprada.HeaderText = "Cantidad Comprada";
+            this.cantidadComprada.Name = "cantidadComprada";
+            this.cantidadComprada.ReadOnly = true;
+            this.cantidadComprada.Visible = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -361,6 +425,7 @@
             this.BackgroundImage = global::Para_inventario.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataConsumiblesConsultar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -373,6 +438,7 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataConsumiblesConsultar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,5 +480,11 @@
         private ToolStripMenuItem registrarPrestamoToolStripMenuItem1;
         private ToolStripMenuItem registrarPrestamoToolStripMenuItem2;
         private ToolStripMenuItem agregarToolStripMenuItem1;
+        private ToolStripMenuItem reponerToolStripMenuItem;
+        private DataGridView dataConsumiblesConsultar;
+        private DataGridViewTextBoxColumn nro;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn cantidadDisponible;
+        private DataGridViewTextBoxColumn cantidadComprada;
     }
 }

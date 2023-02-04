@@ -88,14 +88,21 @@ namespace Para_inventario.Interfaces
         {
             try
             {
-                Mueble mueble = new Mueble();
-                mueble.nombre = txtNombre.Text;
-                mueble.material = txtMaterial.Text;
-                mueble.adquirido = txtAdquirido.Text;
-                mueble.lugar = txtLugar.Text;
-                mueble.cantidad = int.Parse(maskCantidad.Text);
-                mueble.agregar(mueble);
-                MessageBox.Show("Mueble con nombre " + mueble.nombre + "agregado exitósamente");
+                if (txtAdquirido.Text == "" || txtLugar.Text == "" || txtMaterial.Text == "" || txtNombre.Text == "")
+                {
+                    MessageBox.Show("Falta completar algunos datos");
+                }
+                else
+                {
+                    Mueble mueble = new Mueble();
+                    mueble.nombre = txtNombre.Text;
+                    mueble.material = txtMaterial.Text;
+                    mueble.adquirido = txtAdquirido.Text;
+                    mueble.lugar = txtLugar.Text;
+                    mueble.cantidad = int.Parse(maskCantidad.Text);
+                    mueble.agregar(mueble);
+                    MessageBox.Show("Mueble con nombre " + mueble.nombre + "agregado exitósamente");
+                }
             }
             catch (Exception)
             {

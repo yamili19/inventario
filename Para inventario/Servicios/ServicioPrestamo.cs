@@ -189,11 +189,12 @@ namespace Para_inventario.Servicios
             try
             {
                 cmd.CommandText = "INSERT INTO PrestamosMaquinas (inventarioMaquinas, cantidad, fechaPrestamo, encargado) " +
-                    "VALUES (@n, @c, GETDATE(), @e)";
+                    "VALUES (@n, @c, @f, @e)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
                 cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE Maquinas SET cantidad = cantidad - @c WHERE nro = @n";
                 cmd.Parameters.Clear();

@@ -132,5 +132,30 @@ namespace Para_inventario.Servicios
             cn.Close();
             return dt;
         }
+
+        public void reponerConsumibleV1(Consumible consumible)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "UPDATE Consumibles SET cantidadComprada = @c, cantidadDisponible = cantidadDisponible + @c" +
+                    "WHERE nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", consumible.cantidadComprada);
+                cmd.Parameters.AddWithValue("@n", consumible.nro);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Consumible repuesto exitósamente");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error");
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

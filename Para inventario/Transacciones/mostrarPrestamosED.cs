@@ -54,5 +54,10 @@ namespace Para_inventario.Transacciones
             }
             btnRegistrarDev.Enabled = false;    
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            prestamo.buscarPorEncargado(txtEncargado.Text, dataPrestamos);
+        }
     }
 }

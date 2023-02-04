@@ -86,14 +86,21 @@ namespace Para_inventario.Interfaces
         {
             try
             {
-                Informática informatica = new Informática();
-                informatica.nombre = txtNombre.Text;
-                informatica.marca = txtMarca.Text;
-                informatica.lugar = txtLugar.Text;
-                informatica.cantidad = int.Parse(maskCantidad.Text);
-                informatica.agregar(informatica);
-                MessageBox.Show("Elemento de informática agregado exitósamente");
-                limpiarCampos();
+                if (txtNombre.Text == "" || txtMarca.Text == ""  || txtLugar.Text == "")
+                {
+                    MessageBox.Show("Falta completar algunos datos");
+                }
+                else
+                {
+                    Informática informatica = new Informática();
+                    informatica.nombre = txtNombre.Text;
+                    informatica.marca = txtMarca.Text;
+                    informatica.lugar = txtLugar.Text;
+                    informatica.cantidad = int.Parse(maskCantidad.Text);
+                    informatica.agregar(informatica);
+                    MessageBox.Show("Elemento de informática agregado exitósamente");
+                    limpiarCampos();
+                }
             }
             catch(Exception) 
             {

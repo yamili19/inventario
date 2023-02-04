@@ -88,14 +88,21 @@ namespace Para_inventario.Interfaces
         {
             try
             {
-                Maquina maquina = new Maquina();
-                maquina.lugar = txtLugar.Text;
-                maquina.cantidad = int.Parse(maskCantidad.Text);
-                maquina.marca = txtMarca.Text;  
-                maquina.nombre = txtNombre.Text;
-                maquina.agregar(maquina);
-                MessageBox.Show("Maquina con el nombre " + maquina.nombre + " y marca " + maquina.marca + " agregada exitósamente");
-                limpiarCampos();
+                if (txtLugar.Text == "" || txtMarca.Text == "" || txtNombre.Text == "")
+                {
+                    MessageBox.Show("Falta completar algunos datos");
+                }
+                else
+                {
+                    Maquina maquina = new Maquina();
+                    maquina.lugar = txtLugar.Text;
+                    maquina.cantidad = int.Parse(maskCantidad.Text);
+                    maquina.marca = txtMarca.Text;
+                    maquina.nombre = txtNombre.Text;
+                    maquina.agregar(maquina);
+                    MessageBox.Show("Maquina con el nombre " + maquina.nombre + " y marca " + maquina.marca + " agregada exitósamente");
+                    limpiarCampos();
+                }
             }
             catch(Exception) 
             {

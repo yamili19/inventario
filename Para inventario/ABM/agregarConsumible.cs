@@ -87,13 +87,20 @@ namespace Para_inventario.Interfaces
         {
             try
             {
-                Consumible consumible = new Consumible();
-                consumible.nombre = txtNombre.Text;
-                consumible.cantidadDisponible = int.Parse(maskCantidadComprada.Text);
-                consumible.cantidadComprada = int.Parse(maskCantidadComprada.Text);
-                consumible.agregar(consumible);
-                MessageBox.Show("Consumible agregado exitósamente");
-                limpiarCampos();
+                if (txtNombre.Text == "")
+                {
+                    MessageBox.Show("Falta completar algunos datos");
+                }
+                else
+                {
+                    Consumible consumible = new Consumible();
+                    consumible.nombre = txtNombre.Text;
+                    consumible.cantidadDisponible = int.Parse(maskCantidadComprada.Text);
+                    consumible.cantidadComprada = int.Parse(maskCantidadComprada.Text);
+                    consumible.agregar(consumible);
+                    MessageBox.Show("Consumible agregado exitósamente");
+                    limpiarCampos();
+                }
             }
             catch (Exception)
             {
