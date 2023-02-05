@@ -29,11 +29,13 @@ namespace Para_inventario.Interfaces
         {
             frmHerramientas ventana = new frmHerramientas();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            login ventana = new login();    
+            ventana.Show();
             this.Close();
         }
 
@@ -41,152 +43,153 @@ namespace Para_inventario.Interfaces
         {
             frmHerramientaBaja ventana = new frmHerramientaBaja();
             ventana.Show();
-            this.Hide();    
+            this.Close();    
         }
 
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmHerramientasActualizacion ventana = new frmHerramientasActualizacion();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmHerramientasConsultar ventana = new frmHerramientasConsultar();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             elementosDibujoAgregar ventana = new elementosDibujoAgregar();
             ventana.Show(); 
-            this.Hide();    
+            this.Close();    
         }
 
         private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             consultarElementosDibujo ventana = new consultarElementosDibujo();
             ventana.Show(); 
-            this.Hide();
+            this.Close();
         }
 
         private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             eliminarElementosDibujo ventana = new eliminarElementosDibujo();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             agregarConsumible ventana = new agregarConsumible();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             consultarConsumibles ventana = new consultarConsumibles();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             agregarInformatica ventana = new agregarInformatica();
             ventana.Show();
-            this.Hide();
-        }
+            this.Close();
+        }   
 
         private void consultarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             consultarInformatica ventana = new consultarInformatica();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void actualizarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             actualizarInformatica ventana = new actualizarInformatica();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             eliminarInformatica ventana = new eliminarInformatica();
             ventana.Show();
-            this.Hide();    
+            this.Close();    
         }
 
         private void agregarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             agregarMaquinas ventana = new agregarMaquinas();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void eliminarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             eliminarMaquina ventana = new eliminarMaquina();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void actualizarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             actualizarMaquina ventana = new actualizarMaquina();
             ventana.Show(); 
-            this.Hide();
+            this.Close();
         }
 
         private void consultarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             consultarMaquina ventana = new consultarMaquina();
             ventana.Show();
-            this.Hide();    
+            this.Close();    
         }
 
         private void agregarToolStripMenuItem5_Click(object sender, EventArgs e)
         {
             agregarMueble ventana = new agregarMueble();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void eliminarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             eliminarMueble ventana = new eliminarMueble();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void actualizarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             actualizarMueble ventana = new actualizarMueble();
             ventana.Show();
-            this.Hide();    
+            this.Close();    
         }
 
         private void consultarToolStripMenuItem5_Click(object sender, EventArgs e)
         {
             consultarMueble ventana = new consultarMueble();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void registrarConsumoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Consumos ventana = new Consumos();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            usuarioToolStripMenuItem.Text = "Usuario: " + ValoresPublicos.nombreUsuario;
             Consumible consumible = new Consumible();
             consumible.mostrar(dataConsumiblesConsultar);
             mostrarPorcentajeStock();
@@ -196,28 +199,28 @@ namespace Para_inventario.Interfaces
         {
             prestamoHerramientas ventana = new prestamoHerramientas();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void registrarPrestamoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             prestamoED ventana = new prestamoED();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void registrarPrestamoToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             prestamoMaquina ventana = new prestamoMaquina();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void reponerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             reponerConsumibles ventana = new reponerConsumibles();
             ventana.Show(); 
-            this.Hide();
+            this.Close();
         }
 
         private void mostrarPorcentajeStock()

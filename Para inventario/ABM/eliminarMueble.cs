@@ -23,7 +23,7 @@ namespace Para_inventario.Interfaces
         {
             frmPrincipal ventana = new frmPrincipal();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void dataMuebleEliminar_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -47,6 +47,7 @@ namespace Para_inventario.Transacciones
         private void prestamoED_Load(object sender, EventArgs e)
         {
             btnEliminar.Enabled = false;
+            lblUser.Text = "Usuario: " + ValoresPublicos.nombreUsuario;
             ed.mostrarNombreED(comboED);
             ed.mostrar(dataEDEliminar);
         }
@@ -55,7 +56,7 @@ namespace Para_inventario.Transacciones
         {
             frmPrincipal ventana = new frmPrincipal();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -100,7 +101,7 @@ namespace Para_inventario.Transacciones
         {
             mostrarPrestamosED ventana = new mostrarPrestamosED();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -121,14 +121,11 @@
   <data name="descargar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iStock-493585980" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iStock-493585980.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tablero-regla-t" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tablero-regla-t.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="250202692" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\250202692.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imagen_2023-02-02_202624769" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagen_2023-02-02_202624769.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-shape_icon-icons.com_72487" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-shape_icon-icons.com_72487.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maxresdefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxresdefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,14 +133,17 @@
   <data name="fbd5599924f8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fbd5599924f8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imagen_2023-02-02_202624769" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagen_2023-02-02_202624769.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-search-icon-creative-design-template-png-image_1998500" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-search-icon-creative-design-template-png-image_1998500.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="descargar (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="precision-erasers-group" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\precision-erasers-group.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Captura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Captura.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="250202691" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\250202691.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="descargar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +157,8 @@
   <data name="maxresdefault (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxresdefault (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tablero-regla-t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tablero-regla-t.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="250202692" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\250202692.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dibujo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dibujo.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,13 +166,22 @@
   <data name="25020269" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\25020269.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="250202691" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\250202691.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="precision-erasers-group" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\precision-erasers-group.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="500_F_28678477_5rgdCcYD0yXkiKqqt3J1oxQNH7grqXfl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\500_F_28678477_5rgdCcYD0yXkiKqqt3J1oxQNH7grqXfl.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iStock-493585980" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iStock-493585980.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-search-icon-creative-design-template-png-image_1998500" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-search-icon-creative-design-template-png-image_1998500.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-shape_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-shape_icon-icons.com_72487.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

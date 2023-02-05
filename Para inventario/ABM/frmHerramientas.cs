@@ -16,7 +16,7 @@ namespace Para_inventario
         {
             frmPrincipal ventana = new frmPrincipal();  
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void frmHerramientas_Load(object sender, EventArgs e)

@@ -93,6 +93,16 @@ namespace Para_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _500_F_28678477_5rgdCcYD0yXkiKqqt3J1oxQNH7grqXfl {
+            get {
+                object obj = ResourceManager.GetObject("500_F_28678477_5rgdCcYD0yXkiKqqt3J1oxQNH7grqXfl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura {
             get {
                 object obj = ResourceManager.GetObject("Captura", resourceCulture);
@@ -246,6 +256,26 @@ namespace Para_inventario.Properties {
         internal static System.Drawing.Bitmap tablero_regla_t {
             get {
                 object obj = ResourceManager.GetObject("tablero-regla-t", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_shape_icon_icons_com_72487 {
+            get {
+                object obj = ResourceManager.GetObject("user-shape_icon-icons.com_72487", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_shape_icon_icons1 {
+            get {
+                object obj = ResourceManager.GetObject("user-shape_icon-icons1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

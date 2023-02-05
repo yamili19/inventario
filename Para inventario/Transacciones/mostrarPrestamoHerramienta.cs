@@ -23,7 +23,7 @@ namespace Para_inventario.Transacciones
         {
             prestamoHerramientas ventana = new prestamoHerramientas();
             ventana.Show(); 
-            this.Hide();
+            this.Close();
         }
 
         private void mostrarPrestamoHerramienta_Load(object sender, EventArgs e)

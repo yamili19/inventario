@@ -29,7 +29,7 @@ namespace Para_inventario.Transacciones
         {
             prestamoMaquina ventana = new prestamoMaquina();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)

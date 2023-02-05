@@ -69,8 +69,11 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumiblesConsultar)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -362,9 +365,9 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::Para_inventario.Properties.Resources.Captura;
-            this.btnCerrar.Location = new System.Drawing.Point(760, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(760, -2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
+            this.btnCerrar.Size = new System.Drawing.Size(40, 29);
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -418,6 +421,26 @@
             this.cantidadComprada.ReadOnly = true;
             this.cantidadComprada.Visible = false;
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 422);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip2.TabIndex = 29;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.usuarioToolStripMenuItem.Image = global::Para_inventario.Properties.Resources.user_shape_icon_icons_com_72487;
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -425,6 +448,7 @@
             this.BackgroundImage = global::Para_inventario.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.dataConsumiblesConsultar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.menuStrip1);
@@ -439,6 +463,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumiblesConsultar)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,5 +512,7 @@
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn cantidadDisponible;
         private DataGridViewTextBoxColumn cantidadComprada;
+        private MenuStrip menuStrip2;
+        private ToolStripMenuItem usuarioToolStripMenuItem;
     }
 }

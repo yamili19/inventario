@@ -24,7 +24,7 @@ namespace Para_inventario.Transacciones
         {
             frmPrincipal ventana = new frmPrincipal();  
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace Para_inventario.Transacciones
         {
             mostrarConsumos ventana = new mostrarConsumos();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void dataConsumos_CellClick(object sender, DataGridViewCellEventArgs e)

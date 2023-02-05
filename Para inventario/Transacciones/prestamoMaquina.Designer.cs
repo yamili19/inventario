@@ -52,6 +52,7 @@
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataMaquinaEliminar)).BeginInit();
             this.SuspendLayout();
@@ -313,6 +314,16 @@
             this.cantidad.Name = "cantidad";
             this.cantidad.ReadOnly = true;
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUser.Location = new System.Drawing.Point(620, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(57, 20);
+            this.lblUser.TabIndex = 57;
+            this.lblUser.Text = "asdasd";
+            // 
             // prestamoMaquina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -320,6 +331,7 @@
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.dataMaquinaEliminar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label3);
@@ -371,5 +383,6 @@
         private DataGridViewTextBoxColumn marca;
         private DataGridViewTextBoxColumn lugar;
         private DataGridViewTextBoxColumn cantidad;
+        private Label lblUser;
     }
 }

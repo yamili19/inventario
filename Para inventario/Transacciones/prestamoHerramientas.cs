@@ -25,11 +25,12 @@ namespace Para_inventario.Transacciones
         {
             frmPrincipal ventana = new frmPrincipal();
             ventana.Show();
-            this.Hide();    
+            this.Close();    
         }
 
         private void prestamoHerramientas_Load(object sender, EventArgs e)
         {
+            lblUser.Text = "Usuario: " + ValoresPublicos.nombreUsuario;
             herramientaaaa.mostrarNombreHerramienta(comboHerramienta);
             herramientaaaa.mostrar(dataHerramientasBaja);
             btnEliminar.Enabled = false;
@@ -47,7 +48,7 @@ namespace Para_inventario.Transacciones
             else
             {
                 herramientaaaa.verificarCantidadHerramienta(Convert.ToInt32(comboHerramienta.SelectedValue), dataHerramientasBaja, dataPrestamos,
-                       int.Parse(maskCantidad.Text), dtFecha.Value, txtNombre.Text);
+                       int.Parse(maskCantidad.Text), txtNombre.Text);
                 comboHerramienta.SelectedIndex = -1;
                 txtNombre.Text = "";
                 maskCantidad.Text = null;
@@ -77,7 +78,7 @@ namespace Para_inventario.Transacciones
         {
             mostrarPrestamoHerramienta ventana = new mostrarPrestamoHerramienta();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

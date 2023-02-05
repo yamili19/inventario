@@ -53,7 +53,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dtFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasBaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             this.SuspendLayout();
@@ -322,13 +322,15 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // dtFecha
+            // lblUser
             // 
-            this.dtFecha.Location = new System.Drawing.Point(414, 18);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(200, 23);
-            this.dtFecha.TabIndex = 36;
-            this.dtFecha.Visible = false;
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUser.Location = new System.Drawing.Point(557, 18);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(57, 20);
+            this.lblUser.TabIndex = 45;
+            this.lblUser.Text = "asdasd";
             // 
             // prestamoHerramientas
             // 
@@ -337,7 +339,7 @@
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(750, 450);
-            this.Controls.Add(this.dtFecha);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNombre);
@@ -390,6 +392,6 @@
         private DataGridViewTextBoxColumn fechaDevolucion;
         private DataGridViewTextBoxColumn encargado;
         private Button btnEliminar;
-        private DateTimePicker dtFecha;
+        private Label lblUser;
     }
 }

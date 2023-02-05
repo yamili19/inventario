@@ -16,14 +16,17 @@ namespace Para_inventario.Clases
         public int cantidad { get; set; }
         public string encargado { get; set; }
 
+        public int usuario { get; set; }
+
         public Prestamo() { }
-        public Prestamo(int nroInventario, DateTime fechaPrestamo, DateTime fechaDevolucion, int cantidad, string encargado)
+        public Prestamo(int nroInventario, DateTime fechaPrestamo, DateTime fechaDevolucion, int cantidad, string encargado, int usuario)
         {
             this.nroInventario = nroInventario;
             this.fechaPrestamo = fechaPrestamo;
             this.fechaDevolucion = fechaDevolucion;
             this.cantidad = cantidad;
             this.encargado = encargado;
+            this.usuario = usuario;
         }
 
         public void mostrarPrestamoHerramienta(DataGridView prestamos)
@@ -37,10 +40,11 @@ namespace Para_inventario.Clases
             ServicioPrestamo servicio = new ServicioPrestamo();
             for (int i = 0; i < prestamos.Rows.Count; i++) 
             {
-                this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioHerramienta"].Value.ToString());
-                this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
-                this.fechaPrestamo = Convert.ToDateTime(prestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
-                this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
+                this.nroInventario = int.Parse(prestamos.Rows[i].Cells["inventarioHerramienta"].Value.ToString());
+                this.cantidad = int.Parse(prestamos.Rows[i].Cells["cantidadDisponible"].Value.ToString());
+                this.fechaPrestamo = Convert.ToDateTime(prestamos.Rows[i].Cells["fechaPrestamo"].Value.ToString());
+                this.encargado = prestamos.Rows[i].Cells["encargado"].Value.ToString();
+                this.usuario = ValoresPublicos.nroUsuario;
                 servicio.registrarPrestamoHerramienta(this);
             }
             MessageBox.Show("Prestamos registrados exitósamente");
@@ -57,10 +61,11 @@ namespace Para_inventario.Clases
             ServicioPrestamo servicio = new ServicioPrestamo();
             for (int i = 0; i < prestamos.Rows.Count; i++) 
             {
-                this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioElementosDibujo"].Value.ToString());
-                this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cant"].Value.ToString());
-                this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
-                this.fechaPrestamo = Convert.ToDateTime(prestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
+                this.nroInventario = int.Parse(prestamos.Rows[i].Cells["inventarioElementosDibujo"].Value.ToString());
+                this.cantidad = int.Parse(prestamos.Rows[i].Cells["cant"].Value.ToString());
+                this.encargado = prestamos.Rows[i].Cells["encargado"].Value.ToString();
+                this.fechaPrestamo = Convert.ToDateTime(prestamos.Rows[i].Cells["fechaPrestamo"].Value.ToString());
+                this.usuario = ValoresPublicos.nroUsuario;
                 servicio.registrarPrestamoED(this);
             }
             MessageBox.Show("Prestamos registrados exitósamente");
@@ -83,10 +88,11 @@ namespace Para_inventario.Clases
             ServicioPrestamo servicio = new ServicioPrestamo();
             for (int i = 0; i < prestamos.Rows.Count; i++) 
             {
-                this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioMaquinas"].Value.ToString());
-                this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cant"].Value.ToString());
-                this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
-                this.fechaPrestamo = Convert.ToDateTime(prestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
+                this.nroInventario = int.Parse(prestamos.Rows[i].Cells["inventarioMaquinas"].Value.ToString());
+                this.cantidad = int.Parse(prestamos.Rows[i].Cells["cant"].Value.ToString());
+                this.encargado = prestamos.Rows[i].Cells["encargado"].Value.ToString();
+                this.fechaPrestamo = Convert.ToDateTime(prestamos.Rows[i].Cells["fechaPrestamo"].Value.ToString());
+                this.usuario = ValoresPublicos.nroUsuario;
                 servicio.registrarPrestamoMaquina(this);
             }
             MessageBox.Show("Prestamos registrados exitósamente");

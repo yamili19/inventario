@@ -133,7 +133,7 @@ namespace Para_inventario.Clases
             nombre.SelectedIndex = -1;
         }
 
-        public void verificarCantidadHerramienta(int nro, DataGridView herramienta, DataGridView prestamos, int cant, DateTime fecha, string nombre) 
+        public void verificarCantidadHerramienta(int nro, DataGridView herramienta, DataGridView prestamos, int cant, string nombre) 
         { 
             BindingSource bs = new BindingSource(); 
             bs.DataSource = herramienta.DataSource;
@@ -145,7 +145,7 @@ namespace Para_inventario.Clases
                 if (cant <= cantidad)
                 {
                     prestamos.Rows.Add(nro.ToString(), herramienta.CurrentRow.Cells["nombre"].Value.ToString(), cant.ToString(),
-                        fecha, null, nombre);
+                        DateTime.Now.ToString(), null, nombre);
                 }
                 else
                 {

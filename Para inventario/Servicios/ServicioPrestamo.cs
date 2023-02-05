@@ -36,13 +36,14 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "INSERT INTO PrestamosHerramientas (inventarioHerramienta, fechaPrestamo, cantidad, encargado)" +
-                             "VALUES (@nro, @f, @c, @e)";
+                cmd.CommandText = "INSERT INTO PrestamosHerramientas (inventarioHerramienta, fechaPrestamo, cantidad, encargado, RealizadoPor)" +
+                             "VALUES (@nro, @f, @c, @e, @u)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nro", prestamo.nroInventario);
                 cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
                 cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
                 cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                cmd.Parameters.AddWithValue("@u", prestamo.usuario);
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE HerramientasManuales SET cantidad = cantidad - @c WHERE nro = @n";
                 cmd.Parameters.Clear();
@@ -51,9 +52,9 @@ namespace Para_inventario.Servicios
                 cmd.ExecuteNonQuery();
                 cmd.Transaction.Commit();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar préstamos");
+                MessageBox.Show(ex.Message);
                 cmd.Transaction.Rollback();
             }
             finally
@@ -104,13 +105,14 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "INSERT INTO PrestamosElementosDibujo (inventarioElementosDibujo, cantidad, encargado, fechaPrestamo) " +
-                    "VALUES (@n, @c, @e, @f)";
+                cmd.CommandText = "INSERT INTO PrestamosElementosDibujo (inventarioElementosDibujo, cantidad, encargado, fechaPrestamo, RealizadoPor) " +
+                    "VALUES (@n, @c, @e, @f, @u)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
                 cmd.Parameters.AddWithValue("@e", prestamo.encargado);
                 cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.Parameters.AddWithValue("@u", prestamo.usuario);
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible - @c WHERE nro = @n";
                 cmd.Parameters.Clear();
@@ -155,18 +157,19 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
+                cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible + @c WHERE nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();
                 cmd.CommandText = "registrarPrestED";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@fe", prestamo.fechaPrestamo);
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible + @c WHERE nro = @n";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.ExecuteNonQuery();
-                cmd.Transaction.Commit();   
+                cmd.Transaction.Commit();
+                MessageBox.Show("Devolución registrada exitósamente");
             }
             catch(Exception ex) 
             {
@@ -188,13 +191,14 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "INSERT INTO PrestamosMaquinas (inventarioMaquinas, cantidad, fechaPrestamo, encargado) " +
-                    "VALUES (@n, @c, @f, @e)";
+                cmd.CommandText = "INSERT INTO PrestamosMaquinas (inventarioMaquinas, cantidad, fechaPrestamo, encargado, RealizadoPor) " +
+                    "VALUES (@n, @c, @f, @e, @u)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
                 cmd.Parameters.AddWithValue("@e", prestamo.encargado);
                 cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.Parameters.AddWithValue("@u", prestamo.usuario);
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE Maquinas SET cantidad = cantidad - @c WHERE nro = @n";
                 cmd.Parameters.Clear();

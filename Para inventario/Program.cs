@@ -1,3 +1,4 @@
+using Para_inventario.ABM;
 using Para_inventario.Interfaces;
 
 namespace Para_inventario
@@ -13,7 +14,7 @@ namespace Para_inventario
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmPrincipal());
+            Application.Run(new login());
         }
     }
 }

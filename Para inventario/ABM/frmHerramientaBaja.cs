@@ -23,7 +23,7 @@ namespace Para_inventario.Interfaces
         {
             frmPrincipal venta= new frmPrincipal();
             venta.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void frmHerramientaBaja_Load(object sender, EventArgs e)

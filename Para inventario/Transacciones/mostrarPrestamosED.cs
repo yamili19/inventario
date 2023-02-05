@@ -23,7 +23,7 @@ namespace Para_inventario.Transacciones
         {
             prestamoED ventana = new prestamoED();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void mostrarPrestamosED_Load(object sender, EventArgs e)

@@ -34,7 +34,7 @@ namespace Para_inventario.Interfaces
         {
             frmPrincipal ventana = new frmPrincipal();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

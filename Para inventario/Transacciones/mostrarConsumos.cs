@@ -23,7 +23,7 @@ namespace Para_inventario.Transacciones
         {
             Consumos ventana = new Consumos();
             ventana.Show(); 
-            this.Hide();
+            this.Close();
         }
 
         private void mostrarConsumos_Load(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace Para_inventario.ABM
         {
             frmPrincipal ventana = new frmPrincipal();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void reponerConsumibles_Load(object sender, EventArgs e)

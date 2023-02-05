@@ -26,11 +26,12 @@ namespace Para_inventario.Transacciones
         {
             frmPrincipal ventana = new frmPrincipal();
             ventana.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void prestamoMaquina_Load(object sender, EventArgs e)
         {
+            lblUser.Text = "Usuario: " + ValoresPublicos.nombreUsuario;
             btnEliminar.Enabled = false;
             m.mostrar(dataMaquinaEliminar);
             m.mostrarNombreMaquina(comboMaquina);
@@ -101,7 +102,7 @@ namespace Para_inventario.Transacciones
         {
             mostrarPrestamosMaquinas ventana = new mostrarPrestamosMaquinas();
             ventana.Show();
-            this.Hide();    
+            this.Close();    
         }
     }
 }

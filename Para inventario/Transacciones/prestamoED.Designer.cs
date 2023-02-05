@@ -51,6 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataEDEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             this.SuspendLayout();
@@ -308,6 +309,16 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUser.Location = new System.Drawing.Point(589, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(57, 20);
+            this.lblUser.TabIndex = 44;
+            this.lblUser.Text = "asdasd";
+            // 
             // prestamoED
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -315,6 +326,7 @@
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(763, 454);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNombre);
@@ -365,5 +377,6 @@
         private DataGridViewTextBoxColumn fechaPrestamo;
         private DataGridViewTextBoxColumn fechaDevolucion;
         private DataGridViewTextBoxColumn encargado;
+        private Label lblUser;
     }
 }
