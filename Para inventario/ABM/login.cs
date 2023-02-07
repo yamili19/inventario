@@ -121,7 +121,7 @@ namespace Para_inventario.ABM
                 }
                 else
                 {
-                    MessageBox.Show("El nombre de usuario o la contraseña ingresados es incorrecto");
+                    MessageBox.Show("El nombre de usuario o la contraseña ingresados son incorrectos");
                 }
             }
         }
