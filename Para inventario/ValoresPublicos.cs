@@ -10,5 +10,6 @@ namespace Para_inventario
     {
         static public int nroUsuario;
         static public string nombreUsuario;
+        static public DataGridView listaUsuarios;
     }
 }

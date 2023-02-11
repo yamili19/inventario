@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dataPrestamos = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnRegistrarDev = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.txtEncargado = new System.Windows.Forms.ToolStripTextBox();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.inventarioHerramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.herramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +36,12 @@
             this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RealizadoPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnRegistrarDev = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.txtEncargado = new System.Windows.Forms.ToolStripTextBox();
+            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,60 @@
             this.dataPrestamos.Size = new System.Drawing.Size(814, 323);
             this.dataPrestamos.TabIndex = 21;
             this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
+            // 
+            // inventarioHerramienta
+            // 
+            this.inventarioHerramienta.DataPropertyName = "inventarioHerramienta";
+            this.inventarioHerramienta.HeaderText = "inventarioHerramienta";
+            this.inventarioHerramienta.Name = "inventarioHerramienta";
+            this.inventarioHerramienta.ReadOnly = true;
+            this.inventarioHerramienta.Visible = false;
+            // 
+            // herramienta
+            // 
+            this.herramienta.DataPropertyName = "herramienta";
+            this.herramienta.HeaderText = "Herramienta";
+            this.herramienta.Name = "herramienta";
+            this.herramienta.ReadOnly = true;
+            this.herramienta.Width = 150;
+            // 
+            // cantidadDisponible
+            // 
+            this.cantidadDisponible.DataPropertyName = "cantidad";
+            this.cantidadDisponible.HeaderText = "Cantidad";
+            this.cantidadDisponible.Name = "cantidadDisponible";
+            this.cantidadDisponible.ReadOnly = true;
+            // 
+            // fechaPrestamo
+            // 
+            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
+            this.fechaPrestamo.HeaderText = "Fecha Prestamo";
+            this.fechaPrestamo.Name = "fechaPrestamo";
+            this.fechaPrestamo.ReadOnly = true;
+            this.fechaPrestamo.Width = 150;
+            // 
+            // fechaDevolucion
+            // 
+            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
+            this.fechaDevolucion.HeaderText = "Fecha Devolucion";
+            this.fechaDevolucion.Name = "fechaDevolucion";
+            this.fechaDevolucion.ReadOnly = true;
+            this.fechaDevolucion.Width = 150;
+            // 
+            // encargado
+            // 
+            this.encargado.DataPropertyName = "solicitante";
+            this.encargado.HeaderText = "Solicitante";
+            this.encargado.Name = "encargado";
+            this.encargado.ReadOnly = true;
+            this.encargado.Width = 120;
+            // 
+            // RealizadoPor
+            // 
+            this.RealizadoPor.DataPropertyName = "Responsable";
+            this.RealizadoPor.HeaderText = "Responsable";
+            this.RealizadoPor.Name = "RealizadoPor";
+            this.RealizadoPor.ReadOnly = true;
             // 
             // btnVolver
             // 
@@ -117,7 +171,7 @@
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(90, 24);
-            this.toolStripLabel2.Text = "Encargado: ";
+            this.toolStripLabel2.Text = "Solicitante: ";
             // 
             // txtEncargado
             // 
@@ -135,60 +189,6 @@
             this.btnBuscar.Size = new System.Drawing.Size(23, 24);
             this.btnBuscar.Text = "toolStripButton1";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // inventarioHerramienta
-            // 
-            this.inventarioHerramienta.DataPropertyName = "inventarioHerramienta";
-            this.inventarioHerramienta.HeaderText = "inventarioHerramienta";
-            this.inventarioHerramienta.Name = "inventarioHerramienta";
-            this.inventarioHerramienta.ReadOnly = true;
-            this.inventarioHerramienta.Visible = false;
-            // 
-            // herramienta
-            // 
-            this.herramienta.DataPropertyName = "herramienta";
-            this.herramienta.HeaderText = "Herramienta";
-            this.herramienta.Name = "herramienta";
-            this.herramienta.ReadOnly = true;
-            this.herramienta.Width = 150;
-            // 
-            // cantidadDisponible
-            // 
-            this.cantidadDisponible.DataPropertyName = "cantidad";
-            this.cantidadDisponible.HeaderText = "Cantidad";
-            this.cantidadDisponible.Name = "cantidadDisponible";
-            this.cantidadDisponible.ReadOnly = true;
-            // 
-            // fechaPrestamo
-            // 
-            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
-            this.fechaPrestamo.HeaderText = "Fecha Prestamo";
-            this.fechaPrestamo.Name = "fechaPrestamo";
-            this.fechaPrestamo.ReadOnly = true;
-            this.fechaPrestamo.Width = 150;
-            // 
-            // fechaDevolucion
-            // 
-            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
-            this.fechaDevolucion.HeaderText = "Fecha Devolucion";
-            this.fechaDevolucion.Name = "fechaDevolucion";
-            this.fechaDevolucion.ReadOnly = true;
-            this.fechaDevolucion.Width = 150;
-            // 
-            // encargado
-            // 
-            this.encargado.DataPropertyName = "encargado";
-            this.encargado.HeaderText = "Encargado";
-            this.encargado.Name = "encargado";
-            this.encargado.ReadOnly = true;
-            this.encargado.Width = 120;
-            // 
-            // RealizadoPor
-            // 
-            this.RealizadoPor.DataPropertyName = "RealizadoPor";
-            this.RealizadoPor.HeaderText = "Realizado Por";
-            this.RealizadoPor.Name = "RealizadoPor";
-            this.RealizadoPor.ReadOnly = true;
             // 
             // mostrarPrestamoHerramienta
             // 

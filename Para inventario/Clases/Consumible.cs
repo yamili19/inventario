@@ -11,17 +11,20 @@ namespace Para_inventario.Clases
     {
         public int nro { get; set; }    
         public string nombre { get; set; }
-        public int cantidadDisponible { get; set; } 
-        public int cantidadComprada { get; set; }
+        public double cantidadDisponible { get; set; } 
+        public double cantidadComprada { get; set; }
+        public string unidad { get; set; }  
+
 
         public Consumible() { } 
 
-        public Consumible(int nro, string nombre, int cantidadDisponible, int cantidadComprada)
+        public Consumible(int nro, string nombre, int cantidadDisponible, int cantidadComprada, string unidad)
         {
             this.nro = nro;
             this.nombre = nombre;
             this.cantidadDisponible = cantidadDisponible;
             this.cantidadComprada = cantidadComprada;
+            this.unidad = unidad;
         }
 
         public void agregar(Consumible consumible)

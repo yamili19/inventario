@@ -43,7 +43,7 @@ namespace Para_inventario.Transacciones
             if (resultado || comboMaquina.SelectedIndex == -1 || maskCantidad.Text == 0.ToString() || maskCantidad.Text == null ||
                 txtNombre.Text == "")
             {
-                MessageBox.Show("Primero seleccione una máquina e ingrese una cantidad y nombre del encargado del prestamo y " +
+                MessageBox.Show("Primero seleccione una máquina e ingrese una cantidad y nombre del solicitante del prestamo y " +
                     "por favor no repita máquina");
             }
             else

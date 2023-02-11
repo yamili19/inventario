@@ -70,7 +70,7 @@ namespace Para_inventario.Transacciones
             bool restulado = estaED(Convert.ToInt32(comboED.SelectedValue));
             if (restulado || comboED.SelectedIndex == -1 || maskCantidad.Text == 0.ToString() || maskCantidad.Text == null || txtNombre.Text == "") 
             {
-                MessageBox.Show("Primero seleccione un elemento de dibujo e ingrese una cantidad y nombre del encargado del prestamo " +
+                MessageBox.Show("Primero seleccione un elemento de dibujo e ingrese una cantidad y nombre del solicitante del prestamo " +
                     "y por favor no repita elemento de dibujo");
             }
             else

@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.txtUnidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -82,7 +84,7 @@
             // maskCantidadComprada
             // 
             this.maskCantidadComprada.Location = new System.Drawing.Point(236, 74);
-            this.maskCantidadComprada.Mask = "99999";
+            this.maskCantidadComprada.Mask = "99.99";
             this.maskCantidadComprada.Name = "maskCantidadComprada";
             this.maskCantidadComprada.Size = new System.Drawing.Size(44, 23);
             this.maskCantidadComprada.TabIndex = 23;
@@ -116,6 +118,23 @@
             this.lblNombre.TabIndex = 20;
             this.lblNombre.Text = "Nombre:";
             // 
+            // txtUnidad
+            // 
+            this.txtUnidad.Location = new System.Drawing.Point(235, 109);
+            this.txtUnidad.Name = "txtUnidad";
+            this.txtUnidad.Size = new System.Drawing.Size(144, 23);
+            this.txtUnidad.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(143, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 21);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Unidad:";
+            // 
             // agregarConsumible
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -123,6 +142,8 @@
             this.BackgroundImage = global::Para_inventario.Properties.Resources.precision_erasers_group;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(595, 152);
+            this.Controls.Add(this.txtUnidad);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.checkCantidad);
             this.Controls.Add(this.maskCantidadComprada);
             this.Controls.Add(this.label1);
@@ -149,5 +170,7 @@
         private Label label1;
         private TextBox txtNombre;
         private Label lblNombre;
+        private TextBox txtUnidad;
+        private Label label2;
     }
 }

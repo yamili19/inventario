@@ -37,12 +37,6 @@
             this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPrestamos = new System.Windows.Forms.DataGridView();
-            this.inventarioHerramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.herramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboHerramienta = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,6 +48,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
+            this.inventarioHerramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.herramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasBaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             this.SuspendLayout();
@@ -158,52 +158,6 @@
             this.dataPrestamos.TabIndex = 20;
             this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
             // 
-            // inventarioHerramienta
-            // 
-            this.inventarioHerramienta.DataPropertyName = "inventarioHerramienta";
-            this.inventarioHerramienta.HeaderText = "inventarioHerramienta";
-            this.inventarioHerramienta.Name = "inventarioHerramienta";
-            this.inventarioHerramienta.ReadOnly = true;
-            this.inventarioHerramienta.Visible = false;
-            // 
-            // herramienta
-            // 
-            this.herramienta.DataPropertyName = "herramienta";
-            this.herramienta.HeaderText = "Herramienta";
-            this.herramienta.Name = "herramienta";
-            this.herramienta.ReadOnly = true;
-            this.herramienta.Width = 150;
-            // 
-            // cantidadDisponible
-            // 
-            this.cantidadDisponible.DataPropertyName = "cantidad";
-            this.cantidadDisponible.HeaderText = "Cantidad";
-            this.cantidadDisponible.Name = "cantidadDisponible";
-            this.cantidadDisponible.ReadOnly = true;
-            // 
-            // fechaPrestamo
-            // 
-            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
-            this.fechaPrestamo.HeaderText = "Fecha Prestamo";
-            this.fechaPrestamo.Name = "fechaPrestamo";
-            this.fechaPrestamo.ReadOnly = true;
-            this.fechaPrestamo.Width = 150;
-            // 
-            // fechaDevolucion
-            // 
-            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
-            this.fechaDevolucion.HeaderText = "Fecha Devolucion";
-            this.fechaDevolucion.Name = "fechaDevolucion";
-            this.fechaDevolucion.ReadOnly = true;
-            this.fechaDevolucion.Width = 150;
-            // 
-            // encargado
-            // 
-            this.encargado.HeaderText = "Encargado";
-            this.encargado.Name = "encargado";
-            this.encargado.ReadOnly = true;
-            this.encargado.Width = 120;
-            // 
             // comboHerramienta
             // 
             this.comboHerramienta.FormattingEnabled = true;
@@ -304,7 +258,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 34;
-            this.label3.Text = "Encargado: ";
+            this.label3.Text = "Solicitante: ";
             // 
             // btnEliminar
             // 
@@ -331,6 +285,53 @@
             this.lblUser.Size = new System.Drawing.Size(57, 20);
             this.lblUser.TabIndex = 45;
             this.lblUser.Text = "asdasd";
+            // 
+            // inventarioHerramienta
+            // 
+            this.inventarioHerramienta.DataPropertyName = "inventarioHerramienta";
+            this.inventarioHerramienta.HeaderText = "inventarioHerramienta";
+            this.inventarioHerramienta.Name = "inventarioHerramienta";
+            this.inventarioHerramienta.ReadOnly = true;
+            this.inventarioHerramienta.Visible = false;
+            // 
+            // herramienta
+            // 
+            this.herramienta.DataPropertyName = "herramienta";
+            this.herramienta.HeaderText = "Herramienta";
+            this.herramienta.Name = "herramienta";
+            this.herramienta.ReadOnly = true;
+            this.herramienta.Width = 150;
+            // 
+            // cantidadDisponible
+            // 
+            this.cantidadDisponible.DataPropertyName = "cantidad";
+            this.cantidadDisponible.HeaderText = "Cantidad";
+            this.cantidadDisponible.Name = "cantidadDisponible";
+            this.cantidadDisponible.ReadOnly = true;
+            // 
+            // fechaPrestamo
+            // 
+            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
+            this.fechaPrestamo.HeaderText = "Fecha Prestamo";
+            this.fechaPrestamo.Name = "fechaPrestamo";
+            this.fechaPrestamo.ReadOnly = true;
+            this.fechaPrestamo.Width = 150;
+            // 
+            // fechaDevolucion
+            // 
+            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
+            this.fechaDevolucion.HeaderText = "Fecha Devolucion";
+            this.fechaDevolucion.Name = "fechaDevolucion";
+            this.fechaDevolucion.ReadOnly = true;
+            this.fechaDevolucion.Width = 150;
+            // 
+            // encargado
+            // 
+            this.encargado.DataPropertyName = "solicitante";
+            this.encargado.HeaderText = "Solicitante";
+            this.encargado.Name = "encargado";
+            this.encargado.ReadOnly = true;
+            this.encargado.Width = 120;
             // 
             // prestamoHerramientas
             // 
@@ -385,13 +386,13 @@
         private Button btnRegistrarPrestamos;
         private TextBox txtNombre;
         private Label label3;
+        private Button btnEliminar;
+        private Label lblUser;
         private DataGridViewTextBoxColumn inventarioHerramienta;
         private DataGridViewTextBoxColumn herramienta;
         private DataGridViewTextBoxColumn cantidadDisponible;
         private DataGridViewTextBoxColumn fechaPrestamo;
         private DataGridViewTextBoxColumn fechaDevolucion;
         private DataGridViewTextBoxColumn encargado;
-        private Button btnEliminar;
-        private Label lblUser;
     }
 }

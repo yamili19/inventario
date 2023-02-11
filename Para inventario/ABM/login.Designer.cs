@@ -33,18 +33,11 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtContraseñaCrear = new System.Windows.Forms.TextBox();
-            this.txtUsuarioCrear = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.btnCrear = new System.Windows.Forms.Button();
             this.dataUsuarios = new System.Windows.Forms.DataGridView();
             this.nroUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCrearUsuario = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,45 +91,6 @@
             this.lblNombre.TabIndex = 35;
             this.lblNombre.Text = "Usuario: ";
             // 
-            // txtContraseñaCrear
-            // 
-            this.txtContraseñaCrear.Location = new System.Drawing.Point(182, 184);
-            this.txtContraseñaCrear.Name = "txtContraseñaCrear";
-            this.txtContraseñaCrear.PasswordChar = '*';
-            this.txtContraseñaCrear.Size = new System.Drawing.Size(155, 23);
-            this.txtContraseñaCrear.TabIndex = 42;
-            this.txtContraseñaCrear.Visible = false;
-            // 
-            // txtUsuarioCrear
-            // 
-            this.txtUsuarioCrear.Location = new System.Drawing.Point(182, 151);
-            this.txtUsuarioCrear.Name = "txtUsuarioCrear";
-            this.txtUsuarioCrear.Size = new System.Drawing.Size(155, 23);
-            this.txtUsuarioCrear.TabIndex = 41;
-            this.txtUsuarioCrear.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(62, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 21);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Contraseña: ";
-            this.label1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(90, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 21);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Usuario: ";
-            this.label2.Visible = false;
-            // 
             // btnIniciarSesion
             // 
             this.btnIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -144,29 +98,13 @@
             this.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnIniciarSesion.Location = new System.Drawing.Point(261, 112);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(209, 112);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(92, 23);
             this.btnIniciarSesion.TabIndex = 43;
             this.btnIniciarSesion.Text = "Iniciar Sesión";
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
-            // 
-            // btnCrear
-            // 
-            this.btnCrear.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCrear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrear.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCrear.ForeColor = System.Drawing.Color.Brown;
-            this.btnCrear.Location = new System.Drawing.Point(163, 112);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(92, 23);
-            this.btnCrear.TabIndex = 44;
-            this.btnCrear.Text = "Crear Usuario";
-            this.btnCrear.UseVisualStyleBackColor = true;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // dataUsuarios
             // 
@@ -178,11 +116,11 @@
             this.nroUsuario,
             this.nombreUsuario,
             this.contraseña});
-            this.dataUsuarios.Location = new System.Drawing.Point(289, 151);
+            this.dataUsuarios.Location = new System.Drawing.Point(62, 0);
             this.dataUsuarios.Name = "dataUsuarios";
             this.dataUsuarios.ReadOnly = true;
             this.dataUsuarios.RowTemplate.Height = 25;
-            this.dataUsuarios.Size = new System.Drawing.Size(143, 77);
+            this.dataUsuarios.Size = new System.Drawing.Size(75, 47);
             this.dataUsuarios.TabIndex = 45;
             this.dataUsuarios.Visible = false;
             // 
@@ -208,56 +146,15 @@
             this.contraseña.ReadOnly = true;
             this.contraseña.Visible = false;
             // 
-            // btnCrearUsuario
-            // 
-            this.btnCrearUsuario.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCrearUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCrearUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearUsuario.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCrearUsuario.ForeColor = System.Drawing.Color.Brown;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(261, 213);
-            this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(92, 23);
-            this.btnCrearUsuario.TabIndex = 46;
-            this.btnCrearUsuario.Text = "Crear Usuario";
-            this.btnCrearUsuario.UseVisualStyleBackColor = true;
-            this.btnCrearUsuario.Visible = false;
-            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.ForeColor = System.Drawing.Color.Black;
-            this.btnVolver.Location = new System.Drawing.Point(163, 213);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(54, 23);
-            this.btnVolver.TabIndex = 47;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Visible = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.images;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(430, 257);
-            this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnCrearUsuario);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(430, 154);
             this.Controls.Add(this.dataUsuarios);
-            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnIniciarSesion);
-            this.Controls.Add(this.txtContraseñaCrear);
-            this.Controls.Add(this.txtUsuarioCrear);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContraseña);
@@ -280,18 +177,11 @@
         private TextBox txtContraseña;
         private Label lblContraseña;
         private Label lblNombre;
-        private TextBox txtContraseñaCrear;
-        private TextBox txtUsuarioCrear;
-        private Label label1;
-        private Label label2;
         private Button btnIniciarSesion;
-        private Button btnCrear;
         private DataGridView dataUsuarios;
         private DataGridViewTextBoxColumn nroUsuario;
         private DataGridViewTextBoxColumn nombreUsuario;
         private DataGridViewTextBoxColumn contraseña;
-        private Button btnCrearUsuario;
-        private Button btnVolver;
         private TextBox txtUsuario;
     }
 }

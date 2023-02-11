@@ -21,14 +21,15 @@ namespace Para_inventario.Servicios
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection= cn;
-                cmd.CommandText = "INSERT INTO Consumibles (nombre, cantidadComprada, cantidadDisponible) " +
-                    "VALUES (@nombre, @cantidadComprada, @cantidadDisponible)";
+                cmd.Connection = cn;
+                cmd.CommandText = "INSERT INTO Consumibles (nombre, cantidadComprada, cantidadDisponible, unidad) " +
+                    "VALUES (@n, @cc, @cd, @u)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", consumible.nombre);
-                cmd.Parameters.AddWithValue("@cantidadComprada", consumible.cantidadComprada);
-                cmd.Parameters.AddWithValue("@cantidadDisponible", consumible.cantidadDisponible);
-                cn.Open();  
+                cmd.Parameters.AddWithValue("@n", consumible.nombre);
+                cmd.Parameters.AddWithValue("@cc", consumible.cantidadComprada);
+                cmd.Parameters.AddWithValue("@cd", consumible.cantidadDisponible);
+                cmd.Parameters.AddWithValue("@u", consumible.unidad);
+                cn.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)
@@ -140,7 +141,8 @@ namespace Para_inventario.Servicios
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "UPDATE Consumibles SET cantidadComprada = @c, cantidadDisponible = cantidadDisponible + @c" +
+                cn.Open();
+                cmd.CommandText = "UPDATE Consumibles SET cantidadComprada = @c, cantidadDisponible = cantidadDisponible + @c " +
                     "WHERE nro = @n";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@c", consumible.cantidadComprada);
@@ -148,9 +150,9 @@ namespace Para_inventario.Servicios
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Consumible repuesto exitósamente");
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show(ex.Message);
             }
             finally
             {

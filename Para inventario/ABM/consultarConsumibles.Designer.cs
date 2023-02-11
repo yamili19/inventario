@@ -38,6 +38,7 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumiblesConsultar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(366, 383);
+            this.btnVolver.Location = new System.Drawing.Point(385, 383);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(128, 38);
             this.btnVolver.TabIndex = 21;
@@ -67,12 +68,13 @@
             this.nro,
             this.nombre,
             this.cantidadDisponible,
-            this.cantidadComprada});
-            this.dataConsumiblesConsultar.Location = new System.Drawing.Point(101, 71);
+            this.cantidadComprada,
+            this.unidad});
+            this.dataConsumiblesConsultar.Location = new System.Drawing.Point(21, 71);
             this.dataConsumiblesConsultar.Name = "dataConsumiblesConsultar";
             this.dataConsumiblesConsultar.ReadOnly = true;
             this.dataConsumiblesConsultar.RowTemplate.Height = 25;
-            this.dataConsumiblesConsultar.Size = new System.Drawing.Size(393, 306);
+            this.dataConsumiblesConsultar.Size = new System.Drawing.Size(492, 306);
             this.dataConsumiblesConsultar.TabIndex = 27;
             // 
             // txtNombre
@@ -141,6 +143,13 @@
             this.cantidadComprada.ReadOnly = true;
             this.cantidadComprada.Visible = false;
             // 
+            // unidad
+            // 
+            this.unidad.DataPropertyName = "unidad";
+            this.unidad.HeaderText = "Unidad";
+            this.unidad.Name = "unidad";
+            this.unidad.ReadOnly = true;
+            // 
             // consultarConsumibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -177,5 +186,6 @@
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn cantidadDisponible;
         private DataGridViewTextBoxColumn cantidadComprada;
+        private DataGridViewTextBoxColumn unidad;
     }
 }

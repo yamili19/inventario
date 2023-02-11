@@ -34,7 +34,7 @@ namespace Para_inventario.Clases
             servicio.crear(usuario);
         }
 
-        public bool verificarUsuario(Usuario usuario, DataGridView Usuarios)
+        public void verificarUsuario(Usuario usuario, DataGridView Usuarios)
         {
             bool bandera = false;
             for (int i = 0; i < Usuarios.Rows.Count;i++)
@@ -42,16 +42,15 @@ namespace Para_inventario.Clases
                 if (Usuarios.Rows[i].Cells["nombreUsuario"].Value.ToString() == usuario.nombreUsuario)
                 {
                     bandera = true;
-                    MessageBox.Show("El nombre de usuario ingresado no existe, por favor ingrese otro");
+                    MessageBox.Show("El nombre de usuario ingresado ya existe, por favor ingrese otro");
                     break;
                 }
             }
             if (bandera == false)
             {
                 this.crear(usuario);
-                this.mostrar(Usuarios);
+                this.mostrar(Usuarios);  
             }
-            return bandera; 
         }
 
         public (bool,int) login(Usuario usuario, DataGridView usuarios)

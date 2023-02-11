@@ -20,11 +20,6 @@ namespace Para_inventario.Interfaces
             InitializeComponent();
         }
 
-        //private void agregarHerramientasToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmHerramientas ventana = new frmHerramientas();
@@ -193,6 +188,7 @@ namespace Para_inventario.Interfaces
             Consumible consumible = new Consumible();
             consumible.mostrar(dataConsumiblesConsultar);
             mostrarPorcentajeStock();
+            esAdmin();
         }
 
         private void registrarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -229,8 +225,8 @@ namespace Para_inventario.Interfaces
             for (int i = 0; i < dataConsumiblesConsultar.Rows.Count; i++)
             {
                 string nombre = dataConsumiblesConsultar.Rows[i].Cells["nombre"].Value.ToString();
-                int stock = int.Parse(dataConsumiblesConsultar.Rows[i].Cells["cantidadDisponible"].Value.ToString());
-                int cantidad = int.Parse(dataConsumiblesConsultar.Rows[i].Cells["cantidadComprada"].Value.ToString());
+                double stock = double.Parse(dataConsumiblesConsultar.Rows[i].Cells["cantidadDisponible"].Value.ToString());
+                double cantidad = double.Parse(dataConsumiblesConsultar.Rows[i].Cells["cantidadComprada"].Value.ToString());
                 if (stock >= cantidad)
                 {
                     list.Add("Consumible: " + nombre + " Porcentaje de Stock: " + "100%\n");
@@ -249,6 +245,41 @@ namespace Para_inventario.Interfaces
                 textoAnterior = lab.Text;
             }
             MessageBox.Show(lab.Text, "Información sobre el stock", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void registrarDevolverPréstamoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            prestamosInformatica ventana = new prestamosInformatica();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void esAdmin()
+        {
+            if (ValoresPublicos.nombreUsuario == "Amira Yarbouh")
+            {
+                crearUsuarioToolStripMenuItem.Enabled = true;  
+                eliminarUsuariosToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                crearUsuarioToolStripMenuItem.Enabled = false;
+                eliminarUsuariosToolStripMenuItem.Enabled= false;
+            }
+        }
+
+        private void crearUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            crearUsuario ventana = new crearUsuario();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void eliminarUsuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            eliminarUsuarios ventana = new eliminarUsuarios();
+            ventana.Show();
+            this.Close();
         }
     }
 }

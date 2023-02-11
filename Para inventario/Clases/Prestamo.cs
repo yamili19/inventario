@@ -116,7 +116,7 @@ namespace Para_inventario.Clases
             bs.DataSource = prestamos.DataSource;
             try
             {
-                bs.Filter = "encargado like '%" + nombre + "%'";
+                bs.Filter = "solicitante like '%" + nombre + "%'";
                 prestamos.DataSource = bs;
                 if (prestamos.RowCount == 0)
                 {
@@ -127,6 +127,33 @@ namespace Para_inventario.Clases
             {
                 prestamos.Refresh();    
             }
+        }
+
+        public void registrarPrestInformatica(DataGridView prestamos)
+        {
+            ServicioPrestamo servicio = new ServicioPrestamo();
+            for (int i = 0; i < prestamos.Rows.Count; i++)
+            {
+                this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cant"].Value.ToString());
+                this.usuario = ValoresPublicos.nroUsuario;
+                this.fechaPrestamo = Convert.ToDateTime(prestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
+                this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioInformatica"].Value.ToString());
+                this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
+                servicio.registrarPrestamoInformatica(this);
+            }
+            MessageBox.Show("Prestamos registrados exitósamente");
+        }
+
+        public void mostrarPrestInformatica(DataGridView prestamos)
+        {
+            ServicioPrestamo servicio = new ServicioPrestamo();
+            prestamos.DataSource = servicio.mostrarPrestInformatica();
+        }
+
+        public void registrarDevInformatica(Prestamo prestamo)
+        {
+            ServicioPrestamo servicio = new ServicioPrestamo();
+            servicio.registrarDevInformatica(prestamo);
         }
     }
 }

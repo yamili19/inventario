@@ -18,7 +18,7 @@ namespace Para_inventario.Servicios
             SqlConnection cn = new SqlConnection(cadenaBD);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
-            cmd.CommandText = "SELECT * FROM Usuario ORDER BY nombreUsuario";
+            cmd.CommandText = "SELECT * FROM Usuario WHERE estado = 1 ORDER BY nombreUsuario";
             DataTable dt = new DataTable();
             cn.Open();  
             SqlDataAdapter ad = new SqlDataAdapter(cmd);

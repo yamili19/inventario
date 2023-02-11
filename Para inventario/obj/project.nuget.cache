@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M6qTjau5ClVD2heBzxTOSqcW1JX9RTEH7TYnDCgQ5wxJuJm1dLx+cYAdoC+gyFOzP3Q7LThxn3ynUrQ7noMdcQ==",
+  "dgSpecHash": "4azIQ449TQSHUsvRWHg0ggZw7JiVFTWgKfZv6HG6OP7sIzrmTO8hH68XKey92oYU9wonDjgB+4EHT2OHWxx2uw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\YamiYB\\OneDrive\\Escritorio\\inventario\\base-de-datos\\Para inventario\\Para inventario.csproj",
+  "projectFilePath": "C:\\Users\\YamiYB\\OneDrive\\Escritorio\\Inventario\\base-de-datos\\Para inventario\\Para inventario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\YamiYB\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\YamiYB\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,7 +39,7 @@ namespace Para_inventario.Interfaces
             {
                 try
                 {
-                    if (int.Parse(maskCantidadComprada.Text) > 0)
+                    if (double.Parse(maskCantidadComprada.Text) > 0)
                     {
                         checkCantidad.Text = "";
                         btnAgregar.Enabled = true;
@@ -79,27 +80,50 @@ namespace Para_inventario.Interfaces
         {
             btnAgregar.Enabled = false;
             checkCantidad.Checked = false;  
-            txtNombre.Text = null;
-            maskCantidadComprada.Text = null;   
+            txtNombre.Text = "";
+            maskCantidadComprada.Text = null;
+            txtUnidad.Text = "";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtNombre.Text == "")
+                if (int.TryParse(maskCantidadComprada.Text, out int result))
                 {
-                    MessageBox.Show("Falta completar algunos datos");
+                    if (txtNombre.Text == "")
+                    {
+                        MessageBox.Show("Falta completar algunos datos");
+                    }
+                    else
+                    {
+                        Consumible consumible = new Consumible();
+                        consumible.nombre = txtNombre.Text;
+                        consumible.cantidadDisponible = double.Parse(maskCantidadComprada.Text);
+                        consumible.cantidadComprada = double.Parse(maskCantidadComprada.Text);
+                        consumible.unidad = "unidades";
+                        consumible.agregar(consumible);
+                        MessageBox.Show("Consumible agregado exitósamente");
+                        limpiarCampos();
+                    }
                 }
                 else
                 {
-                    Consumible consumible = new Consumible();
-                    consumible.nombre = txtNombre.Text;
-                    consumible.cantidadDisponible = int.Parse(maskCantidadComprada.Text);
-                    consumible.cantidadComprada = int.Parse(maskCantidadComprada.Text);
-                    consumible.agregar(consumible);
-                    MessageBox.Show("Consumible agregado exitósamente");
-                    limpiarCampos();
+                    if (txtUnidad.Text == "" || txtNombre.Text == "")
+                    {
+                        MessageBox.Show("Falta completar algunos datos");
+                    }
+                    else
+                    {
+                        Consumible consumible = new Consumible();
+                        consumible.nombre = txtNombre.Text;
+                        consumible.cantidadComprada = double.Parse(maskCantidadComprada.Text);
+                        consumible.cantidadDisponible = double.Parse(maskCantidadComprada.Text);
+                        consumible.unidad = txtUnidad.Text;
+                        consumible.agregar(consumible);
+                        MessageBox.Show("Consumuble agregado exitósamente");
+                        limpiarCampos();
+                    }
                 }
             }
             catch (Exception)
