@@ -45,9 +45,9 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(384, 9);
+            this.txtNombre.Location = new System.Drawing.Point(384, 10);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(134, 23);
+            this.txtNombre.Size = new System.Drawing.Size(134, 25);
             this.txtNombre.TabIndex = 37;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -55,7 +55,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(301, 9);
+            this.label4.Location = new System.Drawing.Point(301, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 36;
@@ -63,9 +63,9 @@
             // 
             // txtNroInventario
             // 
-            this.txtNroInventario.Location = new System.Drawing.Point(177, 9);
+            this.txtNroInventario.Location = new System.Drawing.Point(177, 10);
             this.txtNroInventario.Name = "txtNroInventario";
-            this.txtNroInventario.Size = new System.Drawing.Size(100, 23);
+            this.txtNroInventario.Size = new System.Drawing.Size(100, 25);
             this.txtNroInventario.TabIndex = 35;
             this.txtNroInventario.TextChanged += new System.EventHandler(this.txtNroInventario_TextChanged);
             // 
@@ -73,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(45, 9);
+            this.label3.Location = new System.Drawing.Point(45, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 21);
             this.label3.TabIndex = 34;
@@ -87,9 +87,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(593, 350);
+            this.btnVolver.Location = new System.Drawing.Point(593, 397);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 38;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -108,11 +108,11 @@
             this.lugar,
             this.adquirido,
             this.cantidad});
-            this.dataMuebleConsultar.Location = new System.Drawing.Point(45, 36);
+            this.dataMuebleConsultar.Location = new System.Drawing.Point(45, 41);
             this.dataMuebleConsultar.Name = "dataMuebleConsultar";
             this.dataMuebleConsultar.ReadOnly = true;
             this.dataMuebleConsultar.RowTemplate.Height = 25;
-            this.dataMuebleConsultar.Size = new System.Drawing.Size(643, 296);
+            this.dataMuebleConsultar.Size = new System.Drawing.Size(643, 335);
             this.dataMuebleConsultar.TabIndex = 39;
             // 
             // nro
@@ -159,17 +159,18 @@
             // 
             // consultarMueble
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.fbd5599924f8;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(748, 417);
+            this.ClientSize = new System.Drawing.Size(748, 473);
             this.Controls.Add(this.dataMuebleConsultar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNroInventario);
             this.Controls.Add(this.label3);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "consultarMueble";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

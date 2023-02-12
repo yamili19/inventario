@@ -61,9 +61,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(259, 413);
+            this.btnVolver.Location = new System.Drawing.Point(259, 468);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 17;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -80,11 +80,11 @@
             this.nombreConsumible,
             this.cantidad,
             this.fecha});
-            this.dataConsumos.Location = new System.Drawing.Point(42, 100);
+            this.dataConsumos.Location = new System.Drawing.Point(42, 113);
             this.dataConsumos.Name = "dataConsumos";
             this.dataConsumos.ReadOnly = true;
             this.dataConsumos.RowTemplate.Height = 25;
-            this.dataConsumos.Size = new System.Drawing.Size(493, 307);
+            this.dataConsumos.Size = new System.Drawing.Size(493, 348);
             this.dataConsumos.TabIndex = 18;
             this.dataConsumos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataConsumos_CellClick);
             // 
@@ -121,17 +121,18 @@
             // 
             // comboConsumible
             // 
+            this.comboConsumible.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboConsumible.FormattingEnabled = true;
-            this.comboConsumible.Location = new System.Drawing.Point(215, 19);
+            this.comboConsumible.Location = new System.Drawing.Point(215, 22);
             this.comboConsumible.Name = "comboConsumible";
-            this.comboConsumible.Size = new System.Drawing.Size(240, 23);
+            this.comboConsumible.Size = new System.Drawing.Size(240, 25);
             this.comboConsumible.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(42, 18);
+            this.label1.Location = new System.Drawing.Point(42, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 20);
             this.label1.TabIndex = 20;
@@ -141,7 +142,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(123, 56);
+            this.label2.Location = new System.Drawing.Point(123, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 22;
@@ -155,9 +156,9 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(266, 54);
+            this.btnAgregar.Location = new System.Drawing.Point(266, 61);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(70, 25);
+            this.btnAgregar.Size = new System.Drawing.Size(70, 28);
             this.btnAgregar.TabIndex = 23;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -171,9 +172,9 @@
             this.btnRegistrarConsumos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnRegistrarConsumos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarConsumos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrarConsumos.Location = new System.Drawing.Point(360, 413);
+            this.btnRegistrarConsumos.Location = new System.Drawing.Point(360, 468);
             this.btnRegistrarConsumos.Name = "btnRegistrarConsumos";
-            this.btnRegistrarConsumos.Size = new System.Drawing.Size(175, 38);
+            this.btnRegistrarConsumos.Size = new System.Drawing.Size(175, 43);
             this.btnRegistrarConsumos.TabIndex = 24;
             this.btnRegistrarConsumos.Text = "Registrar Consumos";
             this.btnRegistrarConsumos.UseVisualStyleBackColor = false;
@@ -191,10 +192,10 @@
             this.cantidadDisponible,
             this.cantidadComprada,
             this.unidad});
-            this.dataConsumibles.Location = new System.Drawing.Point(42, 319);
+            this.dataConsumibles.Location = new System.Drawing.Point(42, 362);
             this.dataConsumibles.Name = "dataConsumibles";
             this.dataConsumibles.RowTemplate.Height = 25;
-            this.dataConsumibles.Size = new System.Drawing.Size(115, 88);
+            this.dataConsumibles.Size = new System.Drawing.Size(115, 100);
             this.dataConsumibles.TabIndex = 26;
             this.dataConsumibles.Visible = false;
             // 
@@ -233,9 +234,9 @@
             // 
             // dtFecha
             // 
-            this.dtFecha.Location = new System.Drawing.Point(461, 19);
+            this.dtFecha.Location = new System.Drawing.Point(461, 22);
             this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(200, 23);
+            this.dtFecha.Size = new System.Drawing.Size(200, 25);
             this.dtFecha.TabIndex = 28;
             this.dtFecha.Visible = false;
             // 
@@ -247,9 +248,9 @@
             this.btnMostrarConsumos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnMostrarConsumos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarConsumos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMostrarConsumos.Location = new System.Drawing.Point(86, 413);
+            this.btnMostrarConsumos.Location = new System.Drawing.Point(86, 468);
             this.btnMostrarConsumos.Name = "btnMostrarConsumos";
-            this.btnMostrarConsumos.Size = new System.Drawing.Size(167, 38);
+            this.btnMostrarConsumos.Size = new System.Drawing.Size(167, 43);
             this.btnMostrarConsumos.TabIndex = 29;
             this.btnMostrarConsumos.Text = "Mostrar Consumos";
             this.btnMostrarConsumos.UseVisualStyleBackColor = false;
@@ -263,9 +264,9 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.Location = new System.Drawing.Point(342, 54);
+            this.btnEliminar.Location = new System.Drawing.Point(342, 61);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(67, 25);
+            this.btnEliminar.Size = new System.Drawing.Size(67, 28);
             this.btnEliminar.TabIndex = 36;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -273,20 +274,21 @@
             // 
             // maskedCantidad
             // 
-            this.maskedCantidad.Location = new System.Drawing.Point(209, 56);
+            this.maskedCantidad.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskedCantidad.Location = new System.Drawing.Point(209, 63);
             this.maskedCantidad.Mask = "99.99";
             this.maskedCantidad.Name = "maskedCantidad";
-            this.maskedCantidad.Size = new System.Drawing.Size(44, 23);
+            this.maskedCantidad.Size = new System.Drawing.Size(44, 25);
             this.maskedCantidad.TabIndex = 37;
             this.maskedCantidad.ValidatingType = typeof(int);
             // 
             // Consumos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(594, 478);
+            this.ClientSize = new System.Drawing.Size(594, 542);
             this.Controls.Add(this.maskedCantidad);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnMostrarConsumos);
@@ -299,6 +301,7 @@
             this.Controls.Add(this.comboConsumible);
             this.Controls.Add(this.dataConsumos);
             this.Controls.Add(this.btnVolver);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Consumos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

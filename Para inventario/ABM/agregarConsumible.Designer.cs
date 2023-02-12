@@ -47,9 +47,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(422, 76);
+            this.btnVolver.Location = new System.Drawing.Point(422, 86);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -63,9 +63,9 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(422, 24);
+            this.btnAgregar.Location = new System.Drawing.Point(422, 27);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(95, 38);
+            this.btnAgregar.Size = new System.Drawing.Size(95, 43);
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -75,7 +75,7 @@
             // 
             this.checkCantidad.AutoSize = true;
             this.checkCantidad.ForeColor = System.Drawing.Color.Red;
-            this.checkCantidad.Location = new System.Drawing.Point(287, 77);
+            this.checkCantidad.Location = new System.Drawing.Point(287, 87);
             this.checkCantidad.Name = "checkCantidad";
             this.checkCantidad.Size = new System.Drawing.Size(15, 14);
             this.checkCantidad.TabIndex = 24;
@@ -83,10 +83,11 @@
             // 
             // maskCantidadComprada
             // 
-            this.maskCantidadComprada.Location = new System.Drawing.Point(236, 74);
+            this.maskCantidadComprada.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskCantidadComprada.Location = new System.Drawing.Point(236, 84);
             this.maskCantidadComprada.Mask = "99.99";
             this.maskCantidadComprada.Name = "maskCantidadComprada";
-            this.maskCantidadComprada.Size = new System.Drawing.Size(44, 23);
+            this.maskCantidadComprada.Size = new System.Drawing.Size(44, 25);
             this.maskCantidadComprada.TabIndex = 23;
             this.maskCantidadComprada.ValidatingType = typeof(int);
             this.maskCantidadComprada.TextChanged += new System.EventHandler(this.maskCantidadComprada_TextChanged);
@@ -95,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(52, 76);
+            this.label1.Location = new System.Drawing.Point(52, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 21);
             this.label1.TabIndex = 22;
@@ -103,16 +104,17 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(236, 33);
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.Location = new System.Drawing.Point(236, 37);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(144, 23);
+            this.txtNombre.Size = new System.Drawing.Size(144, 25);
             this.txtNombre.TabIndex = 21;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(144, 33);
+            this.lblNombre.Location = new System.Drawing.Point(144, 37);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(78, 21);
             this.lblNombre.TabIndex = 20;
@@ -120,16 +122,17 @@
             // 
             // txtUnidad
             // 
-            this.txtUnidad.Location = new System.Drawing.Point(235, 109);
+            this.txtUnidad.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUnidad.Location = new System.Drawing.Point(235, 124);
             this.txtUnidad.Name = "txtUnidad";
-            this.txtUnidad.Size = new System.Drawing.Size(144, 23);
+            this.txtUnidad.Size = new System.Drawing.Size(144, 25);
             this.txtUnidad.TabIndex = 26;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(143, 109);
+            this.label2.Location = new System.Drawing.Point(143, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 21);
             this.label2.TabIndex = 25;
@@ -137,11 +140,11 @@
             // 
             // agregarConsumible
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.precision_erasers_group;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(595, 152);
+            this.ClientSize = new System.Drawing.Size(595, 172);
             this.Controls.Add(this.txtUnidad);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkCantidad);
@@ -151,6 +154,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregar);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "agregarConsumible";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

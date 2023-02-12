@@ -174,13 +174,6 @@ namespace Para_inventario.Interfaces
             this.Close();
         }
 
-        private void registrarConsumoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Consumos ventana = new Consumos();
-            ventana.Show();
-            this.Close();
-        }
-
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -279,6 +272,13 @@ namespace Para_inventario.Interfaces
         {
             eliminarUsuarios ventana = new eliminarUsuarios();
             ventana.Show();
+            this.Close();
+        }
+
+        private void registrarConsumosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consumos ventana = new Consumos();
+            ventana.Show(); 
             this.Close();
         }
     }

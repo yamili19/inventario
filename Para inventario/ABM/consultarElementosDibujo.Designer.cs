@@ -49,9 +49,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(625, 390);
+            this.btnVolver.Location = new System.Drawing.Point(625, 442);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 20;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -68,11 +68,11 @@
             this.nombre,
             this.cantidadDisponible,
             this.cantidadComprada});
-            this.dataEDConsultar.Location = new System.Drawing.Point(77, 70);
+            this.dataEDConsultar.Location = new System.Drawing.Point(77, 79);
             this.dataEDConsultar.Name = "dataEDConsultar";
             this.dataEDConsultar.ReadOnly = true;
             this.dataEDConsultar.RowTemplate.Height = 25;
-            this.dataEDConsultar.Size = new System.Drawing.Size(643, 314);
+            this.dataEDConsultar.Size = new System.Drawing.Size(643, 356);
             this.dataEDConsultar.TabIndex = 22;
             // 
             // nro
@@ -111,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(77, 33);
+            this.label3.Location = new System.Drawing.Point(77, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 21);
             this.label3.TabIndex = 26;
@@ -119,9 +119,9 @@
             // 
             // txtNroInventario
             // 
-            this.txtNroInventario.Location = new System.Drawing.Point(209, 33);
+            this.txtNroInventario.Location = new System.Drawing.Point(209, 37);
             this.txtNroInventario.Name = "txtNroInventario";
-            this.txtNroInventario.Size = new System.Drawing.Size(100, 23);
+            this.txtNroInventario.Size = new System.Drawing.Size(100, 25);
             this.txtNroInventario.TabIndex = 27;
             this.txtNroInventario.TextChanged += new System.EventHandler(this.txtNroInventario_TextChanged);
             // 
@@ -129,7 +129,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(333, 33);
+            this.label4.Location = new System.Drawing.Point(333, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 28;
@@ -137,25 +137,26 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(416, 33);
+            this.txtNombre.Location = new System.Drawing.Point(416, 37);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(134, 23);
+            this.txtNombre.Size = new System.Drawing.Size(134, 25);
             this.txtNombre.TabIndex = 29;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // consultarElementosDibujo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.tablero_regla_t;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 510);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNroInventario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataEDConsultar);
             this.Controls.Add(this.btnVolver);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "consultarElementosDibujo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

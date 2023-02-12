@@ -43,9 +43,9 @@
             this.btnCrearUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearUsuario.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCrearUsuario.Location = new System.Drawing.Point(200, 110);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(200, 125);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(92, 23);
+            this.btnCrearUsuario.Size = new System.Drawing.Size(92, 26);
             this.btnCrearUsuario.TabIndex = 50;
             this.btnCrearUsuario.Text = "Crear Usuario";
             this.btnCrearUsuario.UseVisualStyleBackColor = true;
@@ -53,24 +53,24 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(173, 81);
+            this.txtContraseña.Location = new System.Drawing.Point(173, 92);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(155, 23);
+            this.txtContraseña.Size = new System.Drawing.Size(155, 25);
             this.txtContraseña.TabIndex = 49;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(173, 48);
+            this.txtUsuario.Location = new System.Drawing.Point(173, 54);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(155, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(155, 25);
             this.txtUsuario.TabIndex = 48;
             // 
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblContraseña.Location = new System.Drawing.Point(53, 81);
+            this.lblContraseña.Location = new System.Drawing.Point(53, 92);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(108, 21);
             this.lblContraseña.TabIndex = 47;
@@ -80,7 +80,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(81, 48);
+            this.lblNombre.Location = new System.Drawing.Point(81, 54);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(80, 21);
             this.lblNombre.TabIndex = 46;
@@ -96,24 +96,25 @@
             this.btnCerrar.Image = global::Para_inventario.Properties.Resources.Captura;
             this.btnCerrar.Location = new System.Drawing.Point(392, -2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
+            this.btnCerrar.Size = new System.Drawing.Size(40, 35);
             this.btnCerrar.TabIndex = 52;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // crearUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(430, 154);
+            this.ClientSize = new System.Drawing.Size(430, 175);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCrearUsuario);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblNombre);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "crearUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

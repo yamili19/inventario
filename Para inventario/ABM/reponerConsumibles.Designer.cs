@@ -32,9 +32,9 @@
             this.btnReponer = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboConsumible = new System.Windows.Forms.ComboBox();
-            this.maskCantidad = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkCantidad = new System.Windows.Forms.CheckBox();
+            this.maskCantidad = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -45,9 +45,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(187, 105);
+            this.btnVolver.Location = new System.Drawing.Point(229, 113);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 29;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -62,9 +62,9 @@
             this.btnReponer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnReponer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReponer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnReponer.Location = new System.Drawing.Point(298, 105);
+            this.btnReponer.Location = new System.Drawing.Point(340, 113);
             this.btnReponer.Name = "btnReponer";
-            this.btnReponer.Size = new System.Drawing.Size(95, 38);
+            this.btnReponer.Size = new System.Drawing.Size(95, 43);
             this.btnReponer.TabIndex = 30;
             this.btnReponer.Text = "Reponer";
             this.btnReponer.UseVisualStyleBackColor = false;
@@ -74,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(96, 27);
+            this.label1.Location = new System.Drawing.Point(96, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 20);
             this.label1.TabIndex = 33;
@@ -82,27 +82,18 @@
             // 
             // comboConsumible
             // 
+            this.comboConsumible.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboConsumible.FormattingEnabled = true;
-            this.comboConsumible.Location = new System.Drawing.Point(269, 28);
+            this.comboConsumible.Location = new System.Drawing.Point(263, 29);
             this.comboConsumible.Name = "comboConsumible";
-            this.comboConsumible.Size = new System.Drawing.Size(121, 23);
+            this.comboConsumible.Size = new System.Drawing.Size(172, 25);
             this.comboConsumible.TabIndex = 32;
-            // 
-            // maskCantidad
-            // 
-            this.maskCantidad.Location = new System.Drawing.Point(269, 63);
-            this.maskCantidad.Mask = "99999";
-            this.maskCantidad.Name = "maskCantidad";
-            this.maskCantidad.Size = new System.Drawing.Size(38, 23);
-            this.maskCantidad.TabIndex = 35;
-            this.maskCantidad.ValidatingType = typeof(int);
-            this.maskCantidad.TextChanged += new System.EventHandler(this.maskedCantidad_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(94, 63);
+            this.label2.Location = new System.Drawing.Point(94, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 20);
             this.label2.TabIndex = 34;
@@ -112,26 +103,38 @@
             // 
             this.checkCantidad.AutoSize = true;
             this.checkCantidad.ForeColor = System.Drawing.Color.Red;
-            this.checkCantidad.Location = new System.Drawing.Point(313, 67);
+            this.checkCantidad.Location = new System.Drawing.Point(313, 76);
             this.checkCantidad.Name = "checkCantidad";
             this.checkCantidad.Size = new System.Drawing.Size(15, 14);
             this.checkCantidad.TabIndex = 36;
             this.checkCantidad.UseVisualStyleBackColor = true;
             // 
+            // maskCantidad
+            // 
+            this.maskCantidad.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskCantidad.Location = new System.Drawing.Point(263, 71);
+            this.maskCantidad.Mask = "99.99";
+            this.maskCantidad.Name = "maskCantidad";
+            this.maskCantidad.Size = new System.Drawing.Size(44, 25);
+            this.maskCantidad.TabIndex = 37;
+            this.maskCantidad.ValidatingType = typeof(int);
+            this.maskCantidad.TextChanged += new System.EventHandler(this.maskedCantidad_TextChanged);
+            // 
             // reponerConsumibles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.precision_erasers_group;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(514, 172);
-            this.Controls.Add(this.checkCantidad);
+            this.ClientSize = new System.Drawing.Size(514, 195);
             this.Controls.Add(this.maskCantidad);
+            this.Controls.Add(this.checkCantidad);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboConsumible);
             this.Controls.Add(this.btnReponer);
             this.Controls.Add(this.btnVolver);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "reponerConsumibles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -147,8 +150,8 @@
         private Button btnReponer;
         private Label label1;
         private ComboBox comboConsumible;
-        private MaskedTextBox maskCantidad;
         private Label label2;
         private CheckBox checkCantidad;
+        private MaskedTextBox maskCantidad;
     }
 }

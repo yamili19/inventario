@@ -60,11 +60,11 @@
             this.fechaDevolucion,
             this.encargado,
             this.RealizadoPor});
-            this.dataPrestamos.Location = new System.Drawing.Point(45, 38);
+            this.dataPrestamos.Location = new System.Drawing.Point(45, 43);
             this.dataPrestamos.Name = "dataPrestamos";
             this.dataPrestamos.ReadOnly = true;
             this.dataPrestamos.RowTemplate.Height = 25;
-            this.dataPrestamos.Size = new System.Drawing.Size(814, 345);
+            this.dataPrestamos.Size = new System.Drawing.Size(814, 391);
             this.dataPrestamos.TabIndex = 23;
             this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
             // 
@@ -130,9 +130,9 @@
             this.btnRegistrarDev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnRegistrarDev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarDev.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrarDev.Location = new System.Drawing.Point(675, 389);
+            this.btnRegistrarDev.Location = new System.Drawing.Point(675, 441);
             this.btnRegistrarDev.Name = "btnRegistrarDev";
-            this.btnRegistrarDev.Size = new System.Drawing.Size(184, 38);
+            this.btnRegistrarDev.Size = new System.Drawing.Size(184, 43);
             this.btnRegistrarDev.TabIndex = 36;
             this.btnRegistrarDev.Text = "Registrar Devolución";
             this.btnRegistrarDev.UseVisualStyleBackColor = false;
@@ -146,9 +146,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(563, 389);
+            this.btnVolver.Location = new System.Drawing.Point(563, 441);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 35;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -192,15 +192,16 @@
             // 
             // mostrarPrestamosED
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(896, 450);
+            this.ClientSize = new System.Drawing.Size(896, 510);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnRegistrarDev);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dataPrestamos);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mostrarPrestamosED";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

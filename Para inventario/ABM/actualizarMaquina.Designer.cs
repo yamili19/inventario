@@ -48,9 +48,9 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnActualizar.Location = new System.Drawing.Point(474, 347);
+            this.btnActualizar.Location = new System.Drawing.Point(474, 393);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(107, 38);
+            this.btnActualizar.Size = new System.Drawing.Size(107, 43);
             this.btnActualizar.TabIndex = 30;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -64,9 +64,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(354, 347);
+            this.btnVolver.Location = new System.Drawing.Point(354, 393);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 29;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@
             // 
             this.lblHerramientas.AutoSize = true;
             this.lblHerramientas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblHerramientas.Location = new System.Drawing.Point(250, 20);
+            this.lblHerramientas.Location = new System.Drawing.Point(250, 23);
             this.lblHerramientas.Name = "lblHerramientas";
             this.lblHerramientas.Size = new System.Drawing.Size(149, 20);
             this.lblHerramientas.TabIndex = 28;
@@ -94,10 +94,10 @@
             this.marca,
             this.lugar,
             this.cantidad});
-            this.dataMaquinasActualizar.Location = new System.Drawing.Point(37, 43);
+            this.dataMaquinasActualizar.Location = new System.Drawing.Point(37, 49);
             this.dataMaquinasActualizar.Name = "dataMaquinasActualizar";
             this.dataMaquinasActualizar.RowTemplate.Height = 25;
-            this.dataMaquinasActualizar.Size = new System.Drawing.Size(544, 289);
+            this.dataMaquinasActualizar.Size = new System.Drawing.Size(544, 328);
             this.dataMaquinasActualizar.TabIndex = 27;
             this.dataMaquinasActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMaquinasActualizar_CellClick);
             this.dataMaquinasActualizar.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataMaquinasActualizar_DataError);
@@ -137,15 +137,16 @@
             // 
             // actualizarMaquina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.Maquinaria_pesada;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(650, 408);
+            this.ClientSize = new System.Drawing.Size(650, 462);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblHerramientas);
             this.Controls.Add(this.dataMaquinasActualizar);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "actualizarMaquina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

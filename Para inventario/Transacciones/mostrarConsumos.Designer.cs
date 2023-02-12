@@ -46,9 +46,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(438, 351);
+            this.btnVolver.Location = new System.Drawing.Point(438, 398);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 18;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -65,11 +65,11 @@
             this.nombreConsumible,
             this.cantidad,
             this.fecha});
-            this.dataConsumos.Location = new System.Drawing.Point(40, 38);
+            this.dataConsumos.Location = new System.Drawing.Point(40, 43);
             this.dataConsumos.Name = "dataConsumos";
             this.dataConsumos.ReadOnly = true;
             this.dataConsumos.RowTemplate.Height = 25;
-            this.dataConsumos.Size = new System.Drawing.Size(493, 307);
+            this.dataConsumos.Size = new System.Drawing.Size(493, 348);
             this.dataConsumos.TabIndex = 19;
             // 
             // nro_inventario
@@ -107,7 +107,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(218, 15);
+            this.label1.Location = new System.Drawing.Point(218, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 20);
             this.label1.TabIndex = 20;
@@ -115,13 +115,14 @@
             // 
             // mostrarConsumos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
-            this.ClientSize = new System.Drawing.Size(573, 407);
+            this.ClientSize = new System.Drawing.Size(573, 461);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataConsumos);
             this.Controls.Add(this.btnVolver);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mostrarConsumos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

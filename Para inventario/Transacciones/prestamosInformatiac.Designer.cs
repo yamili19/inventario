@@ -61,7 +61,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUser.Location = new System.Drawing.Point(578, 28);
+            this.lblUser.Location = new System.Drawing.Point(578, 32);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(57, 20);
             this.lblUser.TabIndex = 66;
@@ -75,9 +75,9 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.Location = new System.Drawing.Point(647, 66);
+            this.btnEliminar.Location = new System.Drawing.Point(647, 75);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(67, 30);
+            this.btnEliminar.Size = new System.Drawing.Size(67, 34);
             this.btnEliminar.TabIndex = 65;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -87,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(275, 74);
+            this.label3.Location = new System.Drawing.Point(275, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 64;
@@ -95,9 +95,10 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(371, 71);
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.Location = new System.Drawing.Point(371, 80);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(201, 23);
+            this.txtNombre.Size = new System.Drawing.Size(201, 25);
             this.txtNombre.TabIndex = 63;
             // 
             // btnAgregar
@@ -108,9 +109,9 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(578, 66);
+            this.btnAgregar.Location = new System.Drawing.Point(578, 75);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(63, 30);
+            this.btnAgregar.Size = new System.Drawing.Size(63, 34);
             this.btnAgregar.TabIndex = 62;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -118,10 +119,11 @@
             // 
             // maskCantidad
             // 
-            this.maskCantidad.Location = new System.Drawing.Point(170, 71);
+            this.maskCantidad.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskCantidad.Location = new System.Drawing.Point(170, 80);
             this.maskCantidad.Mask = "99999";
             this.maskCantidad.Name = "maskCantidad";
-            this.maskCantidad.Size = new System.Drawing.Size(100, 23);
+            this.maskCantidad.Size = new System.Drawing.Size(100, 25);
             this.maskCantidad.TabIndex = 61;
             this.maskCantidad.ValidatingType = typeof(int);
             // 
@@ -129,7 +131,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(85, 74);
+            this.label2.Location = new System.Drawing.Point(85, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 60;
@@ -139,7 +141,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(65, 43);
+            this.label1.Location = new System.Drawing.Point(65, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 59;
@@ -147,10 +149,11 @@
             // 
             // comboInformatica
             // 
+            this.comboInformatica.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboInformatica.FormattingEnabled = true;
-            this.comboInformatica.Location = new System.Drawing.Point(170, 40);
+            this.comboInformatica.Location = new System.Drawing.Point(170, 45);
             this.comboInformatica.Name = "comboInformatica";
-            this.comboInformatica.Size = new System.Drawing.Size(172, 23);
+            this.comboInformatica.Size = new System.Drawing.Size(172, 25);
             this.comboInformatica.TabIndex = 58;
             // 
             // dataPrestamos
@@ -166,11 +169,11 @@
             this.fechaPrestamo,
             this.fechaDevolucion,
             this.encargado});
-            this.dataPrestamos.Location = new System.Drawing.Point(45, 102);
+            this.dataPrestamos.Location = new System.Drawing.Point(45, 116);
             this.dataPrestamos.Name = "dataPrestamos";
             this.dataPrestamos.ReadOnly = true;
             this.dataPrestamos.RowTemplate.Height = 25;
-            this.dataPrestamos.Size = new System.Drawing.Size(714, 269);
+            this.dataPrestamos.Size = new System.Drawing.Size(714, 305);
             this.dataPrestamos.TabIndex = 67;
             this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
             // 
@@ -229,9 +232,9 @@
             this.btnMostrarPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnMostrarPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarPrestamos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMostrarPrestamos.Location = new System.Drawing.Point(310, 387);
+            this.btnMostrarPrestamos.Location = new System.Drawing.Point(310, 439);
             this.btnMostrarPrestamos.Name = "btnMostrarPrestamos";
-            this.btnMostrarPrestamos.Size = new System.Drawing.Size(167, 38);
+            this.btnMostrarPrestamos.Size = new System.Drawing.Size(167, 43);
             this.btnMostrarPrestamos.TabIndex = 70;
             this.btnMostrarPrestamos.Text = "Mostrar Prestamos";
             this.btnMostrarPrestamos.UseVisualStyleBackColor = false;
@@ -245,9 +248,9 @@
             this.btnRegistrarPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnRegistrarPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarPrestamos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrarPrestamos.Location = new System.Drawing.Point(584, 387);
+            this.btnRegistrarPrestamos.Location = new System.Drawing.Point(584, 439);
             this.btnRegistrarPrestamos.Name = "btnRegistrarPrestamos";
-            this.btnRegistrarPrestamos.Size = new System.Drawing.Size(175, 38);
+            this.btnRegistrarPrestamos.Size = new System.Drawing.Size(175, 43);
             this.btnRegistrarPrestamos.TabIndex = 69;
             this.btnRegistrarPrestamos.Text = "Registrar Prestamos";
             this.btnRegistrarPrestamos.UseVisualStyleBackColor = false;
@@ -261,9 +264,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(483, 387);
+            this.btnVolver.Location = new System.Drawing.Point(483, 439);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 68;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -281,11 +284,11 @@
             this.marca,
             this.lugar,
             this.cantidad});
-            this.dataInformaticaEliminar.Location = new System.Drawing.Point(22, 339);
+            this.dataInformaticaEliminar.Location = new System.Drawing.Point(22, 384);
             this.dataInformaticaEliminar.Name = "dataInformaticaEliminar";
             this.dataInformaticaEliminar.ReadOnly = true;
             this.dataInformaticaEliminar.RowTemplate.Height = 25;
-            this.dataInformaticaEliminar.Size = new System.Drawing.Size(95, 86);
+            this.dataInformaticaEliminar.Size = new System.Drawing.Size(95, 97);
             this.dataInformaticaEliminar.TabIndex = 71;
             this.dataInformaticaEliminar.Visible = false;
             // 
@@ -326,11 +329,11 @@
             // 
             // prestamosInformatica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 510);
             this.Controls.Add(this.dataInformaticaEliminar);
             this.Controls.Add(this.btnMostrarPrestamos);
             this.Controls.Add(this.btnRegistrarPrestamos);
@@ -345,6 +348,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboInformatica);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "prestamosInformatica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

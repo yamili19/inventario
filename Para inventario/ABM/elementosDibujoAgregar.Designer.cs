@@ -45,9 +45,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(428, 79);
+            this.btnVolver.Location = new System.Drawing.Point(428, 90);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 14;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -61,9 +61,9 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(428, 27);
+            this.btnAgregar.Location = new System.Drawing.Point(428, 31);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(95, 38);
+            this.btnAgregar.Size = new System.Drawing.Size(95, 43);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -71,16 +71,17 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(214, 36);
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.Location = new System.Drawing.Point(214, 41);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(144, 23);
+            this.txtNombre.Size = new System.Drawing.Size(144, 25);
             this.txtNombre.TabIndex = 16;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(122, 36);
+            this.lblNombre.Location = new System.Drawing.Point(122, 41);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(77, 21);
             this.lblNombre.TabIndex = 15;
@@ -90,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(30, 79);
+            this.label1.Location = new System.Drawing.Point(30, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 21);
             this.label1.TabIndex = 17;
@@ -98,10 +99,11 @@
             // 
             // maskCantidadComprada
             // 
-            this.maskCantidadComprada.Location = new System.Drawing.Point(214, 77);
+            this.maskCantidadComprada.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskCantidadComprada.Location = new System.Drawing.Point(214, 87);
             this.maskCantidadComprada.Mask = "99999";
             this.maskCantidadComprada.Name = "maskCantidadComprada";
-            this.maskCantidadComprada.Size = new System.Drawing.Size(44, 23);
+            this.maskCantidadComprada.Size = new System.Drawing.Size(44, 25);
             this.maskCantidadComprada.TabIndex = 18;
             this.maskCantidadComprada.ValidatingType = typeof(int);
             this.maskCantidadComprada.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
@@ -110,7 +112,7 @@
             // 
             this.checkCantidad.AutoSize = true;
             this.checkCantidad.ForeColor = System.Drawing.Color.Red;
-            this.checkCantidad.Location = new System.Drawing.Point(265, 80);
+            this.checkCantidad.Location = new System.Drawing.Point(265, 91);
             this.checkCantidad.Name = "checkCantidad";
             this.checkCantidad.Size = new System.Drawing.Size(15, 14);
             this.checkCantidad.TabIndex = 19;
@@ -118,11 +120,11 @@
             // 
             // elementosDibujoAgregar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.tablero_regla_t;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(579, 154);
+            this.ClientSize = new System.Drawing.Size(579, 175);
             this.Controls.Add(this.checkCantidad);
             this.Controls.Add(this.maskCantidadComprada);
             this.Controls.Add(this.label1);
@@ -130,6 +132,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregar);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "elementosDibujoAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

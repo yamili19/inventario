@@ -54,10 +54,10 @@
             this.material,
             this.lugar,
             this.cantidad});
-            this.dataHerramientasActualizar.Location = new System.Drawing.Point(79, 45);
+            this.dataHerramientasActualizar.Location = new System.Drawing.Point(79, 51);
             this.dataHerramientasActualizar.Name = "dataHerramientasActualizar";
             this.dataHerramientasActualizar.RowTemplate.Height = 25;
-            this.dataHerramientasActualizar.Size = new System.Drawing.Size(643, 334);
+            this.dataHerramientasActualizar.Size = new System.Drawing.Size(643, 379);
             this.dataHerramientasActualizar.TabIndex = 16;
             this.dataHerramientasActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHerramientasActualizar_CellClick);
             this.dataHerramientasActualizar.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataHerramientasActualizar_DataError);
@@ -111,9 +111,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(495, 397);
+            this.btnVolver.Location = new System.Drawing.Point(495, 450);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 17;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -127,9 +127,9 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnActualizar.Location = new System.Drawing.Point(615, 397);
+            this.btnActualizar.Location = new System.Drawing.Point(615, 450);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(107, 38);
+            this.btnActualizar.Size = new System.Drawing.Size(107, 43);
             this.btnActualizar.TabIndex = 18;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -139,7 +139,7 @@
             // 
             this.lblHerramientas.AutoSize = true;
             this.lblHerramientas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblHerramientas.Location = new System.Drawing.Point(313, 25);
+            this.lblHerramientas.Location = new System.Drawing.Point(313, 28);
             this.lblHerramientas.Name = "lblHerramientas";
             this.lblHerramientas.Size = new System.Drawing.Size(176, 20);
             this.lblHerramientas.TabIndex = 22;
@@ -147,15 +147,16 @@
             // 
             // frmHerramientasActualizacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.iStock_493585980;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 452);
+            this.ClientSize = new System.Drawing.Size(800, 512);
             this.Controls.Add(this.lblHerramientas);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dataHerramientasActualizar);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHerramientasActualizacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -43,38 +43,39 @@ namespace Para_inventario.ABM
             else
             {
                 consumible.nro = Convert.ToInt32(comboConsumible.SelectedValue);
-                consumible.cantidadComprada = int.Parse(maskCantidad.Text);
+                consumible.cantidadComprada = double.Parse(maskCantidad.Text);
                 consumible.reponerConsumible(consumible);
             }
         }
 
         private void maskedCantidad_TextChanged(object sender, EventArgs e)
         {
+            bool bandera = false;
             if (maskCantidad.Text != null)
             {
                 bandera = true;
             }
-            if (bandera == true)
+            if (bandera)
             {
                 try
                 {
-                    if (Convert.ToInt32(maskCantidad.Text) > 0)
+                    if (double.Parse(maskCantidad.Text) > 0)
                     {
-                        checkCantidad.Checked = true;
-                        btnReponer.Enabled = true;
                         checkCantidad.Text = "";
+                        btnReponer.Enabled = true;
+                        checkCantidad.Checked = true;
                         checkCantidad.Enabled = true;
                         checkCantidad.FlatStyle = FlatStyle.Flat;
                         checkCantidad.ForeColor = checkCantidad.Checked ? Color.Green : Color.Red;
                     }
                     else
                     {
-                        btnReponer.Enabled = false;
+                        btnReponer.Enabled = false; 
                         checkCantidad.Checked = false;
+                        checkCantidad.Text = "Debe ingresar una cantidad mayor que 0";
                         checkCantidad.Enabled = true;
-                        checkCantidad.Text = "Error, debe ingresar un numero mayor que 0";
                         checkCantidad.FlatStyle = FlatStyle.Flat;
-                        checkCantidad.ForeColor = checkCantidad.Checked ? Color.Red : Color.Red;
+                        checkCantidad.ForeColor = checkCantidad.Enabled ? Color.Red : Color.Red;
                     }
                 }
                 catch (Exception)

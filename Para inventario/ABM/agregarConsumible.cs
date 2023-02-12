@@ -50,6 +50,7 @@ namespace Para_inventario.Interfaces
                     }
                     else
                     {
+                        btnAgregar.Enabled = false;
                         checkCantidad.Checked = false;
                         checkCantidad.Text = "Debe ingresar una cantidad mayor que 0";
                         checkCantidad.Enabled = true;

@@ -46,9 +46,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(496, 367);
+            this.btnVolver.Location = new System.Drawing.Point(496, 416);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -62,9 +62,9 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.Location = new System.Drawing.Point(623, 367);
+            this.btnEliminar.Location = new System.Drawing.Point(623, 416);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(95, 38);
+            this.btnEliminar.Size = new System.Drawing.Size(95, 43);
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -81,11 +81,11 @@
             this.nombre,
             this.cantidadDisponible,
             this.cantidadComprada});
-            this.dataEDEliminar.Location = new System.Drawing.Point(75, 47);
+            this.dataEDEliminar.Location = new System.Drawing.Point(75, 53);
             this.dataEDEliminar.Name = "dataEDEliminar";
             this.dataEDEliminar.ReadOnly = true;
             this.dataEDEliminar.RowTemplate.Height = 25;
-            this.dataEDEliminar.Size = new System.Drawing.Size(643, 314);
+            this.dataEDEliminar.Size = new System.Drawing.Size(643, 356);
             this.dataEDEliminar.TabIndex = 17;
             this.dataEDEliminar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEDEliminar_CellClick);
             // 
@@ -123,14 +123,15 @@
             // 
             // eliminarElementosDibujo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.tablero_regla_t;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 510);
             this.Controls.Add(this.dataEDEliminar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "eliminarElementosDibujo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

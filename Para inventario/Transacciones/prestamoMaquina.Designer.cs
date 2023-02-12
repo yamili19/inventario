@@ -40,6 +40,12 @@
             this.btnRegistrarPrestamos = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.dataPrestamos = new System.Windows.Forms.DataGridView();
+            this.inventarioMaquinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maquina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataMaquinaEliminar = new System.Windows.Forms.DataGridView();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,12 +53,6 @@
             this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblUser = new System.Windows.Forms.Label();
-            this.inventarioMaquinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maquina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataMaquinaEliminar)).BeginInit();
             this.SuspendLayout();
@@ -65,9 +65,9 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.Location = new System.Drawing.Point(689, 47);
+            this.btnEliminar.Location = new System.Drawing.Point(689, 53);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(67, 30);
+            this.btnEliminar.Size = new System.Drawing.Size(67, 34);
             this.btnEliminar.TabIndex = 55;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(317, 55);
+            this.label3.Location = new System.Drawing.Point(317, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 54;
@@ -85,9 +85,10 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(413, 52);
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.Location = new System.Drawing.Point(413, 59);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(201, 23);
+            this.txtNombre.Size = new System.Drawing.Size(201, 25);
             this.txtNombre.TabIndex = 53;
             // 
             // btnAgregar
@@ -98,9 +99,9 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(620, 47);
+            this.btnAgregar.Location = new System.Drawing.Point(620, 53);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(63, 30);
+            this.btnAgregar.Size = new System.Drawing.Size(63, 34);
             this.btnAgregar.TabIndex = 52;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -108,10 +109,11 @@
             // 
             // maskCantidad
             // 
-            this.maskCantidad.Location = new System.Drawing.Point(212, 52);
+            this.maskCantidad.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskCantidad.Location = new System.Drawing.Point(212, 59);
             this.maskCantidad.Mask = "99999";
             this.maskCantidad.Name = "maskCantidad";
-            this.maskCantidad.Size = new System.Drawing.Size(100, 23);
+            this.maskCantidad.Size = new System.Drawing.Size(100, 25);
             this.maskCantidad.TabIndex = 51;
             this.maskCantidad.ValidatingType = typeof(int);
             // 
@@ -119,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(127, 55);
+            this.label2.Location = new System.Drawing.Point(127, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 50;
@@ -129,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(127, 24);
+            this.label1.Location = new System.Drawing.Point(127, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 49;
@@ -137,10 +139,11 @@
             // 
             // comboMaquina
             // 
+            this.comboMaquina.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboMaquina.FormattingEnabled = true;
-            this.comboMaquina.Location = new System.Drawing.Point(212, 21);
+            this.comboMaquina.Location = new System.Drawing.Point(212, 24);
             this.comboMaquina.Name = "comboMaquina";
-            this.comboMaquina.Size = new System.Drawing.Size(172, 23);
+            this.comboMaquina.Size = new System.Drawing.Size(172, 25);
             this.comboMaquina.TabIndex = 48;
             // 
             // btnMostrarPrestamos
@@ -151,9 +154,9 @@
             this.btnMostrarPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnMostrarPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarPrestamos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMostrarPrestamos.Location = new System.Drawing.Point(308, 392);
+            this.btnMostrarPrestamos.Location = new System.Drawing.Point(308, 444);
             this.btnMostrarPrestamos.Name = "btnMostrarPrestamos";
-            this.btnMostrarPrestamos.Size = new System.Drawing.Size(167, 38);
+            this.btnMostrarPrestamos.Size = new System.Drawing.Size(167, 43);
             this.btnMostrarPrestamos.TabIndex = 47;
             this.btnMostrarPrestamos.Text = "Mostrar Prestamos";
             this.btnMostrarPrestamos.UseVisualStyleBackColor = false;
@@ -167,9 +170,9 @@
             this.btnRegistrarPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnRegistrarPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarPrestamos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrarPrestamos.Location = new System.Drawing.Point(582, 392);
+            this.btnRegistrarPrestamos.Location = new System.Drawing.Point(582, 444);
             this.btnRegistrarPrestamos.Name = "btnRegistrarPrestamos";
-            this.btnRegistrarPrestamos.Size = new System.Drawing.Size(175, 38);
+            this.btnRegistrarPrestamos.Size = new System.Drawing.Size(175, 43);
             this.btnRegistrarPrestamos.TabIndex = 46;
             this.btnRegistrarPrestamos.Text = "Registrar Prestamos";
             this.btnRegistrarPrestamos.UseVisualStyleBackColor = false;
@@ -183,9 +186,9 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(481, 392);
+            this.btnVolver.Location = new System.Drawing.Point(481, 444);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 38);
+            this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 45;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -204,78 +207,13 @@
             this.fechaPrestamo,
             this.fechaDevolucion,
             this.encargado});
-            this.dataPrestamos.Location = new System.Drawing.Point(42, 94);
+            this.dataPrestamos.Location = new System.Drawing.Point(42, 107);
             this.dataPrestamos.Name = "dataPrestamos";
             this.dataPrestamos.ReadOnly = true;
             this.dataPrestamos.RowTemplate.Height = 25;
-            this.dataPrestamos.Size = new System.Drawing.Size(714, 269);
+            this.dataPrestamos.Size = new System.Drawing.Size(714, 305);
             this.dataPrestamos.TabIndex = 44;
             this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
-            // 
-            // dataMaquinaEliminar
-            // 
-            this.dataMaquinaEliminar.AllowUserToAddRows = false;
-            this.dataMaquinaEliminar.AllowUserToDeleteRows = false;
-            this.dataMaquinaEliminar.AllowUserToOrderColumns = true;
-            this.dataMaquinaEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataMaquinaEliminar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nro,
-            this.nombre,
-            this.marca,
-            this.lugar,
-            this.cantidad});
-            this.dataMaquinaEliminar.Location = new System.Drawing.Point(12, 341);
-            this.dataMaquinaEliminar.Name = "dataMaquinaEliminar";
-            this.dataMaquinaEliminar.ReadOnly = true;
-            this.dataMaquinaEliminar.RowTemplate.Height = 25;
-            this.dataMaquinaEliminar.Size = new System.Drawing.Size(100, 89);
-            this.dataMaquinaEliminar.TabIndex = 56;
-            this.dataMaquinaEliminar.Visible = false;
-            // 
-            // nro
-            // 
-            this.nro.DataPropertyName = "nro";
-            this.nro.HeaderText = "Nro Inventario";
-            this.nro.Name = "nro";
-            this.nro.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // marca
-            // 
-            this.marca.DataPropertyName = "marca";
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            // 
-            // lugar
-            // 
-            this.lugar.DataPropertyName = "lugar";
-            this.lugar.HeaderText = "Lugar";
-            this.lugar.Name = "lugar";
-            this.lugar.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUser.Location = new System.Drawing.Point(620, 9);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(57, 20);
-            this.lblUser.TabIndex = 57;
-            this.lblUser.Text = "asdasd";
             // 
             // inventarioMaquinas
             // 
@@ -324,13 +262,78 @@
             this.encargado.ReadOnly = true;
             this.encargado.Width = 120;
             // 
+            // dataMaquinaEliminar
+            // 
+            this.dataMaquinaEliminar.AllowUserToAddRows = false;
+            this.dataMaquinaEliminar.AllowUserToDeleteRows = false;
+            this.dataMaquinaEliminar.AllowUserToOrderColumns = true;
+            this.dataMaquinaEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataMaquinaEliminar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nro,
+            this.nombre,
+            this.marca,
+            this.lugar,
+            this.cantidad});
+            this.dataMaquinaEliminar.Location = new System.Drawing.Point(12, 386);
+            this.dataMaquinaEliminar.Name = "dataMaquinaEliminar";
+            this.dataMaquinaEliminar.ReadOnly = true;
+            this.dataMaquinaEliminar.RowTemplate.Height = 25;
+            this.dataMaquinaEliminar.Size = new System.Drawing.Size(100, 101);
+            this.dataMaquinaEliminar.TabIndex = 56;
+            this.dataMaquinaEliminar.Visible = false;
+            // 
+            // nro
+            // 
+            this.nro.DataPropertyName = "nro";
+            this.nro.HeaderText = "Nro Inventario";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.DataPropertyName = "marca";
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // lugar
+            // 
+            this.lugar.DataPropertyName = "lugar";
+            this.lugar.HeaderText = "Lugar";
+            this.lugar.Name = "lugar";
+            this.lugar.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUser.Location = new System.Drawing.Point(620, 10);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(57, 20);
+            this.lblUser.TabIndex = 57;
+            this.lblUser.Text = "asdasd";
+            // 
             // prestamoMaquina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 510);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.dataMaquinaEliminar);
             this.Controls.Add(this.btnEliminar);
@@ -345,6 +348,7 @@
             this.Controls.Add(this.btnRegistrarPrestamos);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dataPrestamos);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "prestamoMaquina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
