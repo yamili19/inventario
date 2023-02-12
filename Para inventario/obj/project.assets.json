@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\YamiYB\\OneDrive\\Escritorio\\inventario\\base-de-datos\\Para inventario\\Para inventario.csproj",
+      "projectUniqueName": "C:\\Users\\YamiYB\\OneDrive\\Documentos\\Inventario\\base-de-datos\\Para inventario\\Para inventario.csproj",
       "projectName": "Para inventario",
-      "projectPath": "C:\\Users\\YamiYB\\OneDrive\\Escritorio\\inventario\\base-de-datos\\Para inventario\\Para inventario.csproj",
+      "projectPath": "C:\\Users\\YamiYB\\OneDrive\\Documentos\\Inventario\\base-de-datos\\Para inventario\\Para inventario.csproj",
       "packagesPath": "C:\\Users\\YamiYB\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\YamiYB\\OneDrive\\Escritorio\\inventario\\base-de-datos\\Para inventario\\obj\\",
+      "outputPath": "C:\\Users\\YamiYB\\OneDrive\\Documentos\\Inventario\\base-de-datos\\Para inventario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\YamiYB\\AppData\\Roaming\\NuGet\\NuGet.Config",

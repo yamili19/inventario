@@ -258,13 +258,13 @@ namespace Para_inventario.Interfaces
         {
             if (ValoresPublicos.nombreUsuario == "Amira Yarbouh")
             {
-                crearUsuarioToolStripMenuItem.Enabled = true;  
-                eliminarUsuariosToolStripMenuItem.Enabled = true;
+                crearUsuarioToolStripMenuItem.Visible = true;  
+                eliminarUsuariosToolStripMenuItem.Visible = true;
             }
             else
             {
-                crearUsuarioToolStripMenuItem.Enabled = false;
-                eliminarUsuariosToolStripMenuItem.Enabled= false;
+                crearUsuarioToolStripMenuItem.Visible = false;
+                eliminarUsuariosToolStripMenuItem.Visible = false;
             }
         }
 

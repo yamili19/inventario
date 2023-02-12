@@ -36,7 +36,7 @@ namespace Para_inventario.Transacciones
             }
             else
             {
-                consumible.verificarCantidad(dataConsumibles, Convert.ToInt32(comboConsumible.SelectedValue), int.Parse(maskedCantidad.Text),
+                consumible.verificarCantidad(dataConsumibles, Convert.ToInt32(comboConsumible.SelectedValue), double.Parse(maskedCantidad.Text),
                        dataConsumos, dtFecha.Value);
                 comboConsumible.SelectedIndex = -1;
                 maskedCantidad.Text = null;

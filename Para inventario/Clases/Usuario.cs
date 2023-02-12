@@ -69,5 +69,11 @@ namespace Para_inventario.Clases
             }
             return (bandera, numero);
         }
+
+        public void eliminar(Usuario usuario) 
+        {
+            servicioUsuario servicio = new servicioUsuario();
+            servicio.eliminar(usuario); 
+        }
     }
 }

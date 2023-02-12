@@ -44,10 +44,11 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maskedCantidad = new System.Windows.Forms.MaskedTextBox();
+            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnMostrarConsumos = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.maskedCantidad = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumibles)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +124,7 @@
             this.comboConsumible.FormattingEnabled = true;
             this.comboConsumible.Location = new System.Drawing.Point(215, 19);
             this.comboConsumible.Name = "comboConsumible";
-            this.comboConsumible.Size = new System.Drawing.Size(121, 23);
+            this.comboConsumible.Size = new System.Drawing.Size(240, 23);
             this.comboConsumible.TabIndex = 19;
             // 
             // label1
@@ -188,7 +189,8 @@
             this.nro,
             this.nombre,
             this.cantidadDisponible,
-            this.cantidadComprada});
+            this.cantidadComprada,
+            this.unidad});
             this.dataConsumibles.Location = new System.Drawing.Point(42, 319);
             this.dataConsumibles.Name = "dataConsumibles";
             this.dataConsumibles.RowTemplate.Height = 25;
@@ -223,14 +225,11 @@
             this.cantidadComprada.HeaderText = "Cantidad Comprada";
             this.cantidadComprada.Name = "cantidadComprada";
             // 
-            // maskedCantidad
+            // unidad
             // 
-            this.maskedCantidad.Location = new System.Drawing.Point(215, 56);
-            this.maskedCantidad.Mask = "99999";
-            this.maskedCantidad.Name = "maskedCantidad";
-            this.maskedCantidad.Size = new System.Drawing.Size(38, 23);
-            this.maskedCantidad.TabIndex = 27;
-            this.maskedCantidad.ValidatingType = typeof(int);
+            this.unidad.DataPropertyName = "unidad";
+            this.unidad.HeaderText = "Unidad";
+            this.unidad.Name = "unidad";
             // 
             // dtFecha
             // 
@@ -272,6 +271,15 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // maskedCantidad
+            // 
+            this.maskedCantidad.Location = new System.Drawing.Point(209, 56);
+            this.maskedCantidad.Mask = "99.99";
+            this.maskedCantidad.Name = "maskedCantidad";
+            this.maskedCantidad.Size = new System.Drawing.Size(44, 23);
+            this.maskedCantidad.TabIndex = 37;
+            this.maskedCantidad.ValidatingType = typeof(int);
+            // 
             // Consumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -279,10 +287,10 @@
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(594, 478);
+            this.Controls.Add(this.maskedCantidad);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnMostrarConsumos);
             this.Controls.Add(this.dtFecha);
-            this.Controls.Add(this.maskedCantidad);
             this.Controls.Add(this.dataConsumibles);
             this.Controls.Add(this.btnRegistrarConsumos);
             this.Controls.Add(this.btnAgregar);
@@ -313,11 +321,6 @@
         private Button btnAgregar;
         private Button btnRegistrarConsumos;
         private DataGridView dataConsumibles;
-        private DataGridViewTextBoxColumn nro;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn cantidadDisponible;
-        private DataGridViewTextBoxColumn cantidadComprada;
-        private MaskedTextBox maskedCantidad;
         private DateTimePicker dtFecha;
         private DataGridViewTextBoxColumn nro_inventario;
         private DataGridViewTextBoxColumn nombreConsumible;
@@ -325,5 +328,11 @@
         private DataGridViewTextBoxColumn fecha;
         private Button btnMostrarConsumos;
         private Button btnEliminar;
+        private DataGridViewTextBoxColumn nro;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn cantidadDisponible;
+        private DataGridViewTextBoxColumn cantidadComprada;
+        private DataGridViewTextBoxColumn unidad;
+        private MaskedTextBox maskedCantidad;
     }
 }

@@ -51,5 +51,27 @@ namespace Para_inventario.Servicios
                 cn.Close();
             }
         }
+
+        public void eliminar(Usuario usuario)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "UPDATE Usuario set estado = 0 where nroUsuario = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", usuario.nroUsuario);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);    
+            }
+            finally
+            {
+                cn.Close(); 
+            }
+        }
     }
 }

@@ -114,12 +114,12 @@ namespace Para_inventario.Clases
         {
             ServicioConsumible servicio = new ServicioConsumible();
             nombre.DataSource = servicio.mostrarNombreConsumible();
-            nombre.DisplayMember = "nombre";
+            nombre.DisplayMember = "name";
             nombre.ValueMember = "nro";
             nombre.SelectedIndex = -1;
         }
 
-        public void verificarCantidad(DataGridView consumibles, int nro, int cant, DataGridView consumos, DateTime fecha)
+        public void verificarCantidad(DataGridView consumibles, int nro, double cant, DataGridView consumos, DateTime fecha)
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = consumibles.DataSource;
@@ -127,7 +127,7 @@ namespace Para_inventario.Clases
             {
                 bs.Filter = "nro = '" + nro + "'";
                 consumibles.DataSource = bs.DataSource;
-                int cantidad = Convert.ToInt32(consumibles.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
+                double cantidad = double.Parse(consumibles.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
                 if (cant <= cantidad)
                 {
                     consumos.Rows.Add(consumibles.CurrentRow.Cells["nro"].Value.ToString(), 

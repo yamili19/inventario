@@ -74,7 +74,7 @@ namespace Para_inventario.Servicios
             SqlCommand cmd = new SqlCommand();
             SqlConnection cn = new SqlConnection(cadenaBD);
             cmd.Connection = cn;
-            cmd.CommandText = "SELECT nro, nombre FROM Consumibles";
+            cmd.CommandText = "SELECT nro, CONCAT('Nombre: ', nombre, ' - ', 'Unidad: ', unidad) as name FROM Consumibles";
             cn.Open();
             SqlDataAdapter ad = new SqlDataAdapter(cmd);
             ad.Fill(dt);
@@ -96,12 +96,12 @@ namespace Para_inventario.Servicios
                     cmd.CommandText = "INSERT INTO Consumos VALUES (@n, @c, @f)";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@n", int.Parse(consumos.Rows[i].Cells["nro_inventario"].Value.ToString()));
-                    cmd.Parameters.AddWithValue("@c", int.Parse(consumos.Rows[i].Cells["cantidad"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@c", double.Parse(consumos.Rows[i].Cells["cantidad"].Value.ToString()));
                     cmd.Parameters.AddWithValue("@f", Convert.ToDateTime(consumos.Rows[i].Cells["fecha"].Value.ToString()));
                     cmd.ExecuteNonQuery();
                     cmd.CommandText = "UPDATE Consumibles set cantidadDisponible = cantidadDisponible - @c where nro = @n";
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@c", int.Parse(consumos.Rows[i].Cells["cantidad"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@c", double.Parse(consumos.Rows[i].Cells["cantidad"].Value.ToString()));
                     cmd.Parameters.AddWithValue("@n", int.Parse(consumos.Rows[i].Cells["nro_inventario"].Value.ToString()));
                     cmd.ExecuteNonQuery();
                 }
