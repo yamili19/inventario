@@ -40,28 +40,35 @@ namespace Para_inventario.Clases
         public void eliminar(DataGridView maquinas) 
         {
             int nro = int.Parse(maquinas.CurrentRow.Cells["nro"].Value.ToString());
-            DialogResult resultado = MessageBox.Show("Desea eliminar la máquina con el nro de inventario "
-                + nro.ToString() + "?", "Información", MessageBoxButtons.YesNo);
+            DialogResult resultado = MessageBox.Show("Desea eliminar la máquina con codigo "
+                + int.Parse(maquinas.CurrentRow.Cells["Codigo"].Value.ToString()) + "?", "Información", MessageBoxButtons.YesNo);
             if (resultado == DialogResult.Yes) 
             {
+                this.nro = nro;
                 ServicioMaquina servicio = new ServicioMaquina();
-                servicio.eliminar(nro);
+                servicio.eliminar(this, int.Parse(maquinas.CurrentRow.Cells["Codigo"].Value.ToString()));
                 maquinas.Rows.Remove(maquinas.CurrentRow);
                 maquinas.Refresh();
                 MessageBox.Show("Máquina eliminada exitósamente");
             }
         }
 
-        public void actualizar(Maquina maquina)
+        public void reportarProblema(int codigo, string problema)
         {
-            DialogResult resultado = MessageBox.Show("Confirme actualización de máquina con nro de inventario " + maquina.nro,
-                "Información", MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes) 
-            {
-                ServicioMaquina servicio = new ServicioMaquina();
-                servicio.actualizar(maquina);
-                MessageBox.Show("Máquina actualizada exitósamente");
-            }
+            ServicioMaquina servicio = new ServicioMaquina();
+            servicio.reportarProblema(codigo, problema);
+        }
+
+        public void mostrarStock(DataGridView maquinas)
+        {
+            ServicioMaquina servicio = new ServicioMaquina();
+            maquinas.DataSource = servicio.mostrarStock();
+        }
+
+        public void actualizarStock(Maquina maquina, int cant)
+        {
+            ServicioMaquina servicio = new ServicioMaquina();
+            servicio.actualizarStock(maquina, cant);
         }
 
         public void consultarNroInventario(TextBox nro ,DataGridView maquinas)
@@ -77,7 +84,7 @@ namespace Para_inventario.Clases
             {
                 try
                 {
-                    bs.Filter = "nro = '" + int.Parse(nro.Text) + "'";
+                    bs.Filter = "Codigo = '" + int.Parse(nro.Text) + "'";
                     maquinas.DataSource = bs.DataSource;
                     if (maquinas.RowCount == 0)
                     {
@@ -102,7 +109,7 @@ namespace Para_inventario.Clases
             bs.DataSource = maquinas.DataSource;
             try
             {
-                bs.Filter = "nombre like '%" + nombre.Text + "%'";
+                bs.Filter = "Nombre like '%" + nombre.Text + "%'";
                 maquinas.DataSource = bs.DataSource;
                 if (maquinas.RowCount == 0)
                 {
@@ -112,41 +119,6 @@ namespace Para_inventario.Clases
             catch (Exception)
             {
                 maquinas.Refresh();
-            }
-        }
-
-        public void mostrarNombreMaquina(ComboBox maquina)
-        {
-            ServicioMaquina  servicio = new ServicioMaquina();
-            maquina.DataSource = servicio.mostrar();
-            maquina.ValueMember = "nro";
-            maquina.DisplayMember = "nombre";
-            maquina.SelectedIndex = -1;
-        }
-
-        public void verificarCantidadMaquina(int nro, int cant, DataGridView maquinas, DataGridView prestamos, string nombre)
-        {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = maquinas.DataSource;
-            try
-            {
-                bs.Filter = "nro = '"+nro+"'";
-                maquinas.DataSource = bs.DataSource;
-                int cantidad = int.Parse(maquinas.CurrentRow.Cells["cantidad"].Value.ToString());
-                if (cant <= cantidad)
-                {
-                    prestamos.Rows.Add(nro.ToString(), maquinas.CurrentRow.Cells["nombre"].Value.ToString(),
-                        cant.ToString(), DateTime.Now.ToString(), null, nombre);
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible de la máquina seleccionada que es: "
-                        +cantidad.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
             }
         }
     }

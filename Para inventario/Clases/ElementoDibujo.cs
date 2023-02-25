@@ -31,22 +31,17 @@ namespace Para_inventario.Clases
             e.agregar(elementoDibujo);  
         }
 
-        public void mostrar(DataGridView elementosDibujo)
-        {
-            ServicioElementoDibujo elementoDibujo = new ServicioElementoDibujo();
-            elementosDibujo.DataSource = elementoDibujo.mostrar();
-        }
-
-        public void eliminar(DataGridView elemento)
+        public void eliminar(DataGridView elemento, int codigo)
         {
             int nro = int.Parse(elemento.CurrentRow.Cells["nro"].Value.ToString());
-            DialogResult dialogo = MessageBox.Show("¿Desea eliminar el elemento de dibujo con nro de inventario " + nro.ToString() + "?",
-                "Información", MessageBoxButtons.YesNo);
+            DialogResult dialogo = MessageBox.Show("¿Desea eliminar el elemento de dibujo con codigo "
+                +codigo+"?", "Información", MessageBoxButtons.YesNo);
             if (dialogo == DialogResult.Yes) 
             {
-                ServicioElementoDibujo ele = new ServicioElementoDibujo();
-                ele.eliminar(nro);
-                MessageBox.Show("Elemento de dibujo eliminado exitosamente");
+                this.nro = nro;
+                ServicioElementoDibujo ser = new ServicioElementoDibujo();
+                ser.eliminar(this, codigo);
+                MessageBox.Show("Elemento de dibujo eliminado exitósamente");
                 elemento.Rows.Remove(elemento.CurrentRow);
                 elemento.Refresh();
             }
@@ -68,11 +63,11 @@ namespace Para_inventario.Clases
                     if (bs.DataSource != null)
                     {
                         int nro = int.Parse(numero.Text);
-                        bs.Filter = "nro = '" + nro + "'";
+                        bs.Filter = "Codigo = '" + nro + "'";
                         elemento.DataSource = bs.DataSource;
                         if (elemento.RowCount == 0)
                         {
-                            MessageBox.Show("No se encontró ningún elemento de dibujo con el nro de inventario ingresado");
+                            MessageBox.Show("No se encontró ningún elemento de dibujo con el codigo ingresado");
                         }
                     }
                 }
@@ -103,7 +98,7 @@ namespace Para_inventario.Clases
                 {
                     if (bs.DataSource != null)
                     {
-                        bs.Filter = "nombre like '%"+nombre.Text+"%'";
+                        bs.Filter = "Nombre like '%"+nombre.Text+"%'";
                         elemento.DataSource = bs.DataSource;    
                         if (elemento.RowCount == 0)
                         {
@@ -123,39 +118,28 @@ namespace Para_inventario.Clases
             }
         }
 
-        public void mostrarNombreED(ComboBox ED)
+        public void mostrarED(DataGridView data)
         {
-            ServicioElementoDibujo servicio = new ServicioElementoDibujo();
-            ED.DataSource = servicio.mostrar();
-            ED.ValueMember = "nro";
-            ED.DisplayMember = "nombre";
-            ED.SelectedIndex = -1;
+            ServicioElementoDibujo ser = new ServicioElementoDibujo();
+            data.DataSource = ser.mostrarED();
         }
 
-        public void verificarCantidadED(int nro, DataGridView ed, DataGridView prestamos, string nombre, int cant)
+        public void reportarProblema(int codigo, string problema)
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ed.DataSource;
-            try
-            {
-                bs.Filter = "nro = '"+nro+"'";
-                ed.DataSource = bs.DataSource;
-                int cantidad = int.Parse(ed.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
-                if (cant <= cantidad)
-                {
-                    prestamos.Rows.Add(nro.ToString(), ed.CurrentRow.Cells["nombre"].Value.ToString(),
-                        cant.ToString(), DateTime.Now.ToString(), null, nombre);
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible del elemento de dibujo seleccionado que es: "
-                        +cantidad.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch(Exception) 
-            {
-                MessageBox.Show("Error");
-            }
+            ServicioElementoDibujo ser = new ServicioElementoDibujo();
+            ser.reportarProblema(codigo, problema); 
+        }
+
+        public void mostrarStock(DataGridView elementos)
+        {
+            ServicioElementoDibujo ser = new ServicioElementoDibujo();
+            elementos.DataSource = ser.mostrarStock();
+        }
+
+        public void actualizarStock(ElementoDibujo elemento, int cant)
+        {
+            ServicioElementoDibujo ser = new ServicioElementoDibujo();
+            ser.actualizarStock(elemento, cant);
         }
     }
 }

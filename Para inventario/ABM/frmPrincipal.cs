@@ -41,13 +41,6 @@ namespace Para_inventario.Interfaces
             this.Close();    
         }
 
-        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmHerramientasActualizacion ventana = new frmHerramientasActualizacion();
-            ventana.Show();
-            this.Close();
-        }
-
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmHerramientasConsultar ventana = new frmHerramientasConsultar();
@@ -104,13 +97,6 @@ namespace Para_inventario.Interfaces
             this.Close();
         }
 
-        private void actualizarToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            actualizarInformatica ventana = new actualizarInformatica();
-            ventana.Show();
-            this.Close();
-        }
-
         private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             eliminarInformatica ventana = new eliminarInformatica();
@@ -134,7 +120,7 @@ namespace Para_inventario.Interfaces
 
         private void actualizarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            actualizarMaquina ventana = new actualizarMaquina();
+            reportarProblemaMaquina ventana = new reportarProblemaMaquina();
             ventana.Show(); 
             this.Close();
         }
@@ -279,6 +265,62 @@ namespace Para_inventario.Interfaces
         {
             Consumos ventana = new Consumos();
             ventana.Show(); 
+            this.Close();
+        }
+
+        private void reportarProblema_Click(object sender, EventArgs e)
+        {
+            reportarProblemaElementoDibujo ventana = new reportarProblemaElementoDibujo();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void actualizarStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            actualizarStockED ventana = new actualizarStockED();
+            ventana.Show();
+            this.Close();   
+        }
+
+        private void reportarProblemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHerramientaProblema ventana = new frmHerramientaProblema();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void actualizarStockToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            actualizarStockHerramientas ventana = new actualizarStockHerramientas();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void reportarProblemaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            reportarProblemaMaquina ventana = new reportarProblemaMaquina();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void reportarProblemaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            reportarProblemaInformatica ventana = new reportarProblemaInformatica();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void actualizarStockToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            actualizarStockInformatica ventana = new actualizarStockInformatica();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void actualizarStockToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            actualizarSockMaquina ventana = new actualizarSockMaquina();
+            ventana.Show();
             this.Close();
         }
     }

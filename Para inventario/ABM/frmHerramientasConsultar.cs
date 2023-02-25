@@ -26,20 +26,19 @@ namespace Para_inventario.Interfaces
             this.Close();
         }
 
-        private void txtNro_TextChanged(object sender, EventArgs e)
+        private void frmHerramientasConsultar_Load(object sender, EventArgs e)
         {
-            herramienta.buscarNroInventario(txtNro,
-                dataHerramientasConsultar);
+            herramienta.mostrarHerramienta(dataHConsultar);
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            herramienta.buscarNombreHerramienta(txtNombre.Text, dataHerramientasConsultar);
+            herramienta.buscarNombreHerramienta(txtNombre.Text, dataHConsultar);
         }
 
-        private void frmHerramientasConsultar_Load(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            herramienta.mostrar(dataHerramientasConsultar);
+            herramienta.buscarNroInventario(txtCodigo, dataHConsultar);
         }
     }
 }

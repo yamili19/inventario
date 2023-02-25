@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Para_inventario.Servicios
 {
@@ -13,27 +14,44 @@ namespace Para_inventario.Servicios
     {
         private string cadenaBD = System.Configuration.ConfigurationManager.AppSettings["cadenaBD"];
 
-        public void agregar(Herramienta herramienta)
+        public void agregar(Herramienta elemento)
         {
             SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "INSERT INTO HerramientasManuales (nombre, marca, material, lugar, cantidad, estado) " +
-                    "VALUES (@nombre, @marca, @material, @lugar, @cantidad, 1)";
+                cmd.CommandText = "SELECT ISNULL(MAX(nro), 0) FROM HerramientasManuales";
+                elemento.nro = (int)cmd.ExecuteScalar() + 1;
+                cmd.CommandText = "INSERT INTO HerramientasManuales (nro, nombre, marca, material, lugar, cantidad) " +
+                    "VALUES (@nro, @nombre, @marca, @material, @lugar, @cantidad)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", herramienta.nombre);
-                cmd.Parameters.AddWithValue("@marca", herramienta.marca);
-                cmd.Parameters.AddWithValue("@material", herramienta.material);
-                cmd.Parameters.AddWithValue("@lugar", herramienta.lugar);
-                cmd.Parameters.AddWithValue("@cantidad", herramienta.cantidad);
-                cn.Open();
+                cmd.Parameters.AddWithValue("@nro", elemento.nro);
+                cmd.Parameters.AddWithValue("@nombre", elemento.nombre);
+                cmd.Parameters.AddWithValue("@marca", elemento.marca);
+                cmd.Parameters.AddWithValue("@material", elemento.material);
+                cmd.Parameters.AddWithValue("@lugar", elemento.lugar);
+                cmd.Parameters.AddWithValue("@cantidad", elemento.cantidad);
                 cmd.ExecuteNonQuery();
+                cmd.CommandText = "SELECT ISNULL(MAX(codigo), 1999) FROM Herramienta WHERE estado = 1";
+                int codigo = (int)cmd.ExecuteScalar() + 1;
+                for (int i = 0; i < elemento.cantidad; i++) 
+                {
+                    cmd.CommandText = "INSERT INTO Herramienta (nroInventario, codigo) VALUES (@n, @c)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", elemento.nro);
+                    cmd.Parameters.AddWithValue("@c", codigo);
+                    cmd.ExecuteNonQuery();
+                    codigo += 1;
+                }
+                cmd.Transaction.Commit();   
             }
-            catch (Exception)
+            catch(Exception ex) 
             {
-                MessageBox.Show("Error al agregar herramienta");
+                MessageBox.Show(ex.Message);    
+                cmd.Transaction.Rollback(); 
             }
             finally
             {
@@ -41,76 +59,132 @@ namespace Para_inventario.Servicios
             }
         }
 
-        public DataTable mostrar()
+        public DataTable mostrarHerramienta()
         {
             DataTable dt = new DataTable();
             SqlConnection cn = new SqlConnection(cadenaBD);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cn.Open();
-                cmd.CommandText = "mostrarHerramientas";
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter ad = new SqlDataAdapter(cmd);
-                ad.Fill(dt);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
-            }
-            finally 
-            { 
-                cn.Close(); 
-            }
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "mostrarHerramienta";
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            cn.Open();
+            ad.Fill(dt);
+            cn.Close();
             return dt;
         }
 
-        public void eliminar(int nro)
+        public void reportarProblema(int codigo, string problema)
         {
             SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection= cn;
-                cmd.CommandText = "UPDATE HerramientasManuales SET estado = 0  where nro = @nro";
+                cmd.CommandText = "UPDATE Herramienta set problema = @p where estado = 1 and codigo = @c";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nro", nro);
-                cn.Open();
+                cmd.Parameters.AddWithValue("@p", problema);
+                cmd.Parameters.AddWithValue("@c", codigo);
                 cmd.ExecuteNonQuery();
+                cmd.Transaction.Commit();
+                MessageBox.Show("Problema reportado exitósamente");
             }
-            catch(Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar herramienta");    
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
             }
             finally
             {
                 cn.Close();
             }
         }
-        public void actualizar(Herramienta herramienta)
+
+        public void eliminar(Herramienta herramienta, int codigo)
         {
             SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection= cn;
-                cmd.CommandText = "UPDATE HerramientasManuales SET cantidad = @cantidad, lugar = @lugar WHERE nro = @nro";
+                cmd.CommandText = "UPDATE Herramienta set estado = 0 where codigo = @c and estado = 1";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@lugar", herramienta.lugar);
-                cmd.Parameters.AddWithValue("@cantidad", herramienta.cantidad);
-                cmd.Parameters.AddWithValue("@nro", herramienta.nro);
-                cn.Open();
+                cmd.Parameters.AddWithValue("@c", codigo);
                 cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE HerramientasManuales set cantidad = cantidad - 1 where nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", herramienta.nro);
+                cmd.ExecuteNonQuery();
+                cmd.Transaction.Commit();
             }
-            catch(Exception) 
+            catch(Exception ex)
             {
-                MessageBox.Show("Error al actualizar herramienta");    
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
             }
             finally
             {
                 cn.Close();
             }
+        }
+
+        public void actualizarStock(Herramienta elemento, int cant)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                cmd.CommandText = "UPDATE HerramientasManuales SET cantidad = cantidad + @c " +
+                    "WHERE nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", cant);
+                cmd.Parameters.AddWithValue("@n", elemento.nro);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "SELECT ISNULL(MAX(codigo), 1999) from Herramienta WHERE estado = 1";
+                int codigo = (int)cmd.ExecuteScalar() + 1;
+                for (int i = 0; i < cant; i++)
+                {
+                    cmd.CommandText = "INSERT INTO Herramienta (nroInventario, codigo) VALUES (@n, @c)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", elemento.nro);
+                    cmd.Parameters.AddWithValue("@c", codigo);
+                    cmd.ExecuteNonQuery();
+                    codigo += 1;
+                }
+                cmd.Transaction.Commit();
+                MessageBox.Show("Stock actualizado exitósamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public DataTable mostrarStock()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "mostrarStockHerramientas";
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            cn.Open();
+            ad.Fill(dt);
+            cn.Close();
+            return dt;
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using Para_inventario.Clases;
+using Para_inventario.Transacciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,44 +16,46 @@ namespace Para_inventario.Servicios
     {
         private string cadenaBD = System.Configuration.ConfigurationManager.AppSettings["cadenaBD"];
 
-        public DataTable mostrarPrestamoHerramientas()
+        public void registrarPrestamoED(DataGridView prestamos, int cantidad, Prestamo prestamo)
         {
-            DataTable dt = new DataTable();
             SqlConnection cn = new SqlConnection(cadenaBD);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
-            cmd.CommandText = "mostrarPrestamoHerramienta";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cn.Open();
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            ad.Fill(dt);    
-            return dt;
-        }
-
-        public void registrarPrestamoHerramienta(Prestamo prestamo)
-        {
-            SqlConnection cn = new SqlConnection(cadenaBD);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;    
             cn.Open();
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "INSERT INTO PrestamosHerramientas (inventarioHerramienta, fechaPrestamo, cantidad, encargado, RealizadoPor)" +
-                             "VALUES (@nro, @f, @c, @e, @u)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nro", prestamo.nroInventario);
-                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@e", prestamo.encargado);
-                cmd.Parameters.AddWithValue("@u", prestamo.usuario);
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE HerramientasManuales SET cantidad = cantidad - @c WHERE nro = @n";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.ExecuteNonQuery();
+                List<string> lista = new List<string>();
+                for (int i = 0; i < cantidad; i++)
+                {
+                    cmd.CommandText = "INSERT INTO PrestamosElementosDibujo (nroInventario, codigo, fechaPrestamo, encargado, RealizadoPor) " +
+                        "VALUES (@n, @c, @f, @e, @u)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@f", Convert.ToDateTime(prestamos.SelectedRows[i].Cells["fecha"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                    cmd.Parameters.AddWithValue("@u", ValoresPublicos.nroUsuario);
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE ElementoDibujo set fuePrestado = 1 where codigo = @c and estado = 1";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE ElementosDibujo set cantidadDisponible = cantidadDisponible - 1 WHERE nro = @n";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    lista.Add(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString());
+                }
                 cmd.Transaction.Commit();
+                TextBox text = new TextBox();
+                text.Text = "";
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    text.Text = text.Text + lista[i].ToString() + ", ";
+                }
+                MessageBox.Show("Préstamos registrados exitosamente para los elementos de dibujo con codigos: "
+                    + text.Text + " y fecha de préstamo: " + prestamo.fechaPrestamo.ToString());
             }
             catch (Exception ex)
             {
@@ -64,7 +68,7 @@ namespace Para_inventario.Servicios
             }
         }
 
-        public void registrarDevolucionHerramienta(Prestamo prestamo)
+        public void registrarPrestamoHerramienta(DataGridView prestamos, int cantidad, Prestamo prestamo)
         {
             SqlConnection cn = new SqlConnection(cadenaBD);
             SqlCommand cmd = new SqlCommand();
@@ -73,55 +77,37 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "UPDATE PrestamosHerramientas SET fechaDevolucion = GETDATE() WHERE inventarioHerramienta = @n AND fechaPrestamo = @fe";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.Parameters.AddWithValue("@fe", prestamo.fechaPrestamo);
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE HerramientasManuales SET cantidad = cantidad + @c WHERE nro = @n";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.ExecuteNonQuery();
+                List<string> lista = new List<string>();
+                for (int i = 0; i < cantidad; i++)
+                {
+                    cmd.CommandText = "INSERT INTO PrestamosHerramientas (nroInventario, codigo, fechaPrestamo, encargado, RealizadoPor) " +
+                        "VALUES (@n, @c, @f, @e, @u)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@f", Convert.ToDateTime(prestamos.SelectedRows[i].Cells["fecha"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                    cmd.Parameters.AddWithValue("@u", ValoresPublicos.nroUsuario);
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE Herramienta set fuePrestado = 1 where codigo = @c and estado = 1";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE HerramientasManuales set cantidad = cantidad - 1 WHERE nro = @n";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    lista.Add(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString());
+                }
                 cmd.Transaction.Commit();
-                MessageBox.Show("Devolución registrada exitósamente");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                cmd.Transaction.Rollback(); 
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-
-        public void registrarPrestamoED(Prestamo prestamo)
-        {
-            SqlConnection cn = new SqlConnection(cadenaBD);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            cn.Open();
-            cmd.Transaction = cn.BeginTransaction();
-            try
-            {
-                cmd.CommandText = "INSERT INTO PrestamosElementosDibujo (inventarioElementosDibujo, cantidad, encargado, fechaPrestamo, RealizadoPor) " +
-                    "VALUES (@n, @c, @e, @f, @u)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@e", prestamo.encargado);
-                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
-                cmd.Parameters.AddWithValue("@u", prestamo.usuario);
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible - @c WHERE nro = @n";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.ExecuteNonQuery();
-                cmd.Transaction.Commit();
-
+                TextBox text = new TextBox();
+                text.Text = "";
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    text.Text = text.Text + lista[i].ToString() + ", ";
+                }
+                MessageBox.Show("Préstamos registrados exitosamente para las herramientas con codigos: "
+                    + text.Text + " y fecha de préstamo: " + prestamo.fechaPrestamo.ToString());
             }
             catch (Exception ex)
             {
@@ -134,45 +120,176 @@ namespace Para_inventario.Servicios
             }
         }
 
-        public DataTable mostrarPrestamosED()
+        public void registrarPrestamoInformatica(DataGridView prestamos, int cantidad, Prestamo prestamo)
         {
-            DataTable dt = new DataTable();
             SqlConnection cn = new SqlConnection(cadenaBD);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
-            cmd.CommandText = "mostrarPrestamosED";
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
             cn.Open();
-            ad.Fill(dt);
-            cn.Close();
-            return dt;
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                List<string> lista = new List<string>();
+                for (int i = 0; i < cantidad; i++)
+                {
+                    cmd.CommandText = "INSERT INTO prestamosInformatica (nroInventario, codigo, fechaPrestamo, encargado, RealizadoPor) " +
+                        "VALUES (@n, @c, @f, @e, @u)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@f", Convert.ToDateTime(prestamos.SelectedRows[i].Cells["fecha"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                    cmd.Parameters.AddWithValue("@u", ValoresPublicos.nroUsuario);
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE InformaticaIndividual set fuePrestado = 1 where codigo = @c and estado = 1";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE Informatica set cantidad = cantidad - 1 WHERE nro = @n";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    lista.Add(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString());
+                }
+                cmd.Transaction.Commit();
+                TextBox text = new TextBox();
+                text.Text = "";
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    text.Text = text.Text + lista[i].ToString() + ", ";
+                }
+                MessageBox.Show("Préstamos registrados exitosamente para los elementos de informatica con codigos: "
+                    + text.Text + " y fecha de préstamo: " + prestamo.fechaPrestamo.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public void registrarPrestamoMaquina(DataGridView prestamos, int cantidad, Prestamo prestamo)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                List<string> lista = new List<string>();
+                for (int i = 0; i < cantidad; i++)
+                {
+                    cmd.CommandText = "INSERT INTO PrestamosMaquinas (nroInventario, codigo, fechaPrestamo, encargado, RealizadoPor) " +
+                        "VALUES (@n, @c, @f, @e, @u)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@f", Convert.ToDateTime(prestamos.SelectedRows[i].Cells["fecha"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                    cmd.Parameters.AddWithValue("@u", ValoresPublicos.nroUsuario);
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE Maquina set fuePrestado = 1 where codigo = @c and estado = 1";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@c", int.Parse(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE Maquinas set cantidad = cantidad - 1 WHERE nro = @n";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@n", int.Parse(prestamos.SelectedRows[i].Cells["nro"].Value.ToString()));
+                    cmd.ExecuteNonQuery();
+                    lista.Add(prestamos.SelectedRows[i].Cells["Codigo"].Value.ToString());
+                }
+                cmd.Transaction.Commit();
+                TextBox text = new TextBox();
+                text.Text = "";
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    text.Text = text.Text + lista[i].ToString() + ", ";
+                }
+                MessageBox.Show("Préstamos registrados exitosamente para las máquinas con codigos: "
+                    + text.Text + " y fecha de préstamo: " + prestamo.fechaPrestamo.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        } 
+
+        public void registrarDevHerramienta(Prestamo prestamo)
+        {
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.Transaction = cn.BeginTransaction();
+            try
+            {
+                cmd.CommandText = "UPDATE PrestamosHerramientas set fechaDevolucion = GETDATE() where nroInventario = @n and codigo = @c and " +
+                    "fechaPrestamo = @f";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
+                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE HerramientasManuales set cantidad = cantidad + 1 where nro = @n";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Herramienta set fuePrestado = 0 where codigo = @c and estado = 1";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
+                cmd.ExecuteNonQuery();
+                cmd.Transaction.Commit();
+                MessageBox.Show("Prestamo devuelto exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cmd.Transaction.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
         public void registrarDevED(Prestamo prestamo)
         {
             SqlConnection cn = new SqlConnection(cadenaBD);
-            SqlCommand cmd = new SqlCommand();  
+            SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             cn.Open();
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "UPDATE ElementosDibujo SET cantidadDisponible = cantidadDisponible + @c WHERE nro = @n";
+                cmd.CommandText = "UPDATE PrestamosElementosDibujo set fechaDevolucion = GETDATE() where nroInventario = @n and codigo = @c and " +
+                    "fechaPrestamo = @f";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
+                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE ElementosDibujo set cantidadDisponible = cantidadDisponible + 1 where nro = @n";
+                cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "registrarPrestED";
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "UPDATE ElementoDibujo set fuePrestado = 0 where codigo = @c and estado = 1";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@fe", prestamo.fechaPrestamo);
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
                 cmd.ExecuteNonQuery();
                 cmd.Transaction.Commit();
-                MessageBox.Show("Devolución registrada exitósamente");
+                MessageBox.Show("Prestamo devuelto exitosamente");
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 cmd.Transaction.Rollback();
@@ -183,7 +300,7 @@ namespace Para_inventario.Servicios
             }
         }
 
-        public void registrarPrestamoMaquina(Prestamo prestamo)
+        public void registrarDevInformatica(Prestamo prestamo)
         {
             SqlConnection cn = new SqlConnection(cadenaBD);
             SqlCommand cmd = new SqlCommand();
@@ -192,21 +309,23 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "INSERT INTO PrestamosMaquinas (inventarioMaquinas, cantidad, fechaPrestamo, encargado, RealizadoPor) " +
-                    "VALUES (@n, @c, @f, @e, @u)";
+                cmd.CommandText = "UPDATE prestamosInformatica set fechaDevolucion = GETDATE() where nroInventario = @n and codigo = @c and " +
+                    "fechaPrestamo = @f";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@e", prestamo.encargado);
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
                 cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
-                cmd.Parameters.AddWithValue("@u", prestamo.usuario);
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE Maquinas SET cantidad = cantidad - @c WHERE nro = @n";
+                cmd.CommandText = "UPDATE Informatica set cantidad = cantidad + 1 where nro = @n";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE InformaticaIndividual set fuePrestado = 0 where codigo = @c and estado = 1";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
                 cmd.ExecuteNonQuery();
                 cmd.Transaction.Commit();
+                MessageBox.Show("Prestamo devuelto exitosamente");
             }
             catch (Exception ex)
             {
@@ -228,71 +347,25 @@ namespace Para_inventario.Servicios
             cmd.Transaction = cn.BeginTransaction();
             try
             {
-                cmd.CommandText = "UPDATE PrestamosMaquinas SET fechaDevolucion = GETDATE() WHERE inventarioMaquinas = @n AND fechaPrestamo = @f";
+                cmd.CommandText = "UPDATE PrestamosMaquinas set fechaDevolucion = GETDATE() where nroInventario = @n and codigo = @c and " +
+                    "fechaPrestamo = @f";
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
                 cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Maquinas set cantidad = cantidad + 1 where nro = @n";
+                cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE Maquinas SET cantidad = cantidad + @c WHERE nro = @n";
+                cmd.CommandText = "UPDATE Maquina set fuePrestado = 0 where codigo = @c and estado = 1";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
+                cmd.Parameters.AddWithValue("@c", prestamo.codigo);
                 cmd.ExecuteNonQuery();
                 cmd.Transaction.Commit();
-                MessageBox.Show("Devolución registrada exitósamente");
+                MessageBox.Show("Prestamo devuelto exitosamente");
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
-                cmd.Transaction.Rollback();
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-
-        public DataTable mostrarPrestamosMaquinas()
-        {
-            SqlConnection cn = new SqlConnection(cadenaBD);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            cmd.CommandText = "mostrarPrestamosMaquinas";
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            cn.Open();
-            DataTable dt = new DataTable();
-            ad.Fill(dt);
-            cn.Close(); 
-            return dt;
-        }
-
-        public void registrarPrestamoInformatica(Prestamo informatica)
-        {
-            SqlConnection cn = new SqlConnection(cadenaBD);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            cn.Open();
-            cmd.Transaction = cn.BeginTransaction();
-            try
-            {
-                cmd.CommandText = "INSERT INTO PrestamosInformatica (inventarioInformatica, fechaPrestamo, cantidad, encargado, RealizadoPor)" +
-                    "VALUES (@n, @f, @c, @e, @u)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@n", informatica.nroInventario);
-                cmd.Parameters.AddWithValue("@f", informatica.fechaPrestamo);
-                cmd.Parameters.AddWithValue("@c", informatica.cantidad);
-                cmd.Parameters.AddWithValue("@e", informatica.encargado);
-                cmd.Parameters.AddWithValue("@u", informatica.usuario);
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE Informatica SET cantidad = cantidad - @c WHERE nro = @n";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@n", informatica.nroInventario);
-                cmd.Parameters.AddWithValue("@c", informatica.cantidad);
-                cmd.ExecuteNonQuery();
-                cmd.Transaction.Commit();
-            }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 cmd.Transaction.Rollback();
@@ -303,13 +376,13 @@ namespace Para_inventario.Servicios
             }
         }
 
-        public DataTable mostrarPrestInformatica()
+        public DataTable mostrarPrestamoHerramienta()
         {
             DataTable dt = new DataTable();
             SqlConnection cn = new SqlConnection(cadenaBD);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
-            cmd.CommandText = "mostrarPrestamoInformatica";
+            cmd.CommandText = "mostrarPrestamosHerramientas";
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter ad = new SqlDataAdapter(cmd);
             cn.Open();
@@ -318,38 +391,49 @@ namespace Para_inventario.Servicios
             return dt;
         }
 
-        public void registrarDevInformatica(Prestamo prestamo)
+        public DataTable mostrarPrestamoED()
         {
+            DataTable dt = new DataTable();
             SqlConnection cn = new SqlConnection(cadenaBD);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
+            cmd.CommandText = "mostrarPrestamosED";
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
             cn.Open();
-            cmd.Transaction = cn.BeginTransaction(); 
-            try 
-            {
-                cmd.CommandText = "UPDATE prestamosInformatica SET fechaDevolucion = GETDATE() WHERE inventarioInformatica = @n AND " +
-                    "fechaPrestamo = @f";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@f", prestamo.fechaPrestamo);
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE Informatica SET cantidad = cantidad + @c WHERE nro = @n";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@c", prestamo.cantidad);
-                cmd.Parameters.AddWithValue("@n", prestamo.nroInventario);
-                cmd.ExecuteNonQuery();
-                cmd.Transaction.Commit();
-                MessageBox.Show("Devolución registrada exitósamente");
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
-                cmd.Transaction.Rollback();
-            }
-            finally
-            {
-                cn.Close();
-            }
+            ad.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
+        public DataTable mostrarPrestamoInformatica()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "mostrarPrestamosInformatica";
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            cn.Open();
+            ad.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
+        public DataTable mostrarPrestamosMaquinas()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaBD);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "mostrarPrestamosMaquinas";
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            cn.Open();
+            ad.Fill(dt);
+            cn.Close();
+            return dt;
         }
     }
 }

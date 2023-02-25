@@ -40,28 +40,36 @@ namespace Para_inventario.Clases
 
         public void eliminar(DataGridView dataInformatica)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea eliminar el elemento de informática con nro de inventario "
-                + dataInformatica.CurrentRow.Cells["nro"].Value.ToString() + "?", "Información", MessageBoxButtons.YesNo);
+            int nro = int.Parse(dataInformatica.CurrentRow.Cells["nro"].Value.ToString());
+            DialogResult resultado = MessageBox.Show("¿Desea eliminar el elemento de informática con codigo "
+                + dataInformatica.CurrentRow.Cells["Codigo"].Value.ToString() + "?", "Información", MessageBoxButtons.YesNo);
             if (resultado == DialogResult.Yes) 
             {
-                ServicioInformatica servicio = new ServicioInformatica();
-                servicio.eliminar(int.Parse(dataInformatica.CurrentRow.Cells["nro"].Value.ToString()));
-                MessageBox.Show("Elemento de informática eliminado exitósamente");
+                this.nro = nro;
+                ServicioInformatica ser = new ServicioInformatica();
+                ser.eliminar(this, int.Parse(dataInformatica.CurrentRow.Cells["Codigo"].Value.ToString()));
                 dataInformatica.Rows.Remove(dataInformatica.CurrentRow);
                 dataInformatica.Refresh();
+                MessageBox.Show("Elemento de informática eliminado exitósamente");
             }
         }
 
-        public void actualizar(Informática informatica)
+        public void reportarProblema(int codigo, string problema)
         {
             ServicioInformatica servicio = new ServicioInformatica();
-            DialogResult resultado = MessageBox.Show("Confirme actualizacion el elemento de informática con nro de inventario " + informatica.nro,
-                "Información", MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes) 
-            {
-                servicio.actualizar(informatica);
-                MessageBox.Show("Elemento de informática actualizado exitósamente");
-            }
+            servicio.reportarProblema(codigo, problema);
+        }
+
+        public void mostrarStock(DataGridView prestamos)
+        {
+            ServicioInformatica servicio = new ServicioInformatica();
+            prestamos.DataSource = servicio.mostrarStock();
+        }
+
+        public void actualizarStock(Informática informatica, int cantidad)
+        {
+            ServicioInformatica ser = new ServicioInformatica();
+            ser.actualizarStock(informatica, cantidad);
         }
 
         public void consultarNroInventario(TextBox numero, DataGridView dataInformatica)
@@ -79,11 +87,11 @@ namespace Para_inventario.Clases
                 {
                     if (bs.DataSource != null)
                     {
-                        bs.Filter = "nro = '" + int.Parse(numero.Text) + "'";
+                        bs.Filter = "Codigo = '" + int.Parse(numero.Text) + "'";
                         dataInformatica.DataSource = bs.DataSource;
                         if (dataInformatica.RowCount == 0)
                         {
-                            MessageBox.Show("No se encontró ningún elemento de informática con el nro de inventario ingresado");
+                            MessageBox.Show("No se encontró ningún elemento de informática con el codigo ingresado");
                         }
                     }
                 }
@@ -114,7 +122,7 @@ namespace Para_inventario.Clases
                 {
                     if (bs.DataSource != null)
                     {
-                        bs.Filter = "nombre like '%"+nombre.Text+"%'";
+                        bs.Filter = "Nombre like '%"+nombre.Text+"%'";
                         dataInformatica.DataSource = bs.DataSource;
                         if (dataInformatica.RowCount == 0)
                         {
@@ -131,41 +139,6 @@ namespace Para_inventario.Clases
                 {
                     bandera = false;
                 }
-            }
-        }
-
-        public void mostrarNombre(ComboBox combo)
-        {
-            ServicioInformatica servicio = new ServicioInformatica();
-            combo.DataSource = servicio.mostrar();
-            combo.ValueMember = "nro";
-            combo.DisplayMember = "nombre";
-            combo.SelectedIndex = -1;
-        }
-
-        public void verificarCantidad(int nro, int cant, DataGridView informatica, DataGridView prestamos, string nombre)
-        {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = informatica.DataSource;
-            try
-            {
-                bs.Filter = "nro = '" + nro + "'";
-                informatica.DataSource = bs.DataSource;
-                int cantidad = int.Parse(informatica.CurrentRow.Cells["cantidad"].Value.ToString());
-                if (cant <= cantidad)
-                {
-                    prestamos.Rows.Add(nro.ToString(), informatica.CurrentRow.Cells["nombre"].Value.ToString(),
-                        cant.ToString(), DateTime.Now.ToString(), null, nombre);
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible del elemento de dibujo seleccionado que es: "
-                        + cantidad.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
             }
         }
     }

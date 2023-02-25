@@ -71,8 +71,6 @@ C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\bin
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para inventario.csproj.AssemblyReference.cache
-C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.actualizarInformatica.resources
-C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.actualizarMaquina.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.actualizarMueble.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.agregarConsumible.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.agregarInformatica.resources
@@ -92,7 +90,6 @@ C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.ABM.eliminarUsuarios.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.frmHerramientaBaja.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.frmHerramientas.resources
-C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.frmHerramientasActualizacion.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.frmHerramientasConsultar.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.frmPrincipal.resources
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.ABM.login.resources
@@ -119,3 +116,11 @@ C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para inventario.pdb
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para inventario.genruntimeconfig.cache
 C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\ref\Para inventario.dll
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.ABM.reportarProblemaElementoDibujo.resources
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.ABM.actualizarStockED.resources
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.frmHerramientaProblema.resources
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.ABM.actualizarStockHerramientas.resources
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.reportarProblemaInformatica.resources
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.ABM.actualizarStockInformatica.resources
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.Interfaces.reportarProblemaMaquina.resources
+C:\Users\YamiYB\OneDrive\Documentos\Inventario\base-de-datos\Para inventario\obj\Debug\net7.0-windows\Para_inventario.ABM.actualizarSockMaquina.resources

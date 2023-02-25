@@ -30,14 +30,15 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.dataEDConsultar = new System.Windows.Forms.DataGridView();
-            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNroInventario = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataEDConsultar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(625, 442);
+            this.btnVolver.Location = new System.Drawing.Point(555, 441);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 20;
@@ -64,72 +65,39 @@
             this.dataEDConsultar.AllowUserToOrderColumns = true;
             this.dataEDConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataEDConsultar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nro,
-            this.nombre,
-            this.cantidadDisponible,
-            this.cantidadComprada});
-            this.dataEDConsultar.Location = new System.Drawing.Point(77, 79);
+            this.Nombre,
+            this.Codigo,
+            this.Problema,
+            this.nro});
+            this.dataEDConsultar.Location = new System.Drawing.Point(107, 79);
             this.dataEDConsultar.Name = "dataEDConsultar";
             this.dataEDConsultar.ReadOnly = true;
             this.dataEDConsultar.RowTemplate.Height = 25;
-            this.dataEDConsultar.Size = new System.Drawing.Size(643, 356);
+            this.dataEDConsultar.Size = new System.Drawing.Size(543, 356);
             this.dataEDConsultar.TabIndex = 22;
-            // 
-            // nro
-            // 
-            this.nro.DataPropertyName = "nro";
-            this.nro.HeaderText = "Nro Inventario";
-            this.nro.Name = "nro";
-            this.nro.ReadOnly = true;
-            this.nro.Width = 150;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 150;
-            // 
-            // cantidadDisponible
-            // 
-            this.cantidadDisponible.DataPropertyName = "cantidadDisponible";
-            this.cantidadDisponible.HeaderText = "Cantidad Disponible";
-            this.cantidadDisponible.Name = "cantidadDisponible";
-            this.cantidadDisponible.ReadOnly = true;
-            this.cantidadDisponible.Width = 150;
-            // 
-            // cantidadComprada
-            // 
-            this.cantidadComprada.DataPropertyName = "cantidadComprada";
-            this.cantidadComprada.HeaderText = "Cantidad Comprada";
-            this.cantidadComprada.Name = "cantidadComprada";
-            this.cantidadComprada.ReadOnly = true;
-            this.cantidadComprada.Width = 150;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(77, 37);
+            this.label3.Location = new System.Drawing.Point(110, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 21);
+            this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Nro Inventario:";
+            this.label3.Text = "Codigo: ";
             // 
-            // txtNroInventario
+            // txtCodigo
             // 
-            this.txtNroInventario.Location = new System.Drawing.Point(209, 37);
-            this.txtNroInventario.Name = "txtNroInventario";
-            this.txtNroInventario.Size = new System.Drawing.Size(100, 25);
-            this.txtNroInventario.TabIndex = 27;
-            this.txtNroInventario.TextChanged += new System.EventHandler(this.txtNroInventario_TextChanged);
+            this.txtCodigo.Location = new System.Drawing.Point(189, 32);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 25);
+            this.txtCodigo.TabIndex = 27;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(333, 37);
+            this.label4.Location = new System.Drawing.Point(395, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 28;
@@ -137,11 +105,52 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(416, 37);
+            this.txtNombre.Location = new System.Drawing.Point(478, 32);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(134, 25);
             this.txtNombre.TabIndex = 29;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(295, 32);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 30;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Problema
+            // 
+            this.Problema.DataPropertyName = "Problema";
+            this.Problema.HeaderText = "Problema";
+            this.Problema.Name = "Problema";
+            this.Problema.ReadOnly = true;
+            this.Problema.Width = 250;
+            // 
+            // nro
+            // 
+            this.nro.DataPropertyName = "nro";
+            this.nro.HeaderText = "nro";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            this.nro.Visible = false;
             // 
             // consultarElementosDibujo
             // 
@@ -149,10 +158,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.tablero_regla_t;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 510);
+            this.ClientSize = new System.Drawing.Size(716, 510);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNroInventario);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataEDConsultar);
             this.Controls.Add(this.btnVolver);
@@ -172,13 +182,14 @@
 
         private Button btnVolver;
         private DataGridView dataEDConsultar;
-        private DataGridViewTextBoxColumn nro;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn cantidadDisponible;
-        private DataGridViewTextBoxColumn cantidadComprada;
         private Label label3;
-        private TextBox txtNroInventario;
+        private TextBox txtCodigo;
         private Label label4;
         private TextBox txtNombre;
+        private Button btnBuscar;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Problema;
+        private DataGridViewTextBoxColumn nro;
     }
 }

@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNro = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataHerramientasConsultar = new System.Windows.Forms.DataGridView();
+            this.dataHConsultar = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasConsultar)).BeginInit();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataHConsultar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -51,7 +50,7 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(628, 453);
+            this.btnVolver.Location = new System.Drawing.Point(477, 421);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(95, 43);
             this.btnVolver.TabIndex = 19;
@@ -59,103 +58,99 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // label2
+            // dataHConsultar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(79, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 21);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Nro Inventario:";
+            this.dataHConsultar.AllowUserToAddRows = false;
+            this.dataHConsultar.AllowUserToDeleteRows = false;
+            this.dataHConsultar.AllowUserToOrderColumns = true;
+            this.dataHConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataHConsultar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Codigo,
+            this.Problema,
+            this.nro});
+            this.dataHConsultar.Location = new System.Drawing.Point(29, 59);
+            this.dataHConsultar.Name = "dataHConsultar";
+            this.dataHConsultar.ReadOnly = true;
+            this.dataHConsultar.RowTemplate.Height = 25;
+            this.dataHConsultar.Size = new System.Drawing.Size(543, 356);
+            this.dataHConsultar.TabIndex = 23;
             // 
-            // txtNro
+            // Nombre
             // 
-            this.txtNro.Location = new System.Drawing.Point(211, 27);
-            this.txtNro.Name = "txtNro";
-            this.txtNro.Size = new System.Drawing.Size(100, 25);
-            this.txtNro.TabIndex = 23;
-            this.txtNro.TextChanged += new System.EventHandler(this.txtNro_TextChanged);
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
             // 
-            // txtNombre
+            // Codigo
             // 
-            this.txtNombre.Location = new System.Drawing.Point(418, 27);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(134, 25);
-            this.txtNombre.TabIndex = 25;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             // 
-            // label1
+            // Problema
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(335, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 21);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Nombre:";
-            // 
-            // dataHerramientasConsultar
-            // 
-            this.dataHerramientasConsultar.AllowUserToAddRows = false;
-            this.dataHerramientasConsultar.AllowUserToDeleteRows = false;
-            this.dataHerramientasConsultar.AllowUserToOrderColumns = true;
-            this.dataHerramientasConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataHerramientasConsultar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nro,
-            this.nombre,
-            this.marca,
-            this.material,
-            this.lugar,
-            this.cantidad});
-            this.dataHerramientasConsultar.Location = new System.Drawing.Point(79, 84);
-            this.dataHerramientasConsultar.Name = "dataHerramientasConsultar";
-            this.dataHerramientasConsultar.ReadOnly = true;
-            this.dataHerramientasConsultar.RowTemplate.Height = 25;
-            this.dataHerramientasConsultar.Size = new System.Drawing.Size(644, 360);
-            this.dataHerramientasConsultar.TabIndex = 26;
+            this.Problema.DataPropertyName = "Problema";
+            this.Problema.HeaderText = "Problema";
+            this.Problema.Name = "Problema";
+            this.Problema.ReadOnly = true;
+            this.Problema.Width = 250;
             // 
             // nro
             // 
             this.nro.DataPropertyName = "nro";
-            this.nro.HeaderText = "Nro Inventario";
+            this.nro.HeaderText = "nro";
             this.nro.Name = "nro";
             this.nro.ReadOnly = true;
+            this.nro.Visible = false;
             // 
-            // nombre
+            // btnBuscar
             // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
+            this.btnBuscar.Location = new System.Drawing.Point(214, 26);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 35;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // marca
+            // txtNombre
             // 
-            this.marca.DataPropertyName = "marca";
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
+            this.txtNombre.Location = new System.Drawing.Point(397, 26);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(134, 25);
+            this.txtNombre.TabIndex = 34;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
-            // material
+            // label4
             // 
-            this.material.DataPropertyName = "material";
-            this.material.HeaderText = "Material";
-            this.material.Name = "material";
-            this.material.ReadOnly = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(314, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 21);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Nombre:";
             // 
-            // lugar
+            // txtCodigo
             // 
-            this.lugar.DataPropertyName = "lugar";
-            this.lugar.HeaderText = "Lugar";
-            this.lugar.Name = "lugar";
-            this.lugar.ReadOnly = true;
+            this.txtCodigo.Location = new System.Drawing.Point(108, 26);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 25);
+            this.txtCodigo.TabIndex = 32;
             // 
-            // cantidad
+            // label3
             // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(29, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 21);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Codigo: ";
             // 
             // frmHerramientasConsultar
             // 
@@ -163,12 +158,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Para_inventario.Properties.Resources.iStock_493585980;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 510);
-            this.Controls.Add(this.dataHerramientasConsultar);
+            this.ClientSize = new System.Drawing.Size(641, 489);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNro);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataHConsultar);
             this.Controls.Add(this.btnVolver);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -176,7 +172,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHerramientasConsultar";
             this.Load += new System.EventHandler(this.frmHerramientasConsultar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataHerramientasConsultar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataHConsultar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,16 +181,15 @@
         #endregion
 
         private Button btnVolver;
-        private Label label2;
-        private TextBox txtNro;
-        private TextBox txtNombre;
-        private Label label1;
-        private DataGridView dataHerramientasConsultar;
+        private DataGridView dataHConsultar;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Problema;
         private DataGridViewTextBoxColumn nro;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn marca;
-        private DataGridViewTextBoxColumn material;
-        private DataGridViewTextBoxColumn lugar;
-        private DataGridViewTextBoxColumn cantidad;
+        private Button btnBuscar;
+        private TextBox txtNombre;
+        private Label label4;
+        private TextBox txtCodigo;
+        private Label label3;
     }
 }

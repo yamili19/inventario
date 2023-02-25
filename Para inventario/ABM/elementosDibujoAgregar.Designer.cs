@@ -91,11 +91,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(30, 90);
+            this.label1.Location = new System.Drawing.Point(109, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 21);
+            this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Cantidad Comprada:";
+            this.label1.Text = "Cantidad: ";
             // 
             // maskCantidadComprada
             // 

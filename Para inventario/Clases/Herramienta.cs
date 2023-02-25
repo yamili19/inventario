@@ -28,47 +28,23 @@ namespace Para_inventario.Clases
             this.cantidad = cantidad;
         }
 
-        public void agregarHerramienta(Herramienta herramienta) 
+        public void agregar(Herramienta herramienta)
         {
-            ServicioHerramienta h = new ServicioHerramienta();
-            h.agregar(herramienta);
+            ServicioHerramienta ser = new ServicioHerramienta();
+            ser.agregar(herramienta);
         }
 
-        public void mostrar(DataGridView herramienta)
+        public void mostrarStock(DataGridView herramientas)
         {
-            ServicioHerramienta h = new ServicioHerramienta();
-            herramienta.DataSource = h.mostrar();   
+            ServicioHerramienta ser = new ServicioHerramienta();
+            herramientas.DataSource = ser.mostrarStock();
         }
 
-        public void eliminar(DataGridView herramienta)
+        public void actualizarStock(Herramienta herramienta, int cantidad)
         {
-            int nro = Convert.ToInt32(herramienta.CurrentRow.Cells["nro"].Value.ToString());
-            ServicioHerramienta h = new ServicioHerramienta();
-            DialogResult resultado = MessageBox.Show("¿Desea eliminar la herramienta con el nro de inventario " + nro.ToString()+"?", "Información",
-                MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes)
-            {
-                h.eliminar(nro);
-                MessageBox.Show("Herramienta eliminada correctamente");
-                herramienta.Rows.Remove(herramienta.CurrentRow);
-                herramienta.Refresh();
-            }
+            ServicioHerramienta ser = new ServicioHerramienta();
+            ser.actualizarStock(herramienta, cantidad);
         }
-
-        
-
-        public void actualizar(Herramienta herramienta) 
-        {
-            ServicioHerramienta h = new ServicioHerramienta();
-            DialogResult resultado = MessageBox.Show("Confirme actualizacion de la herramienta con nro de inventario " + herramienta.nro, "Información",
-                MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes)
-            {
-                h.actualizar(herramienta);
-                MessageBox.Show("Herramienta actualizada exitósamente");
-            }
-        }
-
         public void buscarNroInventario(TextBox numero, DataGridView herramienta)
         {
             BindingSource bs = new BindingSource();
@@ -85,11 +61,11 @@ namespace Para_inventario.Clases
                     if (bs.DataSource != null)
                     {
                         int nro = int.Parse(numero.Text);
-                        bs.Filter = "nro = '" + nro + "'";
+                        bs.Filter = "Codigo = '" + nro + "'";
                         herramienta.DataSource = bs.DataSource;
                         if (herramienta.RowCount == 0)
                         {
-                            MessageBox.Show("No se encontró ninguna herramienta con el numero de inventario ingresado");
+                            MessageBox.Show("No se encontró ninguna herramienta con el codigo ingresado");
                         }
                     }
                 }
@@ -111,7 +87,7 @@ namespace Para_inventario.Clases
             bindingSource.DataSource = herramienta.DataSource;
             try
             {
-                bindingSource.Filter = "nombre like '%" + nombre + "%'";
+                bindingSource.Filter = "Nombre like '%" + nombre + "%'";
                 herramienta.DataSource = bindingSource.DataSource;  
                 if (herramienta.RowCount == 0)
                 {
@@ -124,39 +100,31 @@ namespace Para_inventario.Clases
             }
         }
 
-        public void mostrarNombreHerramienta(ComboBox nombre)
+        public void mostrarHerramienta(DataGridView herramientas)
         {
-            ServicioHerramienta servicio = new ServicioHerramienta();
-            nombre.DataSource = servicio.mostrar();
-            nombre.ValueMember = "nro";
-            nombre.DisplayMember = "nombre";
-            nombre.SelectedIndex = -1;
+            ServicioHerramienta ser = new ServicioHerramienta();
+            herramientas.DataSource = ser.mostrarHerramienta();
         }
 
-        public void verificarCantidadHerramienta(int nro, DataGridView herramienta, DataGridView prestamos, int cant, string nombre) 
-        { 
-            BindingSource bs = new BindingSource(); 
-            bs.DataSource = herramienta.DataSource;
-            try
+        public void reportarProblema(int codigo, string problema)
+        {
+            ServicioHerramienta ser = new ServicioHerramienta();
+            ser.reportarProblema(codigo, problema);
+        }
+
+        public void eliminar(DataGridView herramientas, int codigo)
+        {
+            int nro = int.Parse(herramientas.CurrentRow.Cells["nro"].Value.ToString());
+            DialogResult dialogo = MessageBox.Show("¿Desea eliminar le herramienta con codigo "
+                        + codigo + "?", "Información", MessageBoxButtons.YesNo);
+            if (dialogo == DialogResult.Yes) 
             {
-                bs.Filter = "nro = '"+nro+"'";
-                herramienta.DataSource = bs.DataSource;
-                int cantidad = int.Parse(herramienta.CurrentRow.Cells["cantidad"].Value.ToString());
-                if (cant <= cantidad)
-                {
-                    prestamos.Rows.Add(nro.ToString(), herramienta.CurrentRow.Cells["nombre"].Value.ToString(), cant.ToString(),
-                        DateTime.Now.ToString(), null, nombre);
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese una cantidad menor o igual a la cantidad disponible de la herramienta seleccionada que es: "
-                        + cantidad.ToString(),
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch(Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
+                this.nro = nro;
+                ServicioHerramienta ser = new ServicioHerramienta();
+                ser.eliminar(this, codigo);
+                herramientas.Rows.Remove(herramientas.CurrentRow);
+                herramientas.Refresh();
+                MessageBox.Show("Herramienta eliminada exitósamente");
             }
         }
     }

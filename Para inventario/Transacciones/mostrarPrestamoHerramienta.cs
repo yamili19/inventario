@@ -26,38 +26,36 @@ namespace Para_inventario.Transacciones
             this.Close();
         }
 
-        private void mostrarPrestamoHerramienta_Load(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            btnRegistrarDev.Enabled = false;
-            prestamo.mostrarPrestamoHerramienta(dataPrestamos);
+            prestamo.buscarPorEncargado(txtEncargado.Text, dataPrestamos);
         }
 
-        private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void mostrarPrestamoHerramienta_Load(object sender, EventArgs e)
         {
-            btnRegistrarDev.Enabled = true; 
+            prestamo.mostrarPrestamoHerramienta(dataPrestamos);
         }
 
         private void btnRegistrarDev_Click(object sender, EventArgs e)
         {
             if (dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value.ToString() == "")
             {
-                prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["inventarioHerramienta"].Value.ToString());
-                prestamo.cantidad = int.Parse(dataPrestamos.CurrentRow.Cells["cantidadDisponible"].Value.ToString());
+                prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["nro"].Value.ToString());
+                prestamo.codigo = int.Parse(dataPrestamos.CurrentRow.Cells["codigo"].Value.ToString());
                 prestamo.fechaPrestamo = Convert.ToDateTime(dataPrestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
                 prestamo.registrarDevHerramienta(prestamo);
                 dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value = DateTime.Now.Date.ToString();
-                dataPrestamos.Refresh();
+                btnRegistrarDev.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Ya se registró la devolución");
+                MessageBox.Show("Ya se devolvio el prestamo seleccionado");
             }
-            btnRegistrarDev.Enabled = false;
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            prestamo.buscarPorEncargado(txtEncargado.Text, dataPrestamos);
+            btnRegistrarDev.Enabled = true;
         }
     }
 }

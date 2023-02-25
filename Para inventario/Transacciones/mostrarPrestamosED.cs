@@ -26,38 +26,36 @@ namespace Para_inventario.Transacciones
             this.Close();
         }
 
-        private void mostrarPrestamosED_Load(object sender, EventArgs e)
-        {
-            btnRegistrarDev.Enabled = false;
-            prestamo.mostrarPrestmosED(dataPrestamos);
-        }
-
         private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnRegistrarDev.Enabled = true;
         }
 
-        private void btnRegistrarDev_Click(object sender, EventArgs e)
-        {
-            if (dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value.ToString() == "") 
-            {
-                prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["inventarioElementosDibujo"].Value.ToString());
-                prestamo.fechaPrestamo = Convert.ToDateTime(dataPrestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
-                prestamo.cantidad = int.Parse(dataPrestamos.CurrentRow.Cells["cant"].Value.ToString());
-                prestamo.registrarDevED(prestamo);
-                dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value = DateTime.Now.Date.ToString();
-                dataPrestamos.Refresh();
-            }
-            else
-            {
-                MessageBox.Show("Ya se registró la devolución");
-            }
-            btnRegistrarDev.Enabled = false;    
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             prestamo.buscarPorEncargado(txtEncargado.Text, dataPrestamos);
+        }
+
+        private void mostrarPrestamosED_Load(object sender, EventArgs e)
+        {
+            prestamo.mostrarPrestamosED(dataPrestamos);
+        }
+
+        private void btnRegistrarDev_Click(object sender, EventArgs e)
+        {
+            if (dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value.ToString() == "")
+            {
+                prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["nro"].Value.ToString());
+                prestamo.codigo = int.Parse(dataPrestamos.CurrentRow.Cells["codigo"].Value.ToString());
+                prestamo.fechaPrestamo = Convert.ToDateTime(dataPrestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
+                prestamo.registrarDevED(prestamo);
+                dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value = DateTime.Now.Date.ToString();
+                btnRegistrarDev.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Ya se registró la devolución del préstamo seleccionado");
+            }
         }
     }
 }

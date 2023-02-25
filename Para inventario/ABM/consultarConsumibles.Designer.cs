@@ -37,8 +37,6 @@
             this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNroInventario = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataConsumiblesConsultar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +114,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(360, 28);
+            this.txtNombre.Location = new System.Drawing.Point(232, 31);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(134, 25);
             this.txtNombre.TabIndex = 33;
@@ -126,29 +124,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(277, 28);
+            this.label4.Location = new System.Drawing.Point(149, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
-            // 
-            // txtNroInventario
-            // 
-            this.txtNroInventario.Location = new System.Drawing.Point(153, 28);
-            this.txtNroInventario.Name = "txtNroInventario";
-            this.txtNroInventario.Size = new System.Drawing.Size(100, 25);
-            this.txtNroInventario.TabIndex = 31;
-            this.txtNroInventario.TextChanged += new System.EventHandler(this.txtNroInventario_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(21, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 21);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Nro Inventario:";
             // 
             // consultarConsumibles
             // 
@@ -159,8 +139,6 @@
             this.ClientSize = new System.Drawing.Size(535, 495);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNroInventario);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataConsumiblesConsultar);
             this.Controls.Add(this.btnVolver);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -181,8 +159,6 @@
         private DataGridView dataConsumiblesConsultar;
         private TextBox txtNombre;
         private Label label4;
-        private TextBox txtNroInventario;
-        private Label label3;
         private DataGridViewTextBoxColumn nro;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn cantidadDisponible;

@@ -83,7 +83,7 @@ namespace Para_inventario
                     herramienta.lugar = txtLugar.Text;
                     herramienta.marca = txtMarca.Text;
                     herramienta.nombre = txtNombre.Text;
-                    herramienta.agregarHerramienta(herramienta);
+                    herramienta.agregar(herramienta);
                     MessageBox.Show("Herramienta" + " " + herramienta.nombre + " " + herramienta.marca + " " + "agregada exitosamente");
                     limpiarCampos();
                 }

@@ -28,27 +28,23 @@ namespace Para_inventario.Interfaces
 
         private void frmHerramientaBaja_Load(object sender, EventArgs e)
         {
-            btnEliminar.Enabled= false;
-            herramienta.mostrar(dataHerramientasBaja);
+            herramienta.mostrarHerramienta(dataHConsultar);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            herramienta.buscarNroInventario(txtCodigo, dataHConsultar);
+        }
+
+        private void dataHConsultar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEliminar.Enabled = true;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                herramienta.eliminar(dataHerramientasBaja);
-                btnEliminar.Enabled = false;
-            }
-            catch(Exception) 
-            {
-                btnEliminar.Enabled = false;
-                MessageBox.Show("Error al eliminar herramienta");
-            }
-        }
-
-        private void dataHerramientasBaja_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnEliminar.Enabled = true;
+            int codigo = int.Parse(dataHConsultar.CurrentRow.Cells["Codigo"].Value.ToString());
+            herramienta.eliminar(dataHConsultar, codigo);
         }
     }
 }

@@ -29,80 +29,44 @@ namespace Para_inventario.Transacciones
             this.Close();
         }
 
-        private void prestamoMaquina_Load(object sender, EventArgs e)
-        {
-            lblUser.Text = "Usuario: " + ValoresPublicos.nombreUsuario;
-            btnEliminar.Enabled = false;
-            m.mostrar(dataMaquinaEliminar);
-            m.mostrarNombreMaquina(comboMaquina);
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            bool resultado = hayMaquina(Convert.ToInt32(comboMaquina.SelectedValue));
-            if (resultado || comboMaquina.SelectedIndex == -1 || maskCantidad.Text == 0.ToString() || maskCantidad.Text == null ||
-                txtNombre.Text == "")
-            {
-                MessageBox.Show("Primero seleccione una máquina e ingrese una cantidad y nombre del solicitante del prestamo y " +
-                    "por favor no repita máquina");
-            }
-            else
-            {
-                m.verificarCantidadMaquina(Convert.ToInt32(comboMaquina.SelectedValue), int.Parse(maskCantidad.Text),dataMaquinaEliminar, dataPrestamos, txtNombre.Text);
-                maskCantidad.Text = null;
-                txtNombre.Text = "";
-                comboMaquina.SelectedIndex = -1;
-            }
-        }
-
-        private bool hayMaquina(int nro)
-        {
-            bool bandera = false;
-            for (int i = 0; i < dataPrestamos.Rows.Count; i++)
-            {
-                if (dataPrestamos.CurrentRow.Cells["inventarioMaquinas"].Value.ToString() == nro.ToString())
-                {
-                    bandera = true;
-                    break;
-                }
-            }
-            return bandera;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            dataPrestamos.Rows.Remove(dataPrestamos.CurrentRow);
-            btnEliminar.Enabled = false;
-        }
-
-        private void btnRegistrarPrestamos_Click(object sender, EventArgs e)
-        {
-            if (dataPrestamos.Rows.Count == 0)
-            {
-                MessageBox.Show("No hay préstamos para registrar");
-            }
-            else
-            {
-                prestamo.registrarPrestamoMaquina(dataPrestamos);
-                dataPrestamos.Rows.Clear();
-                comboMaquina.SelectedIndex = -1;
-                maskCantidad.Text = null;
-                txtNombre.Text = "";
-                btnEliminar.Enabled = false;
-                m.mostrar(dataMaquinaEliminar);
-            }
-        }
-
-        private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnEliminar.Enabled = true;
-        }
-
+       
         private void btnMostrarPrestamos_Click(object sender, EventArgs e)
         {
             mostrarPrestamosMaquinas ventana = new mostrarPrestamosMaquinas();
             ventana.Show();
             this.Close();    
+        }
+
+        private void prestamoMaquina_Load(object sender, EventArgs e)
+        {
+            m.mostrar(dataMaquina);
+        }
+
+        private void btnRegistrarPrestamos_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("Ingrese un solicitante del prestamo");
+            }
+            else
+            {
+                int cant = dataMaquina.SelectedRows.Count;
+                prestamo.fechaPrestamo = DateTime.Now;
+                prestamo.encargado = txtNombre.Text;
+                prestamo.registrarPrestamoMaquina(dataMaquina, cant, prestamo);
+                btnRegistrarPrestamos.Enabled = false;
+                m.mostrar(dataMaquina);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            m.consultarNroInventario(txtCodigo, dataMaquina);
+        }
+
+        private void dataMaquina_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnRegistrarPrestamos.Enabled = true;
         }
     }
 }

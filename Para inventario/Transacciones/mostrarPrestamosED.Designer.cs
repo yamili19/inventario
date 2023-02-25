@@ -28,103 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataPrestamos = new System.Windows.Forms.DataGridView();
-            this.inventarioElementosDibujo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementosDibujo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RealizadoPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRegistrarDev = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txtEncargado = new System.Windows.Forms.ToolStripTextBox();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
+            this.dataPrestamos = new System.Windows.Forms.DataGridView();
+            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataPrestamos
-            // 
-            this.dataPrestamos.AllowUserToAddRows = false;
-            this.dataPrestamos.AllowUserToDeleteRows = false;
-            this.dataPrestamos.AllowUserToOrderColumns = true;
-            this.dataPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.inventarioElementosDibujo,
-            this.elementosDibujo,
-            this.cant,
-            this.fechaPrestamo,
-            this.fechaDevolucion,
-            this.encargado,
-            this.RealizadoPor});
-            this.dataPrestamos.Location = new System.Drawing.Point(45, 43);
-            this.dataPrestamos.Name = "dataPrestamos";
-            this.dataPrestamos.ReadOnly = true;
-            this.dataPrestamos.RowTemplate.Height = 25;
-            this.dataPrestamos.Size = new System.Drawing.Size(814, 391);
-            this.dataPrestamos.TabIndex = 23;
-            this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
-            // 
-            // inventarioElementosDibujo
-            // 
-            this.inventarioElementosDibujo.DataPropertyName = "inventarioElementosDibujo";
-            this.inventarioElementosDibujo.HeaderText = "inventarioElementosDibujo";
-            this.inventarioElementosDibujo.Name = "inventarioElementosDibujo";
-            this.inventarioElementosDibujo.ReadOnly = true;
-            this.inventarioElementosDibujo.Visible = false;
-            // 
-            // elementosDibujo
-            // 
-            this.elementosDibujo.DataPropertyName = "elementosDibujo";
-            this.elementosDibujo.HeaderText = "Elemento de Dibujo";
-            this.elementosDibujo.Name = "elementosDibujo";
-            this.elementosDibujo.ReadOnly = true;
-            this.elementosDibujo.Width = 150;
-            // 
-            // cant
-            // 
-            this.cant.DataPropertyName = "cantidad";
-            this.cant.HeaderText = "Cantidad";
-            this.cant.Name = "cant";
-            this.cant.ReadOnly = true;
-            // 
-            // fechaPrestamo
-            // 
-            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
-            this.fechaPrestamo.HeaderText = "Fecha Prestamo";
-            this.fechaPrestamo.Name = "fechaPrestamo";
-            this.fechaPrestamo.ReadOnly = true;
-            this.fechaPrestamo.Width = 150;
-            // 
-            // fechaDevolucion
-            // 
-            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
-            this.fechaDevolucion.HeaderText = "Fecha Devolucion";
-            this.fechaDevolucion.Name = "fechaDevolucion";
-            this.fechaDevolucion.ReadOnly = true;
-            this.fechaDevolucion.Width = 150;
-            // 
-            // encargado
-            // 
-            this.encargado.DataPropertyName = "solicitante";
-            this.encargado.HeaderText = "Solicitante";
-            this.encargado.Name = "encargado";
-            this.encargado.ReadOnly = true;
-            this.encargado.Width = 120;
-            // 
-            // RealizadoPor
-            // 
-            this.RealizadoPor.DataPropertyName = "responsable";
-            this.RealizadoPor.HeaderText = "Responsable";
-            this.RealizadoPor.Name = "RealizadoPor";
-            this.RealizadoPor.ReadOnly = true;
             // 
             // btnRegistrarDev
             // 
             this.btnRegistrarDev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegistrarDev.Enabled = false;
             this.btnRegistrarDev.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnRegistrarDev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnRegistrarDev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
@@ -190,6 +116,85 @@
             this.btnBuscar.Text = "toolStripButton1";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // dataPrestamos
+            // 
+            this.dataPrestamos.AllowUserToAddRows = false;
+            this.dataPrestamos.AllowUserToDeleteRows = false;
+            this.dataPrestamos.AllowUserToOrderColumns = true;
+            this.dataPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nro,
+            this.nombre,
+            this.codigo,
+            this.fechaPrestamo,
+            this.fechaDevolucion,
+            this.solicitante,
+            this.responsable});
+            this.dataPrestamos.Location = new System.Drawing.Point(64, 61);
+            this.dataPrestamos.Name = "dataPrestamos";
+            this.dataPrestamos.ReadOnly = true;
+            this.dataPrestamos.RowTemplate.Height = 25;
+            this.dataPrestamos.Size = new System.Drawing.Size(795, 365);
+            this.dataPrestamos.TabIndex = 51;
+            this.dataPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellClick);
+            // 
+            // nro
+            // 
+            this.nro.DataPropertyName = "nro";
+            this.nro.HeaderText = "nro";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            this.nro.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // fechaPrestamo
+            // 
+            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
+            dataGridViewCellStyle1.Format = "G";
+            dataGridViewCellStyle1.NullValue = null;
+            this.fechaPrestamo.DefaultCellStyle = dataGridViewCellStyle1;
+            this.fechaPrestamo.HeaderText = "Fecha Prestamo";
+            this.fechaPrestamo.MaxInputLength = 32768;
+            this.fechaPrestamo.Name = "fechaPrestamo";
+            this.fechaPrestamo.ReadOnly = true;
+            this.fechaPrestamo.Width = 150;
+            // 
+            // fechaDevolucion
+            // 
+            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
+            this.fechaDevolucion.HeaderText = "Fecha Devolucion";
+            this.fechaDevolucion.Name = "fechaDevolucion";
+            this.fechaDevolucion.ReadOnly = true;
+            this.fechaDevolucion.Width = 150;
+            // 
+            // solicitante
+            // 
+            this.solicitante.DataPropertyName = "encargado";
+            this.solicitante.HeaderText = "Solicitante";
+            this.solicitante.Name = "solicitante";
+            this.solicitante.ReadOnly = true;
+            // 
+            // responsable
+            // 
+            this.responsable.DataPropertyName = "nombreUsuario";
+            this.responsable.HeaderText = "Responsable";
+            this.responsable.Name = "responsable";
+            this.responsable.ReadOnly = true;
+            this.responsable.Width = 150;
+            // 
             // mostrarPrestamosED
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -197,39 +202,38 @@
             this.BackColor = System.Drawing.Color.Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(896, 510);
+            this.Controls.Add(this.dataPrestamos);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnRegistrarDev);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.dataPrestamos);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mostrarPrestamosED";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mostrarPrestamosED";
             this.Load += new System.EventHandler(this.mostrarPrestamosED_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DataGridView dataPrestamos;
         private Button btnRegistrarDev;
         private Button btnVolver;
         private ToolStrip toolStrip1;
         private ToolStripLabel toolStripLabel2;
         private ToolStripTextBox txtEncargado;
         private ToolStripButton btnBuscar;
-        private DataGridViewTextBoxColumn inventarioElementosDibujo;
-        private DataGridViewTextBoxColumn elementosDibujo;
-        private DataGridViewTextBoxColumn cant;
+        private DataGridView dataPrestamos;
+        private DataGridViewTextBoxColumn nro;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn codigo;
         private DataGridViewTextBoxColumn fechaPrestamo;
         private DataGridViewTextBoxColumn fechaDevolucion;
-        private DataGridViewTextBoxColumn encargado;
-        private DataGridViewTextBoxColumn RealizadoPor;
+        private DataGridViewTextBoxColumn solicitante;
+        private DataGridViewTextBoxColumn responsable;
     }
 }

@@ -19,11 +19,6 @@ namespace Para_inventario.Transacciones
             InitializeComponent();
         }
 
-        private void mostrarPrestamosMaquinas_Load(object sender, EventArgs e)
-        {
-            prestamo.mostrarPrestamosMaquinas(dataPrestamos);
-            btnRegistrarDev.Enabled = false;
-        }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -32,27 +27,31 @@ namespace Para_inventario.Transacciones
             this.Close();
         }
 
-        private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnRegistrarDev.Enabled = true; 
-        }
-
         private void btnRegistrarDev_Click(object sender, EventArgs e)
         {
             if (dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value.ToString() == "")
             {
-                prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["inventarioMaquinas"].Value.ToString());
-                prestamo.cantidad = int.Parse(dataPrestamos.CurrentRow.Cells["cant"].Value.ToString());
+                prestamo.nroInventario = int.Parse(dataPrestamos.CurrentRow.Cells["nro"].Value.ToString());
+                prestamo.codigo = int.Parse(dataPrestamos.CurrentRow.Cells["codigo"].Value.ToString());
                 prestamo.fechaPrestamo = Convert.ToDateTime(dataPrestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
                 prestamo.registrarDevMaquina(prestamo);
                 dataPrestamos.CurrentRow.Cells["fechaDevolucion"].Value = DateTime.Now.Date.ToString();
-                dataPrestamos.Refresh();
+                btnRegistrarDev.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Ya se registró la devolución");
+                MessageBox.Show("El prestamo seleccionado ya fue devuelto");
             }
-            btnRegistrarDev.Enabled = false;
+        }
+
+        private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnRegistrarDev.Enabled = true;
+        }
+
+        private void mostrarPrestamosMaquinas_Load(object sender, EventArgs e)
+        {
+            prestamo.mostrarPrestamosMaquinas(dataPrestamos);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

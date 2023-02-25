@@ -1,4 +1,5 @@
 ﻿using Para_inventario.Clases;
+using Para_inventario.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,19 +27,19 @@ namespace Para_inventario.Interfaces
             this.Close();
         }
 
-        private void txtNroInventario_TextChanged(object sender, EventArgs e)
+        private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            elemento.consultarNroInventario(txtNroInventario, dataEDConsultar);
+            elemento.consultarNombre(txtNombre, dataEDConsultar);
         }
 
         private void consultarElementosDibujo_Load(object sender, EventArgs e)
         {
-            elemento.mostrar(dataEDConsultar);
+            elemento.mostrarED(dataEDConsultar);
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            elemento.consultarNombre(txtNombre, dataEDConsultar);
+            elemento.consultarNroInventario(txtCodigo, dataEDConsultar);
         }
     }
 }

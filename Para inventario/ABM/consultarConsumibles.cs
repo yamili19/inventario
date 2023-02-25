@@ -31,11 +31,6 @@ namespace Para_inventario.Interfaces
             consumible.mostrar(dataConsumiblesConsultar);
         }
 
-        private void txtNroInventario_TextChanged(object sender, EventArgs e)
-        {
-            consumible.consultarNroInventario(txtNroInventario,dataConsumiblesConsultar);
-        }
-
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
             consumible.consultarNombre(txtNombre, dataConsumiblesConsultar);

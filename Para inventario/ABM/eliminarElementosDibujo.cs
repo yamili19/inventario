@@ -26,12 +26,6 @@ namespace Para_inventario.Interfaces
             this.Close();
         }
 
-        private void eliminarElementosDibujo_Load(object sender, EventArgs e)
-        {
-            btnEliminar.Enabled = false;
-            elemento.mostrar(dataEDEliminar);
-        }
-
         private void dataEDEliminar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnEliminar.Enabled = true; 
@@ -39,8 +33,18 @@ namespace Para_inventario.Interfaces
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            elemento.eliminar(dataEDEliminar);
+            elemento.eliminar(dataEDEliminar, int.Parse(dataEDEliminar.CurrentRow.Cells["Codigo"].Value.ToString()));
             btnEliminar.Enabled = false;
+        }
+
+        private void eliminarElementosDibujo_Load_1(object sender, EventArgs e)
+        {
+            elemento.mostrarED(dataEDEliminar);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            elemento.consultarNroInventario(txtCodigo, dataEDEliminar);
         }
     }
 }

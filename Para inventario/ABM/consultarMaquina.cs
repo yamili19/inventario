@@ -32,14 +32,14 @@ namespace Para_inventario.Interfaces
             maquina.mostrar(dataMaquinaConsultar);
         }
 
-        private void txtNroInventario_TextChanged(object sender, EventArgs e)
-        {
-            maquina.consultarNroInventario(txtNroInventario, dataMaquinaConsultar);
-        }
-
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
             maquina.consultarNombre(txtNombre, dataMaquinaConsultar);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            maquina.consultarNroInventario(txtCodigo, dataMaquinaConsultar);
         }
     }
 }

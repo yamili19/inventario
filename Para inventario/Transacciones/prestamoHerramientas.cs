@@ -21,57 +21,43 @@ namespace Para_inventario.Transacciones
             InitializeComponent();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            frmPrincipal ventana = new frmPrincipal();
-            ventana.Show();
-            this.Close();    
-        }
-
         private void prestamoHerramientas_Load(object sender, EventArgs e)
         {
-            lblUser.Text = "Usuario: " + ValoresPublicos.nombreUsuario;
-            herramientaaaa.mostrarNombreHerramienta(comboHerramienta);
-            herramientaaaa.mostrar(dataHerramientasBaja);
-            btnEliminar.Enabled = false;
+            herramientaaaa.mostrarHerramienta(dataHConsultar);
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            bool resultado = estaHerramienta(Convert.ToInt32(comboHerramienta.SelectedValue));
-            if (comboHerramienta.SelectedIndex == -1 || maskCantidad.Text == null || txtNombre.Text == "" || resultado || 
-                maskCantidad.Text == 0.ToString()) 
-            {
-                MessageBox.Show("Primero seleccione una herramienta e ingrese una cantidad y nombre del encargado del prestamo y " +
-                    "por favor no repita herramienta");
-            }
-            else
-            {
-                herramientaaaa.verificarCantidadHerramienta(Convert.ToInt32(comboHerramienta.SelectedValue), dataHerramientasBaja, dataPrestamos,
-                       int.Parse(maskCantidad.Text), txtNombre.Text);
-                comboHerramienta.SelectedIndex = -1;
-                txtNombre.Text = "";
-                maskCantidad.Text = null;
-                btnEliminar.Enabled = false;
-            }
+            herramientaaaa.buscarNroInventario(txtCodigo, dataHConsultar);
+        }
+
+        private void dataHConsultar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnRegistrarPrestamos.Enabled = true;
         }
 
         private void btnRegistrarPrestamos_Click(object sender, EventArgs e)
         {
-            if (dataPrestamos.Rows.Count == 0)
+            int cantidad = dataHConsultar.SelectedRows.Count;
+            if (txtNombre.Text == "")
             {
-                MessageBox.Show("No hay prestamos a registrar");
+                MessageBox.Show("Primero ingrese un solicitante para los préstamos");
             }
             else
             {
-                prestamo.registrarPrestamosHerramienntas(dataPrestamos);
-                comboHerramienta.SelectedIndex = -1;
-                txtNombre.Text = "";
-                maskCantidad.Text = null;
-                dataPrestamos.Rows.Clear();
-                btnEliminar.Enabled = false;
-                herramientaaaa.mostrar(dataHerramientasBaja);
+                prestamo.fechaPrestamo = DateTime.Now;
+                prestamo.encargado = txtNombre.Text;
+                prestamo.registrarPrestamoHerramienta(dataHConsultar, cantidad, prestamo);
+                herramientaaaa.mostrarHerramienta(dataHConsultar);
+                btnRegistrarPrestamos.Enabled = false;
             }
+        }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            frmPrincipal ventana = new frmPrincipal();
+            ventana.Show();
+            this.Close();
         }
 
         private void btnMostrarPrestamos_Click(object sender, EventArgs e)
@@ -79,31 +65,6 @@ namespace Para_inventario.Transacciones
             mostrarPrestamoHerramienta ventana = new mostrarPrestamoHerramienta();
             ventana.Show();
             this.Close();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            dataPrestamos.Rows.Remove(dataPrestamos.CurrentRow);
-            btnEliminar.Enabled = false;
-        }
-
-        private void dataPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnEliminar.Enabled = true;
-        }
-
-        private bool estaHerramienta(int herramienta)
-        {
-            bool bandera = false;
-            for (int i = 0; i < dataPrestamos.Rows.Count; i++) 
-            {
-                if (dataPrestamos.CurrentRow.Cells["inventarioHerramienta"].Value.ToString() == herramienta.ToString())
-                {
-                    bandera = true;
-                    break;
-                }
-            }
-            return bandera;
         }
     }
 }

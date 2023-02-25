@@ -11,103 +11,45 @@ namespace Para_inventario.Clases
     class Prestamo
     {
         public int nroInventario { get; set; } 
+        public int codigo { get; set; }  
         public DateTime fechaPrestamo { get; set; }
         public DateTime fechaDevolucion { get; set; }
-        public int cantidad { get; set; }
         public string encargado { get; set; }
-
         public int usuario { get; set; }
 
         public Prestamo() { }
-        public Prestamo(int nroInventario, DateTime fechaPrestamo, DateTime fechaDevolucion, int cantidad, string encargado, int usuario)
+        public Prestamo(int nroInventario, DateTime fechaPrestamo, DateTime fechaDevolucion, string encargado, int usuario, int codigo)
         {
             this.nroInventario = nroInventario;
             this.fechaPrestamo = fechaPrestamo;
             this.fechaDevolucion = fechaDevolucion;
-            this.cantidad = cantidad;
             this.encargado = encargado;
             this.usuario = usuario;
+            this.codigo = codigo;
         }
 
-        public void mostrarPrestamoHerramienta(DataGridView prestamos)
+        public void registrarPrestamoED(DataGridView prestamos, int cantidad, Prestamo prestamo)
         {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            prestamos.DataSource = servicio.mostrarPrestamoHerramientas();
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarPrestamoED(prestamos, cantidad, prestamo);
         }
 
-        public void registrarPrestamosHerramienntas(DataGridView prestamos)
+        public void registrarPrestamoHerramienta(DataGridView prestamos, int cantidad, Prestamo prestamo)
         {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            for (int i = 0; i < prestamos.Rows.Count; i++) 
-            {
-                this.nroInventario = int.Parse(prestamos.Rows[i].Cells["inventarioHerramienta"].Value.ToString());
-                this.cantidad = int.Parse(prestamos.Rows[i].Cells["cantidadDisponible"].Value.ToString());
-                this.fechaPrestamo = Convert.ToDateTime(prestamos.Rows[i].Cells["fechaPrestamo"].Value.ToString());
-                this.encargado = prestamos.Rows[i].Cells["encargado"].Value.ToString();
-                this.usuario = ValoresPublicos.nroUsuario;
-                servicio.registrarPrestamoHerramienta(this);
-            }
-            MessageBox.Show("Prestamos registrados exitósamente");
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarPrestamoHerramienta(prestamos, cantidad, prestamo);
         }
 
-        public void registrarDevHerramienta(Prestamo prestamo)
+        public void registrarPrestamoInformatica(DataGridView prestamos, int cantidad, Prestamo prestamo)
         {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            servicio.registrarDevolucionHerramienta(prestamo);
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarPrestamoInformatica(prestamos, cantidad, prestamo);
         }
 
-        public void registrarPrestamoED(DataGridView prestamos)
+        public void registrarPrestamoMaquina(DataGridView prestamos, int cantidad, Prestamo prestamo)
         {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            for (int i = 0; i < prestamos.Rows.Count; i++) 
-            {
-                this.nroInventario = int.Parse(prestamos.Rows[i].Cells["inventarioElementosDibujo"].Value.ToString());
-                this.cantidad = int.Parse(prestamos.Rows[i].Cells["cant"].Value.ToString());
-                this.encargado = prestamos.Rows[i].Cells["encargado"].Value.ToString();
-                this.fechaPrestamo = Convert.ToDateTime(prestamos.Rows[i].Cells["fechaPrestamo"].Value.ToString());
-                this.usuario = ValoresPublicos.nroUsuario;
-                servicio.registrarPrestamoED(this);
-            }
-            MessageBox.Show("Prestamos registrados exitósamente");
-        }
-
-        public void mostrarPrestmosED(DataGridView prestamos)
-        {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            prestamos.DataSource = servicio.mostrarPrestamosED();
-        }
-
-        public void registrarDevED(Prestamo prestamo)
-        {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            servicio.registrarDevED(prestamo);
-        }
-
-        public void registrarPrestamoMaquina(DataGridView prestamos)
-        {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            for (int i = 0; i < prestamos.Rows.Count; i++) 
-            {
-                this.nroInventario = int.Parse(prestamos.Rows[i].Cells["inventarioMaquinas"].Value.ToString());
-                this.cantidad = int.Parse(prestamos.Rows[i].Cells["cant"].Value.ToString());
-                this.encargado = prestamos.Rows[i].Cells["encargado"].Value.ToString();
-                this.fechaPrestamo = Convert.ToDateTime(prestamos.Rows[i].Cells["fechaPrestamo"].Value.ToString());
-                this.usuario = ValoresPublicos.nroUsuario;
-                servicio.registrarPrestamoMaquina(this);
-            }
-            MessageBox.Show("Prestamos registrados exitósamente");
-        }
-
-        public void mostrarPrestamosMaquinas(DataGridView prestamos)
-        {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            prestamos.DataSource = servicio.mostrarPrestamosMaquinas();
-        }
-
-        public void registrarDevMaquina(Prestamo prestamo)
-        {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            servicio.registrarDevMaquina(prestamo);
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarPrestamoMaquina(prestamos, cantidad, prestamo);
         }
 
         public void buscarPorEncargado(string nombre, DataGridView prestamos)
@@ -116,11 +58,11 @@ namespace Para_inventario.Clases
             bs.DataSource = prestamos.DataSource;
             try
             {
-                bs.Filter = "solicitante like '%" + nombre + "%'";
+                bs.Filter = "encargado like '%" + nombre + "%'";
                 prestamos.DataSource = bs;
                 if (prestamos.RowCount == 0)
                 {
-                    MessageBox.Show("No se encontró el encargado que está buscando");
+                    MessageBox.Show("No se encontró el solicitante que está buscando");
                 }
             }
             catch (Exception)
@@ -129,31 +71,52 @@ namespace Para_inventario.Clases
             }
         }
 
-        public void registrarPrestInformatica(DataGridView prestamos)
+
+        public void mostrarPrestamoHerramienta(DataGridView prestamos)
         {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            for (int i = 0; i < prestamos.Rows.Count; i++)
-            {
-                this.cantidad = int.Parse(prestamos.CurrentRow.Cells["cant"].Value.ToString());
-                this.usuario = ValoresPublicos.nroUsuario;
-                this.fechaPrestamo = Convert.ToDateTime(prestamos.CurrentRow.Cells["fechaPrestamo"].Value.ToString());
-                this.nroInventario = int.Parse(prestamos.CurrentRow.Cells["inventarioInformatica"].Value.ToString());
-                this.encargado = prestamos.CurrentRow.Cells["encargado"].Value.ToString();
-                servicio.registrarPrestamoInformatica(this);
-            }
-            MessageBox.Show("Prestamos registrados exitósamente");
+            ServicioPrestamo ser = new ServicioPrestamo();
+            prestamos.DataSource = ser.mostrarPrestamoHerramienta(); 
         }
 
-        public void mostrarPrestInformatica(DataGridView prestamos)
+        public void mostrarPrestamosED(DataGridView prestamos)
         {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            prestamos.DataSource = servicio.mostrarPrestInformatica();
+            ServicioPrestamo ser = new ServicioPrestamo();
+            prestamos.DataSource = ser.mostrarPrestamoED();
+        }
+
+        public void mostrarPrestamosInformatica(DataGridView prestamos)
+        {
+            ServicioPrestamo ser = new ServicioPrestamo();
+            prestamos.DataSource = ser.mostrarPrestamoInformatica();
+        }
+
+        public void mostrarPrestamosMaquinas(DataGridView prestamos)
+        {
+            ServicioPrestamo ser = new ServicioPrestamo();
+            prestamos.DataSource = ser.mostrarPrestamosMaquinas();
+        }
+        public void registrarDevHerramienta(Prestamo prestamo)
+        {
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarDevHerramienta(prestamo);
+        }
+
+        public void registrarDevMaquina(Prestamo prestamo)
+        {
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarDevMaquina(prestamo);
+        }
+
+        public void registrarDevED(Prestamo prestamo)
+        {
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarDevED(prestamo);   
         }
 
         public void registrarDevInformatica(Prestamo prestamo)
         {
-            ServicioPrestamo servicio = new ServicioPrestamo();
-            servicio.registrarDevInformatica(prestamo);
+            ServicioPrestamo ser = new ServicioPrestamo();
+            ser.registrarDevInformatica(prestamo);
         }
     }
 }

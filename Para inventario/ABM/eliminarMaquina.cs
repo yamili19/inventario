@@ -19,15 +19,20 @@ namespace Para_inventario.Interfaces
             InitializeComponent();
         }
 
-        private void dataInformaticaEliminar_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            btnEliminar.Enabled = true;
+            maquina.consultarNroInventario(txtCodigo, dataMaquinaConsultar);
         }
 
         private void eliminarMaquina_Load(object sender, EventArgs e)
         {
+            maquina.mostrar(dataMaquinaConsultar);
             btnEliminar.Enabled = false;
-            maquina.mostrar(dataMaquinaEliminar);
+        }
+
+        private void dataMaquinaConsultar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEliminar.Enabled = true; 
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -39,14 +44,7 @@ namespace Para_inventario.Interfaces
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                maquina.eliminar(dataMaquinaEliminar); 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al eliminar máquina");
-            }
+            maquina.eliminar(dataMaquinaConsultar);
         }
     }
 }

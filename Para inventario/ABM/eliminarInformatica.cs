@@ -32,23 +32,20 @@ namespace Para_inventario.Interfaces
             informatica.mostrar(dataInformaticaEliminar);
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            informatica.eliminar(dataInformaticaEliminar);
+            btnEliminar.Enabled = false; 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            informatica.consultarNroInventario(txtCodigo, dataInformaticaEliminar);
+        }
+
         private void dataInformaticaEliminar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnEliminar.Enabled = true;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                informatica.eliminar(dataInformaticaEliminar);
-                btnEliminar.Enabled = false;
-            }
-            catch(Exception) 
-            {
-                btnEliminar.Enabled = false;
-                MessageBox.Show("Error al eliminar elemento de informática");
-            }
         }
     }
 }

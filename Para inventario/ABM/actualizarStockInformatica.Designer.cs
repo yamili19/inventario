@@ -1,6 +1,6 @@
-﻿namespace Para_inventario.Interfaces
+﻿namespace Para_inventario.ABM
 {
-    partial class actualizarInformatica
+    partial class actualizarStockInformatica
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataInformaticaActualizar = new System.Windows.Forms.DataGridView();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataI = new System.Windows.Forms.DataGridView();
             this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblHerramientas = new System.Windows.Forms.Label();
+            this.cantidadIngresada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataInformaticaActualizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataI)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataInformaticaActualizar
+            // txtNombre
             // 
-            this.dataInformaticaActualizar.AllowUserToAddRows = false;
-            this.dataInformaticaActualizar.AllowUserToDeleteRows = false;
-            this.dataInformaticaActualizar.AllowUserToOrderColumns = true;
-            this.dataInformaticaActualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataInformaticaActualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.txtNombre.Location = new System.Drawing.Point(139, 26);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(134, 25);
+            this.txtNombre.TabIndex = 42;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(56, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 21);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "Nombre:";
+            // 
+            // dataI
+            // 
+            this.dataI.AllowUserToAddRows = false;
+            this.dataI.AllowUserToDeleteRows = false;
+            this.dataI.AllowUserToOrderColumns = true;
+            this.dataI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nro,
             this.nombre,
             this.marca,
             this.lugar,
-            this.cantidad});
-            this.dataInformaticaActualizar.Location = new System.Drawing.Point(37, 49);
-            this.dataInformaticaActualizar.Name = "dataInformaticaActualizar";
-            this.dataInformaticaActualizar.RowTemplate.Height = 25;
-            this.dataInformaticaActualizar.Size = new System.Drawing.Size(544, 328);
-            this.dataInformaticaActualizar.TabIndex = 23;
-            this.dataInformaticaActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataInformaticaActualizar_CellClick);
-            this.dataInformaticaActualizar.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataInformaticaActualizar_DataError);
+            this.cantidad,
+            this.cantidadIngresada});
+            this.dataI.Location = new System.Drawing.Point(56, 72);
+            this.dataI.Name = "dataI";
+            this.dataI.RowTemplate.Height = 25;
+            this.dataI.Size = new System.Drawing.Size(644, 341);
+            this.dataI.TabIndex = 40;
+            this.dataI.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataI_CellClick);
+            this.dataI.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataI_DataError);
             // 
             // nro
             // 
@@ -86,35 +107,33 @@
             this.lugar.DataPropertyName = "lugar";
             this.lugar.HeaderText = "Lugar";
             this.lugar.Name = "lugar";
+            this.lugar.ReadOnly = true;
             // 
             // cantidad
             // 
             this.cantidad.DataPropertyName = "cantidad";
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
             // 
-            // lblHerramientas
+            // cantidadIngresada
             // 
-            this.lblHerramientas.AutoSize = true;
-            this.lblHerramientas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblHerramientas.Location = new System.Drawing.Point(186, 23);
-            this.lblHerramientas.Name = "lblHerramientas";
-            this.lblHerramientas.Size = new System.Drawing.Size(265, 20);
-            this.lblHerramientas.TabIndex = 24;
-            this.lblHerramientas.Text = "Todos Los Elementos De Informática";
+            this.cantidadIngresada.HeaderText = "Cantidad Ingresada";
+            this.cantidadIngresada.Name = "cantidadIngresada";
             // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnActualizar.Enabled = false;
             this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnActualizar.Location = new System.Drawing.Point(474, 393);
+            this.btnActualizar.Location = new System.Drawing.Point(593, 428);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(107, 43);
-            this.btnActualizar.TabIndex = 26;
+            this.btnActualizar.Size = new System.Drawing.Size(107, 56);
+            this.btnActualizar.TabIndex = 39;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -127,32 +146,32 @@
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVolver.Location = new System.Drawing.Point(354, 393);
+            this.btnVolver.Location = new System.Drawing.Point(473, 428);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 43);
-            this.btnVolver.TabIndex = 25;
+            this.btnVolver.Size = new System.Drawing.Size(95, 56);
+            this.btnVolver.TabIndex = 38;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // actualizarInformatica
+            // actualizarStockInformatica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Para_inventario.Properties.Resources._25020269;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(650, 462);
+            this.BackgroundImage = global::Para_inventario.Properties.Resources._250202692;
+            this.ClientSize = new System.Drawing.Size(765, 510);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataI);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.lblHerramientas);
-            this.Controls.Add(this.dataInformaticaActualizar);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "actualizarInformatica";
+            this.Name = "actualizarStockInformatica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "actualizarInformatica";
-            this.Load += new System.EventHandler(this.actualizarInformatica_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataInformaticaActualizar)).EndInit();
+            this.Text = "actualizarStock";
+            this.Load += new System.EventHandler(this.actualizarStockInformatica_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,14 +179,16 @@
 
         #endregion
 
-        private DataGridView dataInformaticaActualizar;
-        private Label lblHerramientas;
-        private Button btnActualizar;
-        private Button btnVolver;
+        private TextBox txtNombre;
+        private Label label4;
+        private DataGridView dataI;
         private DataGridViewTextBoxColumn nro;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn marca;
         private DataGridViewTextBoxColumn lugar;
         private DataGridViewTextBoxColumn cantidad;
+        private DataGridViewTextBoxColumn cantidadIngresada;
+        private Button btnActualizar;
+        private Button btnVolver;
     }
 }
